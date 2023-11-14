@@ -13,7 +13,11 @@ public class Vererbungstester {
         Dreieck Dreieck1 = new Dreieck();
         Dreieck Dreieck2 = new Dreieck(aDreieck, bDreieck, cDreieck);
 
+        Kreis rund = new Kreis(SP, 3);
+
         System.out.println(Dreieck1.toString());
         System.out.println("\n" + Dreieck2.toString());
+
+        System.out.println(rund.toString());
     }
 }
