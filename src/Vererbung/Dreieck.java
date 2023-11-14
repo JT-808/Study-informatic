@@ -17,9 +17,9 @@ public class Dreieck extends GeometrischeForm {
         this.c = c;
     }
 
-    public String toString(){
-        String KoordinatenDR
-        KoordinatenDR= "a= "+getStartpunkt()+ "\n";
+    public String toString() {
+        String KoordinatenDR = "";
+        KoordinatenDR = "a= " + getStartpunkt() + "\n" + "b= " + b + "\n" + "c= " + c;
         return KoordinatenDR;
     }
 }

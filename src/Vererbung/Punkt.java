@@ -22,7 +22,7 @@ public class Punkt {
     }
 
     public String toString() {
-        return "punkt= " + x + " " + y;
+        return "" + x + " , " + y;
     }
 
     public void verschieben(double dx, double dy) {
