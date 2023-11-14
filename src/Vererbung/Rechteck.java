@@ -38,4 +38,13 @@ public class Rechteck extends GeometrischeForm {
         return 2 * (hoehe + breite);
     }
 
+    public String toString() {
+        String RE = "";
+        return RE + getStartpunkt() + "hoehe = " + hoehe + " breite = " + breite;
+    }
+
+    public boolean equals(Rechteck r) {
+        return (getStartpunkt().equals(r.getStartpunkt())) && (breite == r.breite) && (hoehe == r.hoehe);
+    }
+
 }
