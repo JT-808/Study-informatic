@@ -6,5 +6,6 @@ public class Vererbungstester {
         Punkt SP = new Punkt();
         System.out.println("Startpunkt von SP = " + SP.getX() + " " + SP.getY());
 
+        System.out.println(KoordinatenDR);
     }
 }
