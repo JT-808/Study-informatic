@@ -47,4 +47,10 @@ public class Rechteck extends GeometrischeForm {
         return (getStartpunkt().equals(r.getStartpunkt())) && (breite == r.breite) && (hoehe == r.hoehe);
     }
 
+    public interface InterfaceRechteck {
+
+        double compareTo();
+
+    }
+
 }
