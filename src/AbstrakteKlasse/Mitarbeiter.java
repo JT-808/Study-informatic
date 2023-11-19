@@ -13,6 +13,8 @@ public abstract class Mitarbeiter {
 
     public abstract double monatsBrutto();
 
+    public abstract int hatDienstjubilaeum();
+
     public int getPersnr() {
         return persnr;
     }
