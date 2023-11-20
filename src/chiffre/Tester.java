@@ -4,20 +4,24 @@ import java.util.Scanner;
 
 public class Tester {
     public static void main(String[] args) {
-        // String Klartext = "Hallo";
-        int verschiebung = 2;
+
+        String Klar;
+        int verschiebung;
 
         Scanner wort = new Scanner(System.in);
+        Scanner Zahl = new Scanner(System.in);
 
         System.out.println("Bitte Wort eingeben");
-        String Klar;
         Klar = wort.nextLine();
+        System.out.println("Bitte Verschiebung eingeben");
+        verschiebung = Zahl.nextInt();
 
         System.out.println("unverschlüsselt: " + Klar);
         System.out.println("Länge: " + Klar.length());
-        System.out.println("der letzten beiden Buchstaben waren: " + Klar.substring(Klar.length() - 2));
+        System.out.println("der letzte Buchstabe war: " + Klar.substring(Klar.length() - 1));
+        System.out.println("ich verschiebe um: " + verschiebung);
 
-        String verschluesselterText = Klar.verschluesseln(Klar, verschiebung);
+        // String verschluesselterText = Klar.verschluesseln(Klar, vaserschiebung);
 
     }
 }
