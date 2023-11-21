@@ -11,6 +11,8 @@ public class Tester {
         Scanner wort = new Scanner(System.in);
         Scanner Zahl = new Scanner(System.in);
 
+        CaesarChiffre cc = new CaesarChiffre();
+
         System.out.println("Bitte Wort eingeben");
         Klar = wort.nextLine();
         System.out.println("Bitte Verschiebung eingeben");
@@ -21,7 +23,9 @@ public class Tester {
         System.out.println("der letzte Buchstabe war: " + Klar.substring(Klar.length() - 1));
         System.out.println("ich verschiebe um: " + verschiebung);
 
-        // String verschluesselterText = Klar.verschluesseln(Klar, vaserschiebung);
+        String verschluesselterText = cc.verschluesseln(Klar, verschiebung);
+
+        System.out.println(verschluesselterText);
 
     }
 }
