@@ -26,6 +26,10 @@ public class Gehaltsberechnung extends Mitarbeiter implements InterfaceRechteck 
 
         ma[1] = arbeiter1;
 
+        for (Mitarbeiter ma : ma) {
+            System.out.println(ma);
+        }
+
     };
 
     public void berechneGehaltsListe() {
