@@ -14,5 +14,9 @@ public class arraylisten {
         liste1.add(4, "Sven");
 
         System.out.println(liste1.get(1));
+
+        for (String iString : liste1) {
+            System.out.println(iString);
+        }
     }
 }

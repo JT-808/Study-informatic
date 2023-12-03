@@ -20,7 +20,9 @@ public class YTUebungenForSchleife {
             System.out.println(i);
         }
         System.out.println("---------");
-
+        for (int i = 0; i < nummern.length; i++) {
+            nummern[i] = nummern[i] * -1;
+        }
         // !!!!!Schneller => nummern.for=
         for (int nummern2 : nummern) {
             System.out.println(nummern2);

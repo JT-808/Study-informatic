@@ -1,6 +1,7 @@
 package Arrays;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class YTArray {
     public static void main(String[] args) {
@@ -16,8 +17,6 @@ public class YTArray {
         primeNumberList.add(3);
         primeNumberList.add(5);
 
-        primeNumberList.set(2, 8);
-
         System.out.println(primeNumberList);
         System.out.println(primeNumberList.get(2));
 
@@ -26,5 +25,16 @@ public class YTArray {
             primeNumberList2 = primeNumberList2 + 1;
             System.out.println(primeNumberList2);
         }
+
+    }
+
+    public static String findNeedle(Object[] haystack) {
+        for (Object i : haystack) {
+            if (i.equals("needle")) {
+                return "found the needle at position " + i;
+            }
+        }
+        return null;
+
     }
 }

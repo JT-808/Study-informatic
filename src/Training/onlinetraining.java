@@ -11,6 +11,8 @@ public class onlinetraining {
 
         int[] hundert = new int[100];
 
+        Feld.asList();
+
         int[] eins = new int[5];
         eins[0] = 12;
         eins[1] = 4;
