@@ -4,7 +4,7 @@ public class RekursionUebung {
     public static void main(String[] args) {
 
         // helloworld(10);
-        System.out.println(falkultät(5));
+        System.out.println(falkultät(2));
     }
 
     public static int falkultät(int zahl) {

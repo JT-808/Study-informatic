@@ -1,38 +1,22 @@
 package Training;
 
+import java.util.Scanner;
+
 public class Codewars {
+
     public static void main(String[] args) {
-        System.out.println(countSheeps(array1));
+
+        Scanner scan = new Scanner(System.in);
+        int zahl;
+        System.out.println("Bitte Zahl eingeben");
+
+        zahl = scan.nextInt();
+        for (int i = 1; i <= zahl; i++) {
+            for (int k = 0; k < i; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
     }
-
-    static Boolean[] array1 = { true, true, true, false,
-            true, true, true, true,
-            true, false, true, false,
-            true, false, false, true,
-            true, true, true, true,
-            false, false, true, true };
-
-    public static int countSheeps(Boolean[] arrayOfSheeps) {
-
-        int count = 0;
-
-        for (int i = 0; i < arrayOfSheeps.length; i++) {
-            if (arrayOfSheeps[i] == null) {
-                continue;
-            }
-        }
-        for (int i = 0; i < arrayOfSheeps.length; i++) {
-            if (!(arrayOfSheeps[i] instanceof Boolean)) {
-                continue;
-            }
-        }
-        for (boolean wert : arrayOfSheeps) {
-            if (wert == true) {
-                count++;
-            }
-
-        }
-        return count;
-    }
-
 }
