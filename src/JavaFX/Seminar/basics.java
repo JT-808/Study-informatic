@@ -35,7 +35,7 @@ public class basics extends Application {
         Button knopf2 = new Button("noch ein Button");
         knopf2.setOnAction(e -> text.setText("heut ist Donnerstag"));
 
-        // mit Lambda ausdruck "->" geht es schnellerr
+        // mit Lambda ausdruck "->" geht es schnellerrüüüü
 
         Canvas canvas = new Canvas(300, 300);
         GraphicsContext gc = canvas.getGraphicsContext2D();
