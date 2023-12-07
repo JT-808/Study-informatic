@@ -56,8 +56,10 @@ public class basics extends Application {
         double x = e.getX();
         double y = e.getY();
 
-        gc.setFill(Color.CHOCOLATE);
+        gc.setFill(Color.AQUAMARINE);
         gc.fillOval(x, y, 10, 10);
         ;
+
+        System.out.println();
     }
 }
