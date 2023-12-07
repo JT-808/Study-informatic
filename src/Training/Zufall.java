@@ -1,6 +1,16 @@
 package Training;
 
 import java.text.DecimalFormat;
+<<<<<<< HEAD
+=======
+import javafx.application.*;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+>>>>>>> e0f6fc5b7e5a0ac9b86e0110e11bd8e0e333ce86
 import java.util.Random;
 
 public class Zufall {
@@ -26,4 +36,21 @@ public class Zufall {
             System.out.println("neu: " + Math.round(F));
         }
     }
+<<<<<<< HEAD
+=======
+
+    @Override
+    public void start(Stage primStage) throws Exception {
+        primStage.setTitle("unser 1. FX Projekt");
+
+        root.getChildren().add(text);
+
+        Scene s = new Scene(root);
+        primStage.setScene(s);
+        primStage.show();
+
+        ;
+    }
+
+>>>>>>> e0f6fc5b7e5a0ac9b86e0110e11bd8e0e333ce86
 }
