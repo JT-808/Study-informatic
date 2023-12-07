@@ -59,5 +59,7 @@ public class basics extends Application {
         gc.setFill(Color.CHOCOLATE);
         gc.fillOval(x, y, 10, 10);
         ;
+
+        System.out.println();
     }
 }
