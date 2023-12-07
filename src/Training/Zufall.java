@@ -2,6 +2,10 @@ package Training;
 
 import java.text.DecimalFormat;
 import javafx.application.*;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.util.Random;
@@ -32,8 +36,15 @@ public class Zufall extends Application {
     }
 
     @Override
-    public void start(Stage s) throws Exception {
-        s.show();
+    public void start(Stage primStage) throws Exception {
+        primStage.setTitle("unser 1. FX Projekt");
+
+        root.getChildren().add(text);
+
+        Scene s = new Scene(root);
+        primStage.setScene(s);
+        primStage.show();
+
         ;
     }
 
