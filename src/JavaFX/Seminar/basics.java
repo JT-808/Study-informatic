@@ -1,4 +1,4 @@
-package JavaFX.Seminar;
+package JavaFx.Seminar;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
