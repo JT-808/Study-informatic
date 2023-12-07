@@ -1,15 +1,11 @@
 package Training;
 
 import java.text.DecimalFormat;
-import javafx.application.*;
-import javafx.stage.Stage;
-
 import java.util.Random;
 
-public class Zufall extends Application {
+public class Zufall {
 
     public static void main(String[] args) {
-        launch();
 
         double groß = 0;
         Random test = new Random();
@@ -30,11 +26,4 @@ public class Zufall extends Application {
             System.out.println("neu: " + Math.round(F));
         }
     }
-
-    @Override
-    public void start(Stage s) throws Exception {
-        s.show();
-        ;
-    }
-
 }
