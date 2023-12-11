@@ -23,3 +23,6 @@
 hs_err_pid*
 replay_pid*
 bin/*  
+
+# ignore vscode files
+.vscode
