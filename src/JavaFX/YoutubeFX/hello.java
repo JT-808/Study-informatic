@@ -1,4 +1,4 @@
-package JavaFx.YoutubeFX;
+package JavaFX.YoutubeFX;
 
 import javafx.application.Application;
 import javafx.scene.Group;
