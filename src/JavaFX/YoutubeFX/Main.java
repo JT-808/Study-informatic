@@ -47,7 +47,7 @@ public class Main extends Application implements EventHandler<ActionEvent> {
         });
 
         // schönere schnellere Variante mit Lambdas
-        // weiterhin brauch man Eventhandler nicht implementieren
+        // weiterhin brauch man Eventhandler nicht implementieren..
         buttonlambdas = new Button();
         buttonlambdas.setTranslateX(100);
         buttonlambdas.setOnAction(e -> System.out.println("ich bin eine schönere annonyme inner Class mit Lambdas"));
