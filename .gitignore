@@ -1,5 +1,10 @@
 # Compiled class file
 *.class
+bin/*
+.vscode/*
+*.json
+
+
 
 # Log file
 *.log
@@ -22,6 +27,7 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+<<<<<<< HEAD
 bin/*  
 
 # ignore vscode files
@@ -29,3 +35,5 @@ bin/*
 .vscode/launch.json
 
 *.properties
+=======
+>>>>>>> 16ce84478a3463cbea4587ceb480a4bb6a04748b
