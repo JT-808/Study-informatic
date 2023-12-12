@@ -1,4 +1,4 @@
-package JavaFX.YoutubeFX;
+package JavaFx.YoutubeFX;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
