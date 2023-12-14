@@ -3,6 +3,7 @@ package JavaFX.Mausmalen;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Point2D;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -14,6 +15,10 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class MausMalen extends Application {
+
+    private Point2D aktuellerPunkt;
+    private Point2D vorherogerPunkt;
+
     public static void main(String[] args) {
         launch();
 
@@ -29,7 +34,7 @@ public class MausMalen extends Application {
 
         Canvas canvas = new Canvas(300, 300);
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        canvas.setOnMouseClicked(e -> paint(gc, e));
+        canvas.addEventHandler(MouseEvent.MOUSE_PRESSED, e -> paint(gc, e));
 
         root.getChildren().add(canvas);
 
@@ -39,14 +44,15 @@ public class MausMalen extends Application {
 
     }
 
+    public void setAktuellerPunkt(MouseEvent e) {
+        aktuellerPunkt = new Point2D(e.getX(), e.getY());
+    }
+
     private void paint(GraphicsContext gc, MouseEvent e) {
         double x = e.getX();
         double y = e.getY();
 
         gc.setFill(Color.AQUAMARINE);
         gc.fillOval(x, y, 10, 10);
-        ;
-
-        System.out.println();
     }
 }
