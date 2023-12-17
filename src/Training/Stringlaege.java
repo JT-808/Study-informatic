@@ -1,6 +1,6 @@
 package Training;
 
-public class Codewars2 {
+public class Stringlaege {
 
     public static void main(String[] args) {
 
