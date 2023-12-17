@@ -21,7 +21,7 @@ public class DemoKonto extends Application {
         k.setKontostand(startwert);
 
         Button plus = new Button("+");
-        plus.setOnAction(e -> k.setKontostand(k.getKontostand() + 0.01));
+        plus.setOnAction(e -> k.setKontostand(k.getKontostand() + 0.1));
 
         ProgressBar bar = new ProgressBar(startwert);
         bar.progressProperty().bind(k.KotostandProperty());
