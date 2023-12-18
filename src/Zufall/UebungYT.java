@@ -8,7 +8,7 @@ public class UebungYT {
         Random random = new Random();
         for (int i = 0; i < 10; i++) {
             int ZZahl = random.nextInt(6) + 1; // 0-6
-            // System.out.println(ZZahl);
+            System.out.println(ZZahl);
         }
 
         String letter = "ABCDEFHIJKLMNOPQRSTUVQXYZ";
