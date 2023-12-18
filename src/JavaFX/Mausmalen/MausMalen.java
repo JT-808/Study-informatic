@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
@@ -18,6 +19,7 @@ public class MausMalen extends Application {
 
     private Point2D aktuellerPunkt;
     private Point2D vorherogerPunkt;
+    private Color zeichenFarbe = Color.BLACK;
 
     public static void main(String[] args) {
         launch();
@@ -34,9 +36,18 @@ public class MausMalen extends Application {
 
         Canvas canvas = new Canvas(300, 300);
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        canvas.addEventHandler(MouseEvent.MOUSE_PRESSED, e -> paint(gc, e));
+        Button button = new Button("Löschen");
+        button.setMaxSize(1000, 100);
 
-        root.getChildren().add(canvas);
+        button.setOnAction(e -> gc.clearRect(0, 0, 300, 300));
+
+        ColorPicker picker = new ColorPicker();
+        picker.setMaxSize(1000, 100);
+        picker.setOnAction(e -> zeichenFarbe = picker.getValue());
+
+        canvas.addEventHandler(MouseEvent.MOUSE_DRAGGED, e -> paint(gc, e));
+
+        root.getChildren().addAll(canvas, picker, button);
 
         Scene s = new Scene(root);
         primStage.setScene(s);
@@ -52,7 +63,9 @@ public class MausMalen extends Application {
         double x = e.getX();
         double y = e.getY();
 
-        gc.setFill(Color.AQUAMARINE);
+        gc.setFill(zeichenFarbe);
         gc.fillOval(x, y, 10, 10);
+
     }
+
 }
