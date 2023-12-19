@@ -2,7 +2,7 @@ package Training;
 
 import java.util.Scanner;
 
-public class Codewars {
+public class forSchleifeDoppelt {
 
     public static void main(String[] args) {
 

@@ -1,6 +1,6 @@
 package Training.Lambdas;
 
 public interface FInterface {
-    void machEtwas(String v, String n);
+    void machEtwas(String v);
 
 }

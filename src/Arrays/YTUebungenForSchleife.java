@@ -32,4 +32,13 @@ public class YTUebungenForSchleife {
 
     }
 
+    public static int[] map(int[] arr) {
+        int[] numbers = new int[arr.length];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = numbers[i] * 2;
+
+        }
+        return numbers;
+
+    }
 }
