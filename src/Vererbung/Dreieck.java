@@ -1,4 +1,4 @@
-package Vererbung;
+sepackage Vererbung;
 
 public class Dreieck extends GeometrischeForm {
 

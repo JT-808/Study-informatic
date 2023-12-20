@@ -1,29 +1,36 @@
 package JavaFX.Statistic;
 
-import java.util.Random;
-
 public class wuerfel {
-
-    private int max;
-    private static int[] haeufigkeit;
-    private static double[] relHaeufigkeit;
+    private int max = 6;
+    private int[] haeufigkeit;
+    private double[] relHaeufigkeit;
 
     public wuerfel() {
-
+        haeufigkeit = new int[max];
+        relHaeufigkeit = new double[max];
     }
 
-    public static void wuerfeln(int anzahl) {
-        int[] zZahl = new int[anzahl];
-        Random random = new Random();
-        for (int i = 0; i <= zZahl.length; i++) {
-            int ZZahl = random.nextInt(6) + 1; // 0-6
-            System.out.println(ZZahl);
+    public void wuerfeln(int anzahl) {
 
+        int[] intArray = new int[anzahl];
+        // n mal wuerfeln
+        for (int i = 0; i < intArray.length; i = i + 1) {
+            intArray[i] = (int) ((Math.random()) * max) + 1;
+        }
+
+        // Berechnung Absolute Haeufigkeiten
+        for (int i = 0; i < intArray.length; i = i + 1) {
+            haeufigkeit[intArray[i] - 1] = haeufigkeit[intArray[i] - 1] + 1;
+        }
+
+        // Berechnung der relativen Haeufigkeiten in %
+        for (int j = 0; j < relHaeufigkeit.length; j = j + 1) {
+            relHaeufigkeit[j] = haeufigkeit[j] * 100.0 / anzahl;
         }
 
     }
 
-    public int getHaeufigkeit(int i) {
+    public int getAbsHaeufigkeit(int i) {
         return haeufigkeit[i];
     }
 
