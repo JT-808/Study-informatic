@@ -13,10 +13,10 @@ public class tester extends Application {
     @Override
     public void start(Stage primStage) throws Exception {
 
-        Ball ball = new Ball(100, 100, 100, 100, 50, 100, 100, 200);
+        Ball root = new Ball(10, 10, 170, 10, 20, 100, 100, 50);
 
-        // Scene scene = new Scene(Rechteck.animiereRechteck());
-        Scene scene2 = new Scene(ball.animiereBall());
+        Scene scene = new Scene(Rechteck.animiereRechteck());
+        Scene scene2 = new Scene(root.animiereBall());
         primStage.setScene(scene2);
         // primStage.setScene(scene);
         primStage.show();

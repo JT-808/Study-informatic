@@ -1,10 +1,14 @@
 package JavaFX.Animation;
 
 import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.util.Duration;
 
 public class Ball {
 
@@ -26,16 +30,36 @@ public class Ball {
     public Pane animiereBall() {
         Pane pane = new Pane();
         pane.setPrefSize(500, 500);
-        Circle circle = new Circle(x, y, r, c);
-        circle.setFill(Color.GREEN);
+        Circle ball = new Circle(x, y, r, c);
+        ball.setFill(Color.GREEN);
 
-        pane.getChildren().addAll(circle);
+        pane.getChildren().addAll(ball);
 
         Timeline timeline = new Timeline();
         timeline.setAutoReverse(false);
         timeline.setCycleCount(Animation.INDEFINITE);
 
-        timeline.getKeyFrames().addAll();
+        KeyFrame moveBall = new KeyFrame(new Duration(intervall),
+                new EventHandler<ActionEvent>() {
+                    /* Was zu diesem Zeipunkt manipuliert werden soll */
+                    public void handle(ActionEvent event) {
+
+                        if (ball.getCenterX() + dx - ball.getRadius() <= 0
+                                || ball.getCenterX() + dx + ball.getRadius() > pane.getWidth()) {
+                            dx = -dx;
+                        }
+                        if ((ball.getCenterY() + dy - ball.getRadius() <= 0)
+                                || (ball.getCenterY() + dy + ball.getRadius() > pane.getHeight())) {
+                            dy = -dy;
+                        }
+
+                        ball.setCenterX(ball.getCenterX() + dx);
+                        ball.setCenterY(ball.getCenterY() + dy);
+
+                    }
+                });
+
+        timeline.getKeyFrames().addAll(moveBall);
 
         timeline.play();
 
