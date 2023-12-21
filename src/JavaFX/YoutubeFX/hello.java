@@ -63,9 +63,7 @@ public class hello extends Application {
 
         // mit getChildren, befüllt man die Vbox
 
-        hBox.getChildren().add(label);
-        hBox.getChildren().add(button);
-        hBox.getChildren().add(button2);
+        hBox.getChildren().addAll(label, button, button2);
 
         stage.setScene(scene);
         stage.show();

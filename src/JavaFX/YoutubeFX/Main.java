@@ -54,10 +54,12 @@ public class Main extends Application implements EventHandler<ActionEvent> {
 
         // erstellen eines Layouts
         StackPane layout = new StackPane();
-        layout.getChildren().add(button);
-        layout.getChildren().add(button2);
-        layout.getChildren().add(button3);
-        layout.getChildren().add(buttonlambdas);
+        layout.getChildren().addAll(button, button2, button3, buttonlambdas);
+
+        // layout.getChildren().add(button);
+        // layout.getChildren().add(button2);
+        // layout.getChildren().add(button3);
+        // layout.getChildren().add(buttonlambdas);
 
         Scene scene = new Scene(layout, 300, 300);
 
