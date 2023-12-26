@@ -1,0 +1,18 @@
+
+
+.root{
+    -fx-background-color: coral;
+   
+}
+
+.label{
+    -fx-font-size: 20;
+    -fx-font-family: 'Courier New', Courier, monospace;
+    -fx-text-fill: green;
+    -fx-alignment: center;
+}
+
+#title{
+    
+    -fx-font-size: 50;
+}
