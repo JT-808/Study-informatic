@@ -1,8 +1,14 @@
 
 
 .root{
-    -fx-background-color: coral;
-   
+
+ -fx-background-color: rgb(105, 105, 43);
+
+}
+
+.button{
+    -fx-arrows-visible: true;
+
 }
 
 .label{
@@ -10,6 +16,7 @@
     -fx-font-family: 'Courier New', Courier, monospace;
     -fx-text-fill: green;
     -fx-alignment: center;
+    background-color: aqua;
 }
 
 #title{
