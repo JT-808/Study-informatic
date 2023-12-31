@@ -1,31 +1,23 @@
 package Training.Codewars;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class ifSomethingatStart {
 
     public static void main(String[] args) {
 
-        System.out.println(solution("Martin"));
+        System.out.println(solution("Martin", "Test"));
 
     }
 
-    public static String solution(String name) {
-
-        char i = name.charAt(0);
-        switch (i) {
-            case 'R':
-                name = name + " plays banjo";
-                break;
-            case 'r':
-                name = name + " plays banjo";
-
-                break;
-
-            default:
-                name = name + " does not play banjo";
-                break;
+    public static String solution(String... words) {
+        StringBuilder sb = new StringBuilder();
+        for (String word : words) {
+            sb.append(word + " ");
         }
-        return name;
-
+        return sb.toString().trim();
     }
 
 }
