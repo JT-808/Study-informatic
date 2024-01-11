@@ -22,6 +22,8 @@ public class Verwaltung {
         }
         for (Thread thread : threads) {
             thread.start();
+
+            // Test
         }
 
     }
