@@ -25,7 +25,7 @@ public class Zufall {
 
             System.out.println("neu: " + Math.round(F));
         }
-        System.out.println("ab hier die math.rondom()-methode\n");
+        System.out.println("ab hier die math.random()-methode\n");
         // math.random
         for (int k = 0; k <= 3; k++) {
             double rnd = Math.random();

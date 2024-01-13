@@ -170,9 +170,9 @@ public class Kontrollstrukturen {
 		for (int m = 0; m < 100; m++) {
 			System.out.println(m);
 		}
-
-		// erweiterte for-Schleife / foreach
-		// for ( Speichervariable : Datenstruktur) {Anweisung}
+terte for-Schleife / foreach
+		// for (
+		// erwei Speichervariable : Datenstruktur) {Anweisung}
 
 		for (String wert : args) {
 			System.out.println(wert);
