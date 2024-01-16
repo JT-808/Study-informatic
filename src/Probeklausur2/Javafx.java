@@ -18,8 +18,6 @@ public class Javafx extends Application {
 
     public void start(Stage primarystage) throws Exception {
 
-        String leer = " /n ";
-
         VBox vBox = new VBox();
         Slider slider = new Slider(0, 10, 5);
         TextField textfield = new TextField();
@@ -27,9 +25,7 @@ public class Javafx extends Application {
 
         slider.setOnMouseDragged(e -> {
             String eingabe = textfield.getText();
-            label.setText(eingabe);
-            label.setText(leer);
-            label.setText(slider.valueProperty().toString());
+            label.setText(eingabe + "\n" + Double.toString(slider.getValue()));
         });
 
         Scene scene = new Scene(vBox, 500, 500);

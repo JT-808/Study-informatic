@@ -10,7 +10,6 @@ public class Lotto {
     }
 
     public static void ziehen() {
-        int x = 6;
         int[] zahlen = new int[6];
 
         for (int i = 0; i < 6; i++) {

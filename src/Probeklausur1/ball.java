@@ -4,7 +4,7 @@ import JavaFX.Animation.Ball;
 
 public class ball {
 
-    private double radius;
+    private static double radius;
     private double mx;
     private double my;
     private double mz;
@@ -41,12 +41,12 @@ public class ball {
         return null;
     }
 
-    public double berechneVolumen(double d, double e, double f) {
+    public static double berechneVolumen(double d, double e, double f) {
         double v = (4 / 3) * PI * (radius * radius * radius);
         return v;
     }
 
-    public double berechneFlaeche() {
+    public static double berechneFlaeche(double d, double e, double f) {
         double o = 4 * PI * (radius * radius);
         return o;
     }
