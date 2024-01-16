@@ -25,7 +25,7 @@ public class Javafx extends Application {
 
         slider.setOnMouseDragged(e -> {
             String eingabe = textfield.getText();
-            label.setText(eingabe + "\n" + Double.toString(slider.getValue()));
+            label.setText(eingabe + "\n" + slider.getValue());
         });
 
         Scene scene = new Scene(vBox, 500, 500);
