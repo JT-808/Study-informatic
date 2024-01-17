@@ -14,7 +14,7 @@ public class Lotto {
 
         for (int i = 0; i < 6; i++) {
 
-            int zahl = new Random().nextInt(49);
+            int zahl = new Random().nextInt(50);
             zahlen[i] = zahl;
 
             System.out.println(zahl);

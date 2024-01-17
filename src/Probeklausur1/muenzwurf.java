@@ -14,11 +14,13 @@ public class muenzwurf {
         String[] Wurfergebniss = new String[Wuerfe];
         for (int i = 0; i < Wuerfe; i++) {
             int ZZahl = new Random().nextInt(2); // 0-1
-            String Ergebnis = (ZZahl == 0) ? "Wappen" : "Zahl";
+            String Ergebnis = ZZahl == 0 ? "Wappen" : "Zahl";
             Wurfergebniss[i] = "Wurf " + (i + 1) + " = " + Ergebnis;
+
+            System.out.println(Wurfergebniss[i]);
         }
-        for (String string : Wurfergebniss) {
-            System.out.println(string);
-        }
+        // for (String string : Wurfergebniss) {
+        // System.out.println(string);
     }
 }
+// }
