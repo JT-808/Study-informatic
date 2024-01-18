@@ -28,7 +28,7 @@ public class Kunde {
     }
 
     public void addGeldbetrag(float Summe) {
-        this.geldbetrag = geldbetrag + Summe;
+        this.geldbetrag += Summe;
     }
 
     public Kunde(String name, String vorname) {

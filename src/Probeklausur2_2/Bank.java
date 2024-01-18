@@ -24,10 +24,10 @@ public class Bank {
 
     public Kunde editKunde(int id) {
         return kunden.get(id - 1);
-        return name.toString();
     }
 
     public void gibKundenaus() {
+
         System.out.println(kunden);
 
     }
@@ -37,10 +37,10 @@ public class Bank {
         Bank Grundlagen_der_Informatik = new Bank("IF23wS2-B", "Tengg");
 
         Grundlagen_der_Informatik.addKunde("Tengg", "Jerome");
-        kunden.addKunde(Pan, Peter);
-        kunden.addKunde(Hook, Kapitaen);
+        Grundlagen_der_Informatik.addKunde("Pan", "Peter");
+        Grundlagen_der_Informatik.addKunde("Hook", "Kapitaen");
 
-        kunden.addGeldbetrag(100);
+        Grundlagen_der_Informatik.addGeldbetrag(100);
 
         Grundlagen_der_Informatik.gibKundenaus();
 

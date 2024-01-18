@@ -12,18 +12,13 @@ public class Lotto {
         int[] zahlen = new int[6];
 
         for (int i = 0; i < 6; i++) {
-            zahlen[i] = new Random().nextInt(49);
+            zahlen[i] = new Random().nextInt(49) + 1;
 
-            if (zahlen[i] == zahlen[i]) {
-                zahlen[i] = new Random().nextInt(49);
-
-                System.out.println(zahlen[i]);
-
-            }
+            System.out.println(zahlen[i]);
 
         }
-        int ZZ = new Random().nextInt(49);
-
+        int ZZ = new Random().nextInt(49) + 1;
         System.out.println("Zusatzzahl = " + ZZ);
     }
+
 }
