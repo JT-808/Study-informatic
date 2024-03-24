@@ -1,4 +1,3 @@
-package Probeklausur1;
 
 import java.util.Random;
 
