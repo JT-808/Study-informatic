@@ -21,10 +21,12 @@ public class raf {
             for (int i = 0; i <= zahl; i++) {
                 int erg = i * i;
                 raf.writeInt(erg);
+                // raf.writeUTF("text"); // Text einfügen
                 System.out.println(erg);
             }
             raf.seek(0);
             System.out.println(raf.readInt());
+            // System.out.println(raf.readLine()); // ließ text
 
         } catch (IOException e) {
             e.printStackTrace();
