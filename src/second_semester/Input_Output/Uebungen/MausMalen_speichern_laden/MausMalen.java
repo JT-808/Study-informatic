@@ -1,4 +1,4 @@
-package second_semester.Input_Output.Uebungen.serialisieren_deserialisieren;
+package second_semester.Input_Output.Uebungen.MausMalen_speichern_laden;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 public class MausMalen extends Application {
 
     private Point2D aktuellerPunkt;
-    private Point2D vorherogerPunkt;
+    private Point2D vorherigerPunkt;
     private Color zeichenFarbe = Color.BLACK;
 
     public static void main(String[] args) {
@@ -28,24 +28,26 @@ public class MausMalen extends Application {
 
     @Override
     public void start(Stage primStage) throws Exception {
-        primStage.setTitle("unser 1. FX Projekt");
+        primStage.setTitle("Maus malen + speichern");
 
         VBox root = new VBox();
 
         // mit Lambda ausdruck "->" geht es schnellerrjkjkjk
 
-        Canvas canvas = new Canvas(300, 300);
+        Canvas canvas = new Canvas(500, 300);
         GraphicsContext gc = canvas.getGraphicsContext2D();
         Button button = new Button("Löschen");
         Button speichern = new Button("speichern");
         Button laden = new Button("laden");
         button.setMaxSize(1000, 100);
 
-        button.setOnAction(e -> gc.clearRect(0, 0, 300, 300));
+        button.setOnAction(e -> gc.clearRect(0, 0, 500, 300));
 
         speichern.setOnAction(e -> {
-            speicherLinie.speicherLinie(0, 0, 0, 0, 0, 0, 0);
-
+            speicherLinie.speichernLinie(0, 0, 0, 0, 0, 0);
+        });
+        laden.setOnAction(e -> {
+            speicherLinie.ladeBild();
         });
 
         ColorPicker picker = new ColorPicker();
@@ -66,12 +68,15 @@ public class MausMalen extends Application {
         aktuellerPunkt = new Point2D(e.getX(), e.getY());
     }
 
-    private void paint(GraphicsContext gc, MouseEvent e) {
-        double x = e.getX();
-        double y = e.getY();
+    public void neuerAktuellerPunkt(MouseEvent e) {
+        vorherigerPunkt = aktuellerPunkt;
+        aktuellerPunkt = new Point2D(e.getX(), e.getY());
+    }
 
-        gc.setFill(zeichenFarbe);
-        gc.fillOval(x, y, 10, 10);
+    public void paintLinie(GraphicsContext gc) {
+        gc.setStroke(zeichenFarbe);
+        gc.setLineWidth(5);
+        gc.strokeLine(vorherigerPunkt.getX(), vorherigerPunkt.getY(), aktuellerPunkt.getX(), aktuellerPunkt.getY());
 
     }
 
