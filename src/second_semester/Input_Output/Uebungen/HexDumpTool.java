@@ -19,8 +19,8 @@ public class HexDumpTool {
         String hexline = "";
         String txtline = "";
         Path pfad = Paths.get(filename);
-        int i = 0;
         InputStream in = Files.newInputStream(pfad);
+        int i = 0;
         int b;
 
         while ((b = in.read()) != -1) { // in.read(): iest ein Byte aus dem InputStream in.

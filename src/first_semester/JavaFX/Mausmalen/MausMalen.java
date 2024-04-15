@@ -1,4 +1,4 @@
-package JavaFX.Mausmalen;
+package first_semester.JavaFX.Mausmalen;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -37,6 +37,8 @@ public class MausMalen extends Application {
         Canvas canvas = new Canvas(300, 300);
         GraphicsContext gc = canvas.getGraphicsContext2D();
         Button button = new Button("Löschen");
+        Button speichern = new Button("speichern");
+        Button laden = new Button("laden");
         button.setMaxSize(1000, 100);
 
         button.setOnAction(e -> gc.clearRect(0, 0, 300, 300));
@@ -47,7 +49,7 @@ public class MausMalen extends Application {
 
         canvas.addEventHandler(MouseEvent.MOUSE_DRAGGED, e -> paint(gc, e));
 
-        root.getChildren().addAll(canvas, picker, button);
+        root.getChildren().addAll(canvas, picker, button, speichern, laden);
 
         Scene s = new Scene(root);
         primStage.setScene(s);

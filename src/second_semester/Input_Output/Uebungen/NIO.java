@@ -22,11 +22,12 @@ public class NIO {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        // Pfad wird erst in der Methode beschrieben (Suboptimal)
         copyFile("test", "testkopie");
 
         moveFile("test", "test1");
 
+        // Hier wurde der Pfad gleich in die Main eingesetzt
         try {
             copyURL("https://www.staff.hs-mittweida.de/~altrogge/Beispiel_NIO.txt",
                     "/home/woodz/Downloads/Test/kopien/nio.txt");
