@@ -1,4 +1,4 @@
-package application;
+package second_semester.Input_Output.LÃ¶sungen.IO_NIO;
 
 import java.io.File;
 import java.io.IOException;
@@ -119,7 +119,6 @@ public class HexDump extends Application {
 		return neueDateiTextField;
 	}
 
-	
 	private Button getDumpButton() {
 		if (dumpButton == null) {
 			dumpButton = new Button();
@@ -229,13 +228,13 @@ public class HexDump extends Application {
 	}
 
 	/**
-	 * This method initializes MenuItem (öffnen)
+	 * This method initializes MenuItem (ï¿½ffnen)
 	 * 
 	 */
 	private MenuItem getOpenMenuItem() {
 		if (openMenuItem == null) {
 			openMenuItem = new MenuItem();
-			openMenuItem.setText("öffnen");
+			openMenuItem.setText("ï¿½ffnen");
 			openMenuItem.setOnAction(e -> {
 				FileChooser chooser = new FileChooser();
 				chooser.setInitialDirectory(new File(System.getProperty("user.dir")));
