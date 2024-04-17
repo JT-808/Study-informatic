@@ -23,7 +23,7 @@ public class HexDumpTool {
         int i = 0;
         int b;
 
-        while ((b = in.read()) != -1) { // in.read(): iest ein Byte aus dem InputStream in.
+        while ((b = in.read()) != -1) { // in.read(): liest ein Byte aus dem InputStream in.
                                         // Wenn kein weiteres Byte verfügbar ist, gibt in.read() -1 zurück.
             if (b <= 15) {
                 hexline += "0";
