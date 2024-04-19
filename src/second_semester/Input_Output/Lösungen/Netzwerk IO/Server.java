@@ -1,4 +1,3 @@
-package csFertig;
 
 import java.io.EOFException;
 import java.io.IOException;
@@ -7,6 +6,8 @@ import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+
+import csFertig.Message;
 
 public class Server {
 	private int port = 50000;
@@ -36,27 +37,28 @@ public class Server {
 						while (ois != null) {
 							Message message = (Message) ois.readObject();
 							switch (message.getAction()) {
-							case LOGIN:
-								user = message.getUser();
-								if (users.contains(message.getUser())) {
-									Message messageNew = new Message(Message.Action.JOIN_ERROR, message.getUser(), "");
-									oos.writeObject(messageNew);
-									oos.flush();
-									joined = false;
-								} else {
-									connections.add(oos);
-									users.add(user);
-									Message messageNew = new Message(Message.Action.JOIN, user, "");
+								case LOGIN:
+									user = message.getUser();
+									if (users.contains(message.getUser())) {
+										Message messageNew = new Message(Message.Action.JOIN_ERROR, message.getUser(),
+												"");
+										oos.writeObject(messageNew);
+										oos.flush();
+										joined = false;
+									} else {
+										connections.add(oos);
+										users.add(user);
+										Message messageNew = new Message(Message.Action.JOIN, user, "");
+										broadcast(messageNew);
+										joined = true;
+									}
+									break;
+								case SAY:
+									Message messageNew = new Message(Message.Action.SAY, user, message.getText());
 									broadcast(messageNew);
-									joined = true;
-								}
-								break;
-							case SAY:
-								Message messageNew = new Message(Message.Action.SAY, user, message.getText());
-								broadcast(messageNew);
-								break;
-							default:
-								break;
+									break;
+								default:
+									break;
 							}
 						}
 					} catch (EOFException eofe) {

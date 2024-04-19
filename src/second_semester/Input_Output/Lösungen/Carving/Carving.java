@@ -3,6 +3,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
+import second_semester.Input_Output.Uebungen.carving.HexUtils;
+
 public class Carving {
 
 	private int anzahlDateien = 0;

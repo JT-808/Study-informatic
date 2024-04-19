@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class zeichen_zaehlen {
+public class zeichen_zaehlen_FileinputStream {
 
     public static void main(String[] args) throws IOException {
 

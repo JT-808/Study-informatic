@@ -1,4 +1,4 @@
-package first_semester.JavaFX.Mausmalen;
+package JavaFX.Mausmalen;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;

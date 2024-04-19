@@ -1,4 +1,4 @@
-package second_semester.Input_Output.Uebungen.MausMalen_speichern_laden;
+package second_semester.Input_Output.Uebungen.MausMalen_ObjectOutput;
 
 import java.io.File;
 import java.io.FileInputStream;
