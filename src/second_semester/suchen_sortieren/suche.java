@@ -9,19 +9,23 @@ public class suche {
 
         int anzahl = 100;
         int gesuchteZahl = 5;
-
         Random rnd = new Random();
         int[] zahlenArray = new int[anzahl];
-
         for (int i = 0; i < anzahl; i++) {
-
-            int z = rnd.nextInt(11);
+            int z = rnd.nextInt(10) + 1;
             zahlenArray[i] = z;
         }
 
-        // Array sortieren für binäre Suche
+        // Kopie vom array, damit man es danach sortieren kann
         int[] sortiertesArray = new int[anzahl];
+        for (int i = 0; i < anzahl; i++) {
+            sortiertesArray[i] = zahlenArray[i];
+        }
+
+        // Array sortieren für binäre Suche
         Arrays.sort(sortiertesArray);
+        int von = 0;
+        int bis = sortiertesArray.length - 1;
 
         // Zeitmessung des sequenziellen Alghorithmus
 
@@ -30,8 +34,19 @@ public class suche {
         SequenzielleSuche(zahlenArray, gesuchteZahl);
 
         long endTime = System.currentTimeMillis();
-        long executionTime = endTime - startTime;
-        System.out.println("Dauer sequenzielle Suche: " + executionTime + " ms");
+        long dauer = endTime - startTime;
+        System.out.println("Dauer sequenzielle Suche: " + dauer + " ms");
+
+        // Zeitmessung des binären Alghorithmus
+
+        long startTime2 = System.currentTimeMillis();
+
+        int erg = binaereSuche(sortiertesArray, gesuchteZahl, von, bis);
+        System.out.println(erg);
+
+        long endTime2 = System.currentTimeMillis();
+        long dauer2 = endTime2 - startTime2;
+        System.out.println("Dauer binäre Suche: " + dauer2 + " ms");
 
     }
 
@@ -47,4 +62,21 @@ public class suche {
         return -1;
     }
 
+    public static int binaereSuche(int[] sortiertesArray, int gesuchteZahl, int von, int bis) {
+
+        int pos = -1;
+        if (von <= bis) {
+            int mitte = (von + bis) / 2;
+            if (gesuchteZahl > sortiertesArray[mitte]) {
+                pos = binaereSuche(sortiertesArray, gesuchteZahl, mitte + 1, bis);
+            } else if (gesuchteZahl < sortiertesArray[mitte]) {
+                pos = binaereSuche(sortiertesArray, gesuchteZahl, von, mitte - 1);
+            } else {
+                pos = mitte;
+            }
+        }
+        return pos;
+    }
 }
+
+// Es kommt das Falsche ergebniss heraus
