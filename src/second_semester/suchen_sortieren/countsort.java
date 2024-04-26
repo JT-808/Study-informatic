@@ -2,11 +2,36 @@ package second_semester.suchen_sortieren;
 
 import java.util.*;
 
-public class quickSort {
+public class countsort {
 
-    // erst sortieren
+    // Countsort = Hilfs-Array wird gezählt -> Index
 
-    public static void quickSort(int[] zahlen, int links, int rechts) {
+    public static void countSort(int[] zahlen, int max) {
+        int[] zaehler = new int[max + 1]; // Array zum speichern der häufigkeit
+        for (int i = 0; i <= max; i++) {
+            zaehler[i] = 0;
+        }
+        for (int i = 0; i < zaehler.length; i++) { // Zähle Vorkommen jedes Elementes
+            zaehler[zahlen[i]]++;
+        }
+        // Aktualisiere zahlen[] mit sortierten Elementen
+        int index = 0;
+        for (int i = 0; i <= max; i++) {
+            for (int j = 0; j <= zaehler[i] - 1; j++) {
+                zahlen[index] = i;
+                index++;
+            }
+        }
+    }
+
+    public static int max(int[] zahlen) {
+        int maxBisher = zahlen[0];
+        for (int i = 1; i < zahlen.length; i++) {
+            if (zahlen[i] > maxBisher) {
+                maxBisher = zahlen[i];
+            }
+        }
+        return maxBisher;
 
     }
 
@@ -22,24 +47,25 @@ public class quickSort {
         a = bestArray(anzahl);
         System.out.println("aufsteigend geordnetes Array");
         printArray(a);
-        System.out.println("quickSort:");
-        quickSort(a, 0, a.length - 1);
+        System.out.println("countSort:");
+        countSort(a, max(a));
         printArray(a);
         System.out.println();
 
         a = worstArray(anzahl);
         System.out.println("absteigend geordnetes Array");
         printArray(a);
-        System.out.println("quickSort:");
-        quickSort(a, 0, a.length - 1);
+        System.out.println("countSort:");
         printArray(a);
+        countSort(a, max(a));
+
         System.out.println();
 
         a = randArray(anzahl);
         System.out.println("zufälliges Array");
         printArray(a);
-        System.out.println("quickSort:");
-        quickSort(a, 0, a.length - 1);
+        System.out.println("countSort:");
+        countSort(a, max(a));
         printArray(a);
 
     }

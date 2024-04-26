@@ -1,4 +1,4 @@
-package Training;
+package Training.Codewars;
 
 public class Stringlaege {
 
