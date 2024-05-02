@@ -19,6 +19,16 @@ public class film {
     private String jahr;
     private ArrayList<String> schauspieler;
 
+    public static void erstelleListe(BufferedReader BR) throws IOException {
+        String Zeile;
+        while ((Zeile = BR.readLine()) != null) {
+            String[] Liste = Zeile.split("\n");
+            for (String string : Liste) {
+                FilmListe.add(string);
+            }
+        }
+    }
+
     public static void fuegeSchauspielerHinzu(String name) {
 
     }
