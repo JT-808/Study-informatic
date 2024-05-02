@@ -22,20 +22,24 @@ public class film implements Comparable<film> {
         BufferedWriter BW = new BufferedWriter(FW);
 
         erstelleFilmListe(BR);
-        // sortiereFilme(FilmListe);
-        // sortiereFilme(FilmListe);
-
+        sortiereFilme(FilmListe);
         // fuegeSchauspielerHinzu(BW, "Jerome");
         // getSchauspieler(FilmListe.get(1));
-        getJahr("breaker");
+        // getJahr("breaker");
         // gibAlleFilmeAusDemJahr(1980);
+        BR.close();
 
     }
 
     static ArrayList<String> FilmListe = new ArrayList<>();
     private static String name;
     private static int jahr;
-    private static ArrayList<String> schauspieler = new ArrayList<>();
+    private ArrayList<String> schauspieler = new ArrayList<>();
+
+    public film(String name, int jahr) {
+        this.name = name;
+        this.jahr = jahr;
+    }
 
     public static void erstelleFilmListe(BufferedReader BR) throws IOException {
         String Zeile;
@@ -43,7 +47,6 @@ public class film implements Comparable<film> {
             FilmListe.add(Zeile);
 
             // je Zeilenumbruch (pro Film) gibts einnen neuen Eintrag
-
         }
     }
 
@@ -58,15 +61,14 @@ public class film implements Comparable<film> {
 
     }
 
-    public static String getJahr(String Film) {
+    public static String getJahr(String Filmname) {
         String jahrString = null;
 
         for (String i : FilmListe) {
-            if (i.contains(Film)) {
+            if (i.contains(Filmname)) {
                 String[] teile = i.split("/");
-                jahrString = teile[1].replaceAll("\\D", ""); // Nur Zahlen extrahieren
-                // int jahr = Integer.parseInt(jahrString);
-
+                jahrString = teile[0].replaceAll("\\D", ""); // Nur Zahlen extrahieren
+                System.out.println(jahrString);
                 // 0 = erster Inhalt, also der name des Films
                 // 1 wäre, dann der erste Schauspieler
             }
@@ -78,7 +80,7 @@ public class film implements Comparable<film> {
 
     // übergebe aus der Filmliste (die aus Strings besteht) einen bestimmten Film
     // siehe Main
-    public static ArrayList<String> getSchauspieler(String film) {
+    public ArrayList<String> getSchauspieler(String film) {
 
         String[] Teile = film.split("/");
         for (int i = 0; i < Teile.length; i++) {
@@ -86,11 +88,6 @@ public class film implements Comparable<film> {
             System.out.println(schauspieler.get(i));
         }
         return schauspieler;
-    }
-
-    public film(String name, int jahr) {
-        this.name = name;
-        this.jahr = jahr;
     }
 
     public static void gibAlleFilmeAusDemJahr(int jahr) throws IOException {
@@ -103,25 +100,37 @@ public class film implements Comparable<film> {
         }
     }
 
-    public void sortiereFilme(ArrayList<String> FilmListe) {
+    public static void sortiereFilme(ArrayList<String> FilmListe) {
         ArrayList<film> ObjektFilmListe = new ArrayList<>();
         for (String filmString : FilmListe) {
             if (filmString.contains("(")) {
                 String[] teile = filmString.split("/");
-                String filmName = teile[0];
-                String jahrString = teile[1].replaceAll("\\D", ""); // Nur Zahlen extrahieren
-                int jahr = Integer.parseInt(jahrString);
-                // erstelle daraus ein Objekt ->
-                film film = new film(filmName, jahr);
-                // haue Objekte in die neue Arraylist
-                ObjektFilmListe.add(film);
+                String filmName = teile[0].replaceAll("[^a-zA-Z]", ""); // Nur Buchstaben
+                int index = filmName.replaceAll("\\D", "").length(); // Index der ersten Zahl im String finden
+                filmName = filmName.substring(0, index); // Teil des Strings bis zur ersten Zahl extrahieren
+                String jahrString = teile[0].replaceAll("\\D", ""); // Nur Zahlen extrahieren
+                if (!jahrString.isEmpty()) { // Überprüfen, ob die Jahreszahl nicht leer ist
+                    int jahr = Integer.parseInt(jahrString);
+                    ObjektFilmListe.add(new film(filmName, jahr));
+                }
             }
+
         }
+        Collections.sort(ObjektFilmListe);
+        for (film i : ObjektFilmListe)
+            System.out.println(i);
+        System.out.println(ObjektFilmListe.size());
     }
 
     @Override
-    public int compareTo(film film) {
-        return this.jahr - film.getJahr(jahr);
+    public String toString() {
+        return name + " (" + jahr + ")";
+    }
+
+    @Override
+    public int compareTo(film movie) {
+        return Integer.compare(this.jahr, movie.jahr);
 
     }
+
 }
