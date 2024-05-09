@@ -71,7 +71,7 @@ public class telefonbuch {
 
     // einfache Form das ganze Telefonbuch auszugeben
     public static void printTelefonbuch() {
-        for (Map.Entry<String, Set<String>> eintrag : speicher.entrySet()) {
+        for (Entry<String, Set<String>> eintrag : speicher.entrySet()) {
             String name = eintrag.getKey();
             Set<String> nummern = eintrag.getValue();
             System.out.println(name + ": " + nummern);

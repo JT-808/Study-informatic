@@ -1,0 +1,17 @@
+In diesem Paktikum lernen Sie, wie man Daten in Dateien mit
+wahlfreiem Zugriff (engl.: random access files) speichen
+kann. Derartige Dateien kann man sich als Arrays auf einem
+Speichermedium vortellen. Die Rolle des Index fuer den
+Zugriff auf ein bestimtes Datenelment uebernimmt dabei ein
+Dateiziger (engl.: file pointer), der die Stelle angibt, an
+der der naechste Zugriff auf die Datei stattfindet. Bei
+Lesen oder Schreiben wird dieser Zeiger um die ensprechende
+Anzahl von Bytes versetzt.
+
+In einem einfachn Beispiel sehen Sie, wie man Zahlen in
+einer Datei mit wahlfreiem Zugriff speichen und wieder
+auslesen kann. Ein zweites Beispiel zeigt Ihnen anhand
+von Zeichenkettn, wie auch Daten unterschiedlicher Laenge
+in einer Datei mit wahlfreiem Zugriff abgelegt werden
+koennen, wenn man in einer zughoerigen Index-Datei die
+Datepositionen speichert.
