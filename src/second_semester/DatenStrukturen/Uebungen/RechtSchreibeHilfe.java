@@ -47,27 +47,30 @@ public class RechtSchreibeHilfe {
             while ((Zeile = BR.readLine()) != null) {
                 List<String> fehler = new ArrayList<String>();
                 StringTokenizer tokenizer = new StringTokenizer(Zeile, " \n\t.,;:!?()-");
+                // filter die Zeichen heraus -> man bekommt einzelne Wörter
                 while (tokenizer.hasMoreTokens()) {
-                    fehler.add(tokenizer.nextToken());
-                    if (!woerterbuch.contains(fehler)) {
+                    String token = tokenizer.nextToken();
+                    if (!woerterbuch.contains(token.toLowerCase())) {
+                        // toLowerCase = ignoriert Groß und kleinschriebung
+                        fehler.add(token);
                         fehlerspeicher.put(Zeilenzähler, fehler);
                     }
+                    Zeilenzähler++;
                 }
-                Zeilenzähler++;
             }
-
-        }
-        Iterator<Entry<Integer, List<String>>> iterator = fehlerspeicher.entrySet().iterator();
-        while (iterator.hasNext()) {
-            Entry<Integer, List<String>> eintrag = iterator.next();
-            Integer name = eintrag.getKey();
-            List<String> nummern = eintrag.getValue();
-            System.out.println(name + ": " + nummern);
         }
         BR.close();
+
     }
 
-    public void generiereReport() {
+    public static void generiereReport() throws IOException {
+        initialisiereWoerterbuch();
+        analysiereText();
+
+        Iterator<Entry<Integer, List<String>>> iterator = fehlerspeicher.entrySet().iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
 
     }
 
@@ -75,8 +78,7 @@ public class RechtSchreibeHilfe {
 
         RechtSchreibeHilfe RSH = new RechtSchreibeHilfe(null, null);
 
-        initialisiereWoerterbuch();
-        analysiereText();
+        generiereReport();
 
     }
 }
