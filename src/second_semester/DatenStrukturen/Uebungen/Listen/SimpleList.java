@@ -63,7 +63,7 @@ public class SimpleList<E extends Comparable<E>> implements Iterable<E> {
     }
 
     public Iterator<E> iterator() {
-        return new MyIterator<E>(first);
+        return new MyIterator<E>();
     }
 
     public static void main(String[] args) {

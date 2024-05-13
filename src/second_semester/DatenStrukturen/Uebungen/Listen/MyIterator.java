@@ -2,6 +2,8 @@ package second_semester.DatenStrukturen.Uebungen.Listen;
 
 import java.util.Iterator;
 
+import DoppelteListe.DLListElement;
+
 public class MyIterator<E extends Comparable<E>>
 		implements Iterator<E> {
 	// 2. Schritt die Klasse MyIterator implementieren
@@ -10,8 +12,8 @@ public class MyIterator<E extends Comparable<E>>
 	private ListElement<E> currentElement;
 	// aktuelles Element (Wo in der Liste bin ich?)
 
-	public MyIterator(ListElement<E> firstElement) {
-		currentElement = firstElement;
+	public MyIterator() {
+		currentElement = entry;
 		// beim Start anlegen -> am Start ist das
 		// 1. Element auch gleichzeitig das aktuelle
 		// Element
