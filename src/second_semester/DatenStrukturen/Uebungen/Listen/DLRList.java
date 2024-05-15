@@ -1,6 +1,5 @@
 package second_semester.DatenStrukturen.Uebungen.Listen;
 
-import java.net.Socket;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -64,6 +63,32 @@ public class DLRList<E extends Comparable<E>> implements Iterable<E> {
         add(data, entry);
     }
 
+    public E removeFirst() {
+        return remove(entry.getNext());
+    }
+
+    public E removeLast() {
+        return remove(entry.getPrev());
+    }
+
+    private E remove(DLListElement<E> current) throws NoSuchElementException {
+        if (current == entry) {
+            // auf den Speicher (data) bezogen
+            throw new NoSuchElementException(":(");
+        }
+
+        E data = current.getData();
+        // Schritt 1: Ueberschreiben
+        current.getPrev().setNext(current.getNext());
+        current.getNext().setPrev(current.getPrev());
+        // Schritt 2: Loeschen
+        current.setNext(null);
+        current.setPrev(null);
+        current.setData(null);
+        size--;
+        return data;
+    }
+
     public String toString() {
         String erg = "";
         DLListElement<E> currentElement = entry.getNext();
@@ -88,14 +113,17 @@ public class DLRList<E extends Comparable<E>> implements Iterable<E> {
         System.out.println(doppelteListe.size());
         System.out.println(doppelteListe.isEmpty() + "\n--------");
 
+        doppelteListe.addLast("4");
         doppelteListe.addFirst("1");
         doppelteListe.addFirst("2");
         doppelteListe.addFirst("3");
-        // doppelteListe.addLast("4");
 
         System.out.println(doppelteListe.size());
         System.out.println(doppelteListe.isEmpty() + "\n---------");
 
+        System.out.println(doppelteListe);
+
+        doppelteListe.removeLast();
         System.out.println(doppelteListe);
 
     }
