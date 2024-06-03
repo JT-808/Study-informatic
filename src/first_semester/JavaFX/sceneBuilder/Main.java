@@ -18,9 +18,8 @@ public class Main extends Application {
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("MainWindow.fxml"));
-        // AnchorPane root = loader.load();
+        AnchorPane root = loader.load();
 
-        AnchorPane root = new AnchorPane();
         Scene scene = new Scene(root, 400, 400);
         PrimaryStage.setTitle("Beispiel");
         PrimaryStage.setScene(scene);

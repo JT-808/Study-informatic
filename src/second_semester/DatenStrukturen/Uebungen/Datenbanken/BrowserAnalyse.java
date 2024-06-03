@@ -30,6 +30,7 @@ public class BrowserAnalyse {
         ResultSet rs = statement.executeQuery("select * from moz_places");
 
         // Herausfinden: Anzahl der Spalten, Name der Spalte, Datentyp der Spalte
+        // -> Analyse: was ist drin ---
         ResultSetMetaData meta = rs.getMetaData();
         List<String> columnNames = new ArrayList<>();
         for (int m = 1; m <= meta.getColumnCount(); m++) {
