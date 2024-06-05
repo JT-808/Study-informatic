@@ -20,13 +20,13 @@ public class XMLVerarbeitung {
 		// TODO Auto-generated method stub
 
 		schreibenXML();
-		lesenXML();
+		//lesenXML();
 
 	}
 
 	private static void lesenXML() {
 		try {
-			File datei = new File("C:\\Daten\\DozentenIFGruppe3.xml");
+			File datei = new File("src/second_semester/DatenStrukturen/Uebungen/Datenbanken/dozenten.xml");
 
 			DocumentBuilderFactory fabrik = DocumentBuilderFactory.newInstance();
 			DocumentBuilder arbeiter = fabrik.newDocumentBuilder();
@@ -51,11 +51,8 @@ public class XMLVerarbeitung {
 			// Arbeit mit XML
 
 			DocumentBuilderFactory fabrik = DocumentBuilderFactory.newInstance();
-
 			DocumentBuilder arbeiter = fabrik.newDocumentBuilder();
-
 			Document doc = arbeiter.newDocument();
-
 			Element root = doc.createElement("dozenten");
 
 			Element dozent1 = doc.createElement("dozent");
@@ -79,7 +76,7 @@ public class XMLVerarbeitung {
 
 			DOMSource domSource = new DOMSource(doc);
 			StreamResult ziel = new StreamResult(
-					new File("C:\\Daten\\DozentenIFGruppe3.xml"));
+					new File("src/second_semester/DatenStrukturen/Uebungen/Datenbanken/dozenten.xml"));
 			arbeiterTransformer.transform(domSource, ziel);
 
 		} catch (Exception e) {

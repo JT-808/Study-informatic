@@ -16,7 +16,7 @@ public class Datenbank {
 
         String url = "jdbc:sqlite:/home/woodz/Dev/Daten/Musik.db";
         String zeigeAlleTabellen = "SELECT name FROM sqlite_master WHERE type = 'table'";
-        String zeigeInhaltDerTabelle = "SELECT * FROM artist";
+        //String zeigeInhaltDerTabelle = "SELECT * FROM artist";
         //String MeisteRechnung = "SELECT COUNT(invoiceId), BillingCountry FROM invoice";
         String MeisteRechnung = "SELECT TOP 10 billingcountry, invoiceiD FROM invoice ORDER BY COUNT(invoiceId)";
 
@@ -24,7 +24,7 @@ public class Datenbank {
       
         //ResultSet rs= Select(zeigeInhaltDerTabelle, url)
         //ResultSet rs=  Select(zeigeInhaltDerTabelle, url);
-        ResultSet rs= Select(MeisteRechnung, url);
+        ResultSet rs= Select(zeigeAlleTabellen, url);
         ZeigeInhalt(rs);
       
 }
