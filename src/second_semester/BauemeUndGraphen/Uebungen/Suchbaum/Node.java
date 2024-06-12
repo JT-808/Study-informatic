@@ -1,3 +1,4 @@
+package second_semester.BauemeUndGraphen.Uebungen.Suchbaum;
 
 public class Node  
 {

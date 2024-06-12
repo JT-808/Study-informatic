@@ -1,4 +1,4 @@
-package application;
+package second_semester.BauemeUndGraphen.Uebungen.Suchbaum;
 
 import java.util.Scanner;
 
@@ -39,7 +39,7 @@ public class BinBaumGrafik extends Application {
 		Scanner scanner = new Scanner(System.in);
 
 		do {
-			System.out.println("Waehlen Sie: [i]nsert, [d]elete, Baum [l]öschen, [e]xit ... ");
+			System.out.println("Waehlen Sie: [i]nsert, [d]elete, Baum [l]ï¿½schen, [e]xit ... ");
 			a = scanner.next();
 			switch (a.charAt(0)) {
 			case 'i': {

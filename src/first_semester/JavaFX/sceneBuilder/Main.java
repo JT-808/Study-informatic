@@ -1,4 +1,4 @@
-package JavaFX.sceneBuilder;
+package first_semester.JavaFX.sceneBuilder;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

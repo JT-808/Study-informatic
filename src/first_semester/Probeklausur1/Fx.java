@@ -1,4 +1,4 @@
-package Probeklausur1;
+package first_semester.Probeklausur1;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
