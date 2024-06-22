@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -26,7 +27,7 @@ public class GraphListen {
          //Man kann erst zeile 1 und 2 einzelnd lesen 
          //und danach den rest zusammen:
          
-             // Lese die Anzahl der Knoten
+             // Lese die Anzahl der Knoten ( 1. Zeile)
              if ((Zeile = BR.readLine()) != null) {
                 anzahlKnoten = Integer.parseInt(Zeile);
                 for (int i = 0; i < anzahlKnoten; i++) {
@@ -34,7 +35,7 @@ public class GraphListen {
                     // Initialisiere für jede Knoten ein leeres Set
                 }
             }
-            // Lese die Anzahl der Kanten
+            // Lese die Anzahl der Kanten (2. Zeile)
             if ((Zeile = BR.readLine()) != null) {
                 anzahlKanten = Integer.parseInt(Zeile);
             }
