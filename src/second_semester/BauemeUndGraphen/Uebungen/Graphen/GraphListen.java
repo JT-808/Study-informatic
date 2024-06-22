@@ -39,7 +39,7 @@ public class GraphListen {
             }
         //verarbeite die restlichen Zeilen
         while ((Zeile = BR.readLine()) != null) {
-            //String Zeile an den Stellen aufteilen, an denen ein Leerzeichen auftritt.
+            //String Zeile an den Stellen aufteilen, an denen ein Leerzeichen auftritt
             String[] zahlenpaare = Zeile.split("\\s+");
             //sobald 2 im Array drin sind, soll 1. Zahl Start und 2. Zahl Ziel sein
             if(zahlenpaare.length >=2){
@@ -100,7 +100,7 @@ public class GraphListen {
         g.printGraph();
 
        //g.gibNachbarKnoten(6);
-       
+
        g.gibGradDesKnoten(4);
 
     
