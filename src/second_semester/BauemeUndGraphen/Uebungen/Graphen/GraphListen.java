@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -13,7 +12,6 @@ public class GraphListen {
     private int anzahlKnoten;
     private int anzahlKanten;
     private ArrayList<Set<Integer>> liste;
-
 
     public GraphListen() throws IOException{
 
@@ -50,18 +48,36 @@ public class GraphListen {
                 liste.get(startKnoten).add(zielKnoten);
                 liste.get(zielKnoten).add(startKnoten);
             }
-
         }
         BR.close();
     }
 
+    public boolean knotenGueltig(int knoten){
+        return knoten >=0 && knoten <= anzahlKnoten;
+    }
+    public void gibNachbarKnoten(int knoten){
+        if (knotenGueltig(knoten)){
+                System.out.print("knoten " + knoten + ": ");
+                for (Integer set : liste.get(knoten)) {
+                    System.out.print("->" + set);
+                }
+                System.out.println("");
+        }
+    }
+    // Anzahl der angrenzenden Kanten vom knoten
+    public void gibGradDesKnoten(int knoten){
+        if(knotenGueltig(knoten)){
+           int grad = liste.get(knoten).size();
+           System.out.println("Grad des Knotens: " + grad);
+        }
+    }
     public int getKnotenAnzahl() {
 		return anzahlKnoten;
 	}
     public int getKantenAnzahl(){
         return anzahlKanten;
     }
-
+    //drucke alles in Listenansicht
     public void printGraph() {
         for (int i = 0; i < anzahlKnoten; i++) {
             System.out.print("Knoten " + i + ":");
@@ -73,6 +89,7 @@ public class GraphListen {
     }
 
 
+
     public static void main(String[] args) throws IOException {
 
         GraphListen g = new GraphListen();
@@ -81,6 +98,13 @@ public class GraphListen {
         System.out.println("Anzahl Kanten: " +g.anzahlKanten);
 
         g.printGraph();
+
+       //g.gibNachbarKnoten(6);
+       
+       g.gibGradDesKnoten(4);
+
+    
+
         
     }
 }
