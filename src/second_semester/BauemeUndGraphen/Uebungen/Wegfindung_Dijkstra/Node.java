@@ -1,3 +1,4 @@
+package second_semester.BauemeUndGraphen.Uebungen.Wegfindung_Dijkstra;
 import java.util.ArrayList;
 
 public class Node implements Comparable<Node> {

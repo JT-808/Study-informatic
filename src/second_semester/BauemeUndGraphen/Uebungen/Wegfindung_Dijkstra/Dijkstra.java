@@ -1,3 +1,4 @@
+package second_semester.BauemeUndGraphen.Uebungen.Wegfindung_Dijkstra;
 import java.util.ArrayList;
 import java.util.Collections;
 

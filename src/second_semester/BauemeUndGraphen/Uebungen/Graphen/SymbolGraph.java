@@ -38,7 +38,7 @@ public class SymbolGraph extends GraphListen {
         BufferedReader BR = new BufferedReader(FR);
        
         while ((Zeile = BR.readLine()) != null) {
-// Splitte die Zeile an Leerzeichen
+// Splitte die Zeile anhand Leerzeichen
             String[] paar = Zeile.split("\\s+");
             if(paar.length >=2){
                 String startKnoten = paar[0];
