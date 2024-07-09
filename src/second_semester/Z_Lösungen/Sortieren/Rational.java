@@ -1,10 +1,10 @@
 /**
- * Klasse Rational definiert Objekte für rationale Zahlen.
+ * Klasse Rational definiert Objekte fï¿½r rationale Zahlen.
  *
  * @version    2.1
  */
 
-package sortieren;
+
 
 public class Rational implements Comparable<Rational> {
 
@@ -12,7 +12,7 @@ public class Rational implements Comparable<Rational> {
      *  compareTo()-Methode aus Comparable
      *
      * @param  o  Vergleichsobjekt
-     * @return    int-Wert > 0 falls Zahl größer als Vergleichszahl,
+     * @return    int-Wert > 0 falls Zahl grï¿½ï¿½er als Vergleichszahl,
      *            int-Wert < 0 falls Zahl kleiner als Vergleichszahl,
      *            int-Wert 0 falls Zahl gleich Vergleichszahl
      */
@@ -47,7 +47,7 @@ public class Rational implements Comparable<Rational> {
 //*/
 
      /**
-      *  Zähler der rationalen Zahl
+      *  Zï¿½hler der rationalen Zahl
       */
      private int zaehler;
 
@@ -57,9 +57,9 @@ public class Rational implements Comparable<Rational> {
     private int nenner;
 
     /**
-     *  Konstruktor für rationale Zahl
+     *  Konstruktor fï¿½r rationale Zahl
      *
-     * @param  z  Zählerwert
+     * @param  z  Zï¿½hlerwert
      * @param  n  Nennerwert
      * @throws IllegalArgumentException
      */
@@ -72,9 +72,9 @@ public class Rational implements Comparable<Rational> {
     }
 
     /**
-     *  liest das Zähler-Attribute
+     *  liest das Zï¿½hler-Attribute
      *
-     * @return    Wert des Zählers
+     * @return    Wert des Zï¿½hlers
      */
     public int getZaehler() {
         return zaehler;
@@ -90,9 +90,9 @@ public class Rational implements Comparable<Rational> {
     }
 
     /**
-     *  Überschreiben der toString()-Methode
+     *  ï¿½berschreiben der toString()-Methode
      *
-     * @return    Zeichenkettendarstellung "Zähler/Nenner"
+     * @return    Zeichenkettendarstellung "Zï¿½hler/Nenner"
      */
     public String toString() {
         String str = "";
@@ -109,7 +109,7 @@ public class Rational implements Comparable<Rational> {
     }
 
     /**
-     *  Überschreiben der equals()-Methode
+     *  ï¿½berschreiben der equals()-Methode
      *
      * @param  o  Objekt zum Vergleichen
      * @return    true bei wertgleicher rationaler Zahl
@@ -129,8 +129,8 @@ public class Rational implements Comparable<Rational> {
     }
 
     /**
-     *  Überschreiben der hashCode()-Methode
-     *  ist erforderlich, da equals()-Methode überschrieben wurde
+     *  ï¿½berschreiben der hashCode()-Methode
+     *  ist erforderlich, da equals()-Methode ï¿½berschrieben wurde
      *
      * @return    der Hashcode der rationalen Zahl
      */
@@ -143,16 +143,16 @@ public class Rational implements Comparable<Rational> {
     }
 
     /**
-     *  liefert double-Näherungswert der rationalen Zahl
+     *  liefert double-Nï¿½herungswert der rationalen Zahl
      *
-     * @return    double-Näherungswert der rationalen Zahl
+     * @return    double-Nï¿½herungswert der rationalen Zahl
      */
     public double doubleValue() {
         return ((double) zaehler) / nenner;
     }
 
     /**
-     *  Objektmethode für die Addition rationaler Zahlen
+     *  Objektmethode fï¿½r die Addition rationaler Zahlen
      *
      * @param  r  der zweite Summand
      * @return    die Summe
@@ -163,7 +163,7 @@ public class Rational implements Comparable<Rational> {
     }
 
     /**
-     *  Objektmethode für die Subtraktion rationaler Zahlen
+     *  Objektmethode fï¿½r die Subtraktion rationaler Zahlen
      *
      * @param  r  der Subtrahend
      * @return    die Differenz
@@ -174,7 +174,7 @@ public class Rational implements Comparable<Rational> {
     }
 
     /**
-     *  Objektmethode für die Multiplikation rationaler Zahlen
+     *  Objektmethode fï¿½r die Multiplikation rationaler Zahlen
      *
      * @param  r  der zweite Faktor
      * @return    das Produkt
@@ -184,7 +184,7 @@ public class Rational implements Comparable<Rational> {
     }
 
     /**
-     *  Objektmethode für die Division rationaler Zahlen
+     *  Objektmethode fï¿½r die Division rationaler Zahlen
      *
      * @param  r  der Divisor
      * @return    der Quotient
@@ -194,7 +194,7 @@ public class Rational implements Comparable<Rational> {
     }
 
     /**
-     *  Kürzen einer der rationalen Zahl
+     *  Kï¿½rzen einer der rationalen Zahl
      */
     public void kuerzen() {
         int faktor = ggt(Math.abs(zaehler), Math.abs(nenner));
@@ -203,12 +203,12 @@ public class Rational implements Comparable<Rational> {
     }
 
     /**
-     *  Methode zur Bestimmung des größten gemeinsamen Teilers nach dem
+     *  Methode zur Bestimmung des grï¿½ï¿½ten gemeinsamen Teilers nach dem
      *  Euklidischen Algorithmus
      *
      * @param  a  erste Zahl (>=0)
      * @param  b  zweite Zahl (>0)
-     * @return    der größte gemeinsame Teiler
+     * @return    der grï¿½ï¿½te gemeinsame Teiler
      * @throws IllegalArgumentException
      */
     private int ggt(int a, int b) throws IllegalArgumentException {
@@ -236,7 +236,7 @@ public class Rational implements Comparable<Rational> {
     }
 
     /**
-     *  symmetrische Klassenmethode für die Addition rationaler Zahlen
+     *  symmetrische Klassenmethode fï¿½r die Addition rationaler Zahlen
      *
      * @param  r1  Description of Parameter
      * @param  r2  Description of Parameter
@@ -248,7 +248,7 @@ public class Rational implements Comparable<Rational> {
     }
 
     /**
-     *  symmetrische Klassenmethode für die Subtraktion rationaler Zahlen
+     *  symmetrische Klassenmethode fï¿½r die Subtraktion rationaler Zahlen
      *
      * @param  r1  Minuend
      * @param  r2  Subtrahend
@@ -260,7 +260,7 @@ public class Rational implements Comparable<Rational> {
     }
 
     /**
-     *  symmetrische Klassenmethode für die Multiplikation rationaler Zahlen
+     *  symmetrische Klassenmethode fï¿½r die Multiplikation rationaler Zahlen
      *
      * @param  r1  der erste Faktor
      * @param  r2  Description of Parameter
@@ -271,7 +271,7 @@ public class Rational implements Comparable<Rational> {
     }
 
     /**
-     *  symmetrische Klassenmethode für die Division rationaler Zahlen
+     *  symmetrische Klassenmethode fï¿½r die Division rationaler Zahlen
      *
      * @param  r1  der Dividend
      * @param  r2  der Divisor

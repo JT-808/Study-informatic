@@ -28,6 +28,9 @@ public class insertionsort {
       int anzahl = 10;
       int[] a;
 
+
+
+
       a = bestArray(anzahl);
       System.out.println("aufsteigend geordnetes Array");
       printArray(a);

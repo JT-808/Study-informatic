@@ -1,4 +1,4 @@
-package suchen;
+
 
 /**
  * 
@@ -111,7 +111,7 @@ public class Suchen {
 
 	/**
 	 * 
-	 * Aufrufprozedur fuer die rekursive binaere Suche für ein geordnetes int-Array
+	 * Aufrufprozedur fuer die rekursive binaere Suche fï¿½r ein geordnetes int-Array
 	 * 
 	 * @param zahlen  zu durchsuchendes Array
 	 * @param gesucht Zahl die gesucht wird
@@ -123,7 +123,7 @@ public class Suchen {
 
 	/**
 	 * 
-	 * rekursives binaeres Suchverfahren für ein geordnetes int-Array
+	 * rekursives binaeres Suchverfahren fï¿½r ein geordnetes int-Array
 	 * 
 	 * @param zahlen  zu durchsuchendes Array
 	 * @param gesucht Zahl die gesucht wird
@@ -150,7 +150,7 @@ public class Suchen {
 	
 	/**
 	 * 
-	 * iteratives binaeres Suchverfahren für ein geordnetes int-Array
+	 * iteratives binaeres Suchverfahren fï¿½r ein geordnetes int-Array
 	 * 
 	 * @param zahlen  zu durchsuchendes Array
 	 * @param gesucht Zahl die gesucht wird
@@ -240,7 +240,7 @@ public class Suchen {
 
 
 		// sequentielle Suche: Grundalgorithmus - Exceptions moeglich
-		System.out.println("sequentielle Suche - Grundalgorithmus, Exceptions möglich");
+		System.out.println("sequentielle Suche - Grundalgorithmus, Exceptions mï¿½glich");
 		time = System.currentTimeMillis();
 		for (i = 0; i < testanzahl; i++) {
 			pos = seqSuche(zahlen, gesucht);
@@ -265,7 +265,7 @@ public class Suchen {
 
 		// sequentielle Suche mit Pruefung der Array-Grenze
 		// zahlen = randIntegerArray(anzahl);//ggf. mit neuen Array durchfuehren
-		System.out.println("sequentielle Suche mit Prüfung der Array-Grenze");
+		System.out.println("sequentielle Suche mit Prï¿½fung der Array-Grenze");
 		time = System.currentTimeMillis();
 		for (i = 0; i < testanzahl; i++) {
 			pos = seqSuchePruefungGrenze(zahlen, gesucht);
@@ -300,7 +300,7 @@ public class Suchen {
 
 		//rekursive binaere Suche
 		zahlen = ordIntegerArray(anzahl); // Array muss sortiert sein !!!!
-		System.out.println("rekursive binäre Suche");
+		System.out.println("rekursive binï¿½re Suche");
 		time = System.currentTimeMillis();
 		for (i = 0; i < testanzahl; i++) {
 			pos = binSucheRek(zahlen, gesucht);
@@ -311,7 +311,7 @@ public class Suchen {
 		System.out.println(); 
 		
 		// iterative binaere Suche
-		System.out.println("iterative binäre Suche");
+		System.out.println("iterative binï¿½re Suche");
 		time = System.currentTimeMillis();
 		for (i = 0; i < testanzahl; i++) {
 			pos = binSucheIt(zahlen, gesucht);

@@ -1,5 +1,3 @@
-package sortieren;
-
 
 
 import java.util.*;
@@ -72,7 +70,7 @@ public class Sortieren
                 }
             }
         }
-        System.out.println(anzahl + " Vertauschungen durchgeführt");
+        System.out.println(anzahl + " Vertauschungen durchgefï¿½hrt");
     }
 
     /**
@@ -178,13 +176,13 @@ public class Sortieren
         System.out.println("fertig \n");
 
         System.out.println("Zeitvergleich bei " + anzahlGross 
-                + " Array-Elementen und " + anzahlWiederholungen + " Testläufen:");
+                + " Array-Elementen und " + anzahlWiederholungen + " Testlï¿½ufen:");
         a0 = worstArray(anzahlGross);
         
 
         // Zeitmessungen
 
-        // Zeitbedarf für das Array-Klonen bestimmen
+        // Zeitbedarf fï¿½r das Array-Klonen bestimmen
         long tconst = -System.currentTimeMillis();
         for(int i = 0; i < anzahlWiederholungen; i++) {
             a = (int[]) a0.clone();    }
@@ -199,7 +197,7 @@ public class Sortieren
             bubbleSort(a1);
         }
         t2 = System.currentTimeMillis();
-        System.out.println("Zeit für bubbleSort: " + (t2 - t1 - tconst)/anzahlWiederholungen);
+        System.out.println("Zeit fï¿½r bubbleSort: " + (t2 - t1 - tconst)/anzahlWiederholungen);
         if(!geordnetArray(a1)) System.out.println("a1 nicht geordnet"); 
 
         // BubbleSort mit Abbruch
@@ -210,7 +208,7 @@ public class Sortieren
                bubbleSortMitAbbruch(a2);
         }
         t2 = System.currentTimeMillis();
-        System.out.println("Zeit für bubbleSortMitAbbruch: " + (t2 - t1 - tconst)/anzahlWiederholungen);
+        System.out.println("Zeit fï¿½r bubbleSortMitAbbruch: " + (t2 - t1 - tconst)/anzahlWiederholungen);
         if(!geordnetArray(a2)) System.out.println("a2 nicht geordnet"); 
 
         // SelectionSort
@@ -221,7 +219,7 @@ public class Sortieren
             selectionSort(a3);
         }
         t2 = System.currentTimeMillis();
-        System.out.println("Zeit für selectionSort: " + (t2 - t1 - tconst)/anzahlWiederholungen);
+        System.out.println("Zeit fï¿½r selectionSort: " + (t2 - t1 - tconst)/anzahlWiederholungen);
         if(!geordnetArray(a3)) System.out.println("a3 nicht geordnet"); 
 
         // InsertionSort
@@ -232,7 +230,7 @@ public class Sortieren
             insertionSort(a4);
         }
         t2 = System.currentTimeMillis();
-        System.out.println("Zeit für insertionSort: " + (t2 - t1 - tconst)/anzahlWiederholungen);
+        System.out.println("Zeit fï¿½r insertionSort: " + (t2 - t1 - tconst)/anzahlWiederholungen);
         if(!geordnetArray(a4)) System.out.println("a4 nicht geordnet"); 
 
         System.out.println("\nEnde \n");

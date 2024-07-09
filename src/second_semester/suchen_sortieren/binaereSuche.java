@@ -3,9 +3,11 @@ package second_semester.suchen_sortieren;
 import java.util.Arrays;
 import java.util.Random;
 
-public class suche {
+public class binaereSuche {
 
     public static void main(String[] args) {
+
+        //Array erstellen
 
         int anzahl = 100;
         int gesuchteZahl = 5;
