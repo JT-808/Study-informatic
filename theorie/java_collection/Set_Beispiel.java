@@ -1,4 +1,4 @@
-package theorie.java_collection;
+package java_collection;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class DatenEinlesen {
 
-    private void readFileAndCalculateSize(String woerterbuchfile) throws NumberFormatException, IOException {
+    private void berechneGroesse(String woerterbuchfile) throws NumberFormatException, IOException {
         FileReader fr = new FileReader(woerterbuchfile);
         BufferedReader br = new BufferedReader(fr);
         int totalSize = 0;
@@ -16,14 +16,8 @@ public class DatenEinlesen {
             System.out.println(line);
             if (!line.contains("DIR")) {
                 String[] elements = line.split(" ");
-                if (elements.length > 2) {
-                    try {
                         int fileSize = Integer.parseInt(elements[2]);
-                        totalSize += fileSize;
-                    } catch (NumberFormatException e) {
-                        System.err.println("Invalid number format in line: " + line);
-                    }
-                }
+                        totalSize += fileSize;  
             }
         }
         br.close();
@@ -36,7 +30,7 @@ public class DatenEinlesen {
         String datei = "/home/woodz/Dev/Projects/Study-Java/src/second_semester/DatenStrukturen/Uebungen/text copy.txt";
 
         DatenEinlesen de = new DatenEinlesen();
-        de.readFileAndCalculateSize(datei);
+        de.berechneGroesse(datei);
 
     }
 }

@@ -1,4 +1,5 @@
 
+
 /*
         K
       /   \
@@ -39,18 +40,19 @@ Nun wird der nächste Nachbar von K, V (2), besucht.
 Der Algorithmus fährt fort, indem er die Nachbarn von V (A und Z) besucht
 
  */
-
 import java.util.*;
 
-class Tiefensuche{
+class Tiefensuche {
+
     private int V;
     private LinkedList<Integer> adj[];
 
     Tiefensuche(int v) {
         V = v;
         adj = new LinkedList[v];
-        for (int i = 0; i < v; ++i)
+        for (int i = 0; i < v; ++i) {
             adj[i] = new LinkedList();
+        }
     }
 
     void addEdge(int v, int w) {
@@ -64,8 +66,9 @@ class Tiefensuche{
         Iterator<Integer> i = adj[v].listIterator();
         while (i.hasNext()) {
             int n = i.next();
-            if (!visited[n])
+            if (!visited[n]) {
                 DFSUtil(n, visited);
+            }
         }
     }
 
@@ -104,4 +107,3 @@ class Tiefensuche{
          */
     }
 }
-

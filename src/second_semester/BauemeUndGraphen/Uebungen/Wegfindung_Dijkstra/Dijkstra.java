@@ -24,6 +24,7 @@ public class Dijkstra {
 	}
 
 	public ArrayList<Node> getReihenfolge() {
+		return zubesuchenListe;
 		//TODO
 	}
 }

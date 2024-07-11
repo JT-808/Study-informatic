@@ -27,12 +27,12 @@ public class GraphenTester {
 	
 		
 		Tiefensuche ts = new Tiefensuche(ug, 2);
-		ts.gibWegAus(0, 8);
+		ts.gibWegAus(0, 11);
 		//die Tiefensuche findet einen Weg, falls ein Weg existiert,
 		//es kann der optimale(kuerzeste) Weg sein, muss aber nicht
 		
 		Breitensuche bs = new Breitensuche(ug, 0);
-		bs.gibWegAus(0, 2);
+		bs.gibWegAus(0, 11);
 		//die Breitensuche findet den optimalen(kuerzesten) Weg,
 		//falls ein Weg existiert
 

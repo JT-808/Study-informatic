@@ -12,11 +12,12 @@ public class sportergebnisse {
     private static TreeMap<String, Set<String>> speicher;
 
     public sportergebnisse() {
+
         speicher = new TreeMap<String, Set<String>>();
 
-    };
+    }
 
-    public static void eingabe(){
+    public static void eingabe() {
 
         Scanner scan = new Scanner(System.in);
         System.out.println("Name eingeben:");
@@ -27,7 +28,7 @@ public class sportergebnisse {
         einfuegen(name, zeit);
 
         System.out.println("weiter? j/n");
-        String weiter= scan.nextLine();
+        String weiter = scan.nextLine();
 
         if (weiter.equals("j")) {
             eingabe();
@@ -35,10 +36,25 @@ public class sportergebnisse {
 
     }
 
+    public static void eingabe2(){
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Eingabe (name zeit)");
+        String input = scan.nextLine();
+
+        String[] zeiten = input.split(" ");
+
+        for (int i = 0; i < zeiten.length; i += 2) {
+            String name = zeiten[i];
+            String zeit = zeiten[i + 1];
+            einfuegen(name, zeit);
+        }   
+            
+    }
+
     public static boolean einfuegen(String name, String zeit) {
 
         // wenn vorhanden, dann hole name und füge nummer hinzu
-
         if (speicher.containsKey(name)) {
             Set<String> nummern = speicher.get(name);
             nummern.add(zeit);
@@ -120,27 +136,21 @@ public class sportergebnisse {
 
         @SuppressWarnings("unused")
         sportergebnisse sportbuch = new sportergebnisse();
-       
 
+       // eingabe();
 
-        eingabe();
+       eingabe2();
 
-         printTelefonbuch();
-
+        printTelefonbuch();
 
         // sportbuch.einfuegen("Frank", "660983");
         // sportbuch.einfuegen("Frank", "1092283");
         // sportbuch.einfuegen("Stefan", "1083");
         // sportbuch.einfuegen("Anton", "1098663");
-
-        
-
         // loeschen("Anton", "1098663");
-
         //System.out.println(hatErgebniss("Frank"));
         // System.out.println(speicher.size());
         //printTelefonbuch2();
-
     }
 
 }

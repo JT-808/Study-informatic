@@ -1,6 +1,9 @@
+
+
 import java.util.*;
 
 class TreeNode {
+
     char val;
     TreeNode left;
     TreeNode right;
@@ -13,6 +16,7 @@ class TreeNode {
 }
 
 public class Tree {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Bitte geben Sie die Zeichen für Preorder ein (z.B. a b d e c f):");
@@ -38,14 +42,16 @@ public class Tree {
     }
 
     public static TreeNode constructTree(char[] preorder, char[] postorder) {
-        if (preorder.length == 0 || postorder.length == 0)
+        if (preorder.length == 0 || postorder.length == 0) {
             return null;
+        }
 
         char rootValue = preorder[0];
         TreeNode root = new TreeNode(rootValue);
 
-        if (preorder.length == 1)
+        if (preorder.length == 1) {
             return root;
+        }
 
         // Find the root of the left subtree in postorder
         char leftSubtreeRootValue = preorder[1];
@@ -66,15 +72,17 @@ public class Tree {
 
     public static int findIndex(char[] arr, char value) {
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == value)
+            if (arr[i] == value) {
                 return i;
+            }
         }
         return -1;
     }
 
     public static void inorderTraversal(TreeNode root) {
-        if (root == null)
+        if (root == null) {
             return;
+        }
 
         inorderTraversal(root.left);
         System.out.print(root.val + " ");
@@ -102,21 +110,25 @@ public class Tree {
                 } else {
                     String aa = String.valueOf(n.val);
                     line.add(aa);
-                    if (aa.length() > widest)
+                    if (aa.length() > widest) {
                         widest = aa.length();
+                    }
 
                     next.add(n.left);
                     next.add(n.right);
 
-                    if (n.left != null)
+                    if (n.left != null) {
                         nn++;
-                    if (n.right != null)
+                    }
+                    if (n.right != null) {
                         nn++;
+                    }
                 }
             }
 
-            if (widest % 2 == 1)
+            if (widest % 2 == 1) {
                 widest++;
+            }
 
             lines.add(line);
 
@@ -140,8 +152,9 @@ public class Tree {
                         if (line.get(j - 1) != null) {
                             c = (line.get(j) != null) ? '┴' : '┘';
                         } else {
-                            if (j < line.size() && line.get(j) != null)
+                            if (j < line.size() && line.get(j) != null) {
                                 c = '└';
+                            }
                         }
                     }
                     System.out.print(c);
@@ -168,8 +181,9 @@ public class Tree {
             for (int j = 0; j < line.size(); j++) {
 
                 String f = line.get(j);
-                if (f == null)
+                if (f == null) {
                     f = "";
+                }
                 float a = f.length();
                 float b = (float) (perpiece - a) / 2f;
                 int c = (int) Math.ceil(b);

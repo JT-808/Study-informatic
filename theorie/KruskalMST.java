@@ -1,5 +1,6 @@
 
 
+
 /*
  * Ein Minimal Spanning Tree (MST) ist ein Teilgraph eines 
  * gewichteten, ungerichteten Graphen, der alle Knoten des 
