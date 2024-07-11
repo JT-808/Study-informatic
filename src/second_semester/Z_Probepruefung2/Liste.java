@@ -85,7 +85,7 @@ public class Liste<E extends Comparable<E>> implements Iterable<E> {
 
     public int loeschePos(int pos) throws NoSuchElementException {
         if (pos < 0 || pos >= size) {
-            throw new NoSuchElementException("Position out of bounds");
+            throw new NoSuchElementException("Position = out of bounds");
         }
 
         DLListElement<E> current = entry.getNext();

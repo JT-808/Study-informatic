@@ -12,6 +12,8 @@ public class ListElement<E extends Comparable<E>> {
 	private ListElement<E> next = null;// Nachfolger
 	private E data = null; // Daten
 
+
+
 	public ListElement(ListElement<E> next,
 			E data) {
 		// Werte fuer den Nachfolger und die Daten
@@ -26,5 +28,9 @@ public class ListElement<E extends Comparable<E>> {
 
 	public E getData() {
 		return data;
+	}
+
+	public void setData(E data) {
+		this.data = data;
 	}
 }

@@ -103,7 +103,7 @@ class Graph {
     }
 
     public static void main(String[] args) {
-        int V = 4;
+        int V = 5;
         Graph graph = new Graph(V);
 
         graph.addEdge(0, 1, 1);
