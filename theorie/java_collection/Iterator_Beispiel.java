@@ -1,4 +1,4 @@
-package second_semester.Z_Probepruefung.Probeklausur_Paul.java_collection;
+package theorie.java_collection;
 
 import java.util.ArrayList;
 import java.util.Iterator;

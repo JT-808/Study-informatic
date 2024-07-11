@@ -18,7 +18,7 @@ public class SimpleList<E extends Comparable<E>> implements Iterable<E> {
 
     }
 
-    // erstelle Erstelle ein Element und ersetze es mit dem Ersten
+    // Erstelle ein Element und ersetze es mit dem Ersten
     // first = Zeiger auf das nächste Element
     public void insertFirst(E data) {
         ListElement<E> newElement = new ListElement<E>(first, data);
@@ -72,9 +72,10 @@ public class SimpleList<E extends Comparable<E>> implements Iterable<E> {
         SimpleList<String> liste2 = new SimpleList<>();
 
         liste.insertFirst("test");
-        liste.insertFirst("test2");
+        liste.insertFirst("test6");
         liste.insertFirst("test3");
         liste.insertFirst("test4");
+     
 
         liste2.insertFirst("3");
         liste2.insertFirst("1");
@@ -84,8 +85,10 @@ public class SimpleList<E extends Comparable<E>> implements Iterable<E> {
         System.out.println(liste);
         System.out.println("\n");
 
-        liste.clear();
-        System.out.println("Liste wird gelöscht:" + liste.toString());
+
+
+       // liste.clear();
+       //  System.out.println("Liste wird gelöscht:" + liste.toString());
         System.out.println(liste.isEmpty());
 
         System.out.print(liste2);

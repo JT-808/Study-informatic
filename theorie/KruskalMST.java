@@ -1,4 +1,4 @@
-package theorie;
+
 
 /*
  * Ein Minimal Spanning Tree (MST) ist ein Teilgraph eines 

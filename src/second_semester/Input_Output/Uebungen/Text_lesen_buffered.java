@@ -10,6 +10,8 @@ public class Text_lesen_buffered {
 
     public static void main(String[] args) throws IOException {
 
+        
+
         FileReader FR = new FileReader("/home/woodz/Downloads/Test/kopien/nio.txt");
         BufferedReader BR = new BufferedReader(FR);
 

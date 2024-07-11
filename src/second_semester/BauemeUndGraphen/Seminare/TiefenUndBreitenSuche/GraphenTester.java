@@ -32,7 +32,7 @@ public class GraphenTester {
 		//es kann der optimale(kuerzeste) Weg sein, muss aber nicht
 		
 		Breitensuche bs = new Breitensuche(ug, 0);
-		bs.gibWegAus(0, 8);
+		bs.gibWegAus(0, 2);
 		//die Breitensuche findet den optimalen(kuerzesten) Weg,
 		//falls ein Weg existiert
 

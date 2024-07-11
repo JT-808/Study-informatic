@@ -1,4 +1,4 @@
-package theorie;
+
 
 	/*
 	 *								K
@@ -43,16 +43,16 @@ class Node {
 public class Order {
     public static void main(String[] args) {
         // Baumknoten erstellen
-        Node K = new Node('K');
-        Node L = new Node('L');
-        Node V = new Node('V');
-        Node M = new Node('M');
-        Node J = new Node('J');
-        Node A = new Node('A');
-        Node Z = new Node('Z');
-        Node X = new Node('X');
-        Node W = new Node('W');
-        Node B = new Node('B');
+        Node K = new Node('N');
+        Node L = new Node('H');
+        Node V = new Node('F');
+        Node M = new Node('D');
+        Node J = new Node('A');
+        Node A = new Node('E');
+        Node Z = new Node('G');
+        Node X = new Node('I');
+        Node W = new Node('S');
+        Node B = new Node('R');
 
         // Baumstruktur aufbauen
         K.left = L;

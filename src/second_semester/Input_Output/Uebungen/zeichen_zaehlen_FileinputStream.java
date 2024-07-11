@@ -24,6 +24,6 @@ public class zeichen_zaehlen_FileinputStream {
 
         }
         System.out.println("Buchstaben: " + Buchstaben);
-        System.out.println("Ubrüche: " + Umbrueche);
+        System.out.println("Umbrüche: " + Umbrueche);
     }
 }

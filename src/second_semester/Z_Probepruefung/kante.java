@@ -19,7 +19,5 @@ public class kante implements Serializable {
     public int getNach() {
         return nach;
     }
-    
 
-    
 }

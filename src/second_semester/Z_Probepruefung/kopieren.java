@@ -35,7 +35,6 @@ public class kopieren {
             if (Files.notExists(ziel)) {
                 Files.createDirectories(ziel);
             }
-
             for (File file : quelle.toFile().listFiles()) {
                 Path targetPath = ziel.resolve(file.getName());
                 if (file.isDirectory()) {

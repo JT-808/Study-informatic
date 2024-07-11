@@ -3,8 +3,6 @@ package second_semester.DatenStrukturen.Uebungen.Listen;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import DoppelteListe.DLListElement;
-
 public class DLRList<E extends Comparable<E>> implements Iterable<E> {
 
     private DLListElement<E> entry; // Startpunkt fuer die Datenhaltung
@@ -120,6 +118,9 @@ public class DLRList<E extends Comparable<E>> implements Iterable<E> {
 
         System.out.println(doppelteListe.size());
         System.out.println(doppelteListe.isEmpty() + "\n---------");
+
+
+        
 
         System.out.println(doppelteListe);
 
