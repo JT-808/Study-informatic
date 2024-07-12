@@ -1,24 +1,33 @@
-package second_semester.Z_Probepruefung2;
+package second_semester.Pruefung;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Liste<E extends Comparable<E>> implements Iterable<E> {
+public class MeineListe<E extends Comparable<E>> implements Iterable<E> {
 
-    private DLListElement<E> entry; // Startpunkt fuer die Datenhaltung
+    private Entry<E> entry; // Startpunkt fuer die Datenhaltung
     private int size;// Anzahl der Elemente
 
-    public Liste() {
+    public MeineListe(boolean richtung) {
         // entry = new DLListElement<E>(null, entry, entry);
         // Hinweis: data == null -> Fehlermeldung
-        entry = new DLListElement<E>();
+
+        if(richtung){      
+        entry = new Entry<E>();
         entry.setNext(entry);
         entry.setPrev(entry);
         // Vorgaenger und Nachfolger von entry ist entry selbst
         size = 0;
+    }else{
+        entry = new Entry<E>();
+        entry.setNext(entry);
+        entry.setPrev(entry);
+
     }
 
-    public int size() {
+    }
+
+    public int getAnzahl() {
         return size;
     }
 
@@ -26,7 +35,7 @@ public class Liste<E extends Comparable<E>> implements Iterable<E> {
         return size == 0;
     }
 
-    public DLListElement<E> getFirst() throws NoSuchElementException {
+    public Entry<E> getFirst() throws NoSuchElementException {
         if (size == 0) {
             throw new NoSuchElementException("Vorne Nix Daten");
         } else {
@@ -35,7 +44,7 @@ public class Liste<E extends Comparable<E>> implements Iterable<E> {
         }
     }
 
-    public DLListElement<E> getLast() throws NoSuchElementException {
+    public Entry<E> getLast() throws NoSuchElementException {
         if (size == 0) {
             throw new NoSuchElementException("Hinten Nix Daten");
         } else {
@@ -44,51 +53,44 @@ public class Liste<E extends Comparable<E>> implements Iterable<E> {
         }
     }
     
-    public void addDaten(int data) {
-        DLListElement<E> current = entry.getNext();
+    public void addDaten(String name,int alter) {
+        Entry<E> current = entry.getNext();
 
         // Prüfe wo ich hingehöre
-        while (current != entry && current.getData() < data) {
+        while (current != entry && current.getAlter() < alter) {
             current = current.getNext();
         }
         // schon vorhanden?
-        if (current != entry && current.getData() == data) {
+        if (current != entry && current.getAlter() == alter) {
             return; //wenn ja, mach nichts
         }
-        add(data, current);
+        add(alter, current);
     }
 
-    private void add(int data, DLListElement<E> neu) {
+    private void add(int data, Entry<E> neu) {
         // neues Element anlegen und mit Vorgaenger und Nachfolger verbinden
-        DLListElement<E> neuesElement = new DLListElement<E>(data, neu.getPrev(), neu);
+        Entry<E> neuesElement = new Entry<E>(null, data, neu.getPrev(), neu);
         // Vorgaenger und Nachfolger mit dem neuen ELement verbinden
         neuesElement.getPrev().setNext(neuesElement);
         neuesElement.getNext().setPrev(neuesElement);
         size++;
     }
 
-    public void addFirst(int data) {
-        add(data, entry.getNext());
-    }
 
-    public void addLast(int data) {
-        add(data, entry);
-    }
-
-    public int loescheMin() {
+    public int removeFirst() {
         return loescheAllgemein(entry.getNext());
     }
 
-    public int loescheMax() {
+    public int removeLast() {
         return loescheAllgemein(entry.getPrev());
     }
 
-    public int loeschePos(int pos) throws NoSuchElementException {
-        if (pos < 0 || pos >= size) {
+    public int removeString(String name) throws NoSuchElementException {
+        if (!enthalten(name)) {
             throw new NoSuchElementException("Position = out of bounds");
         }
 
-        DLListElement<E> current = entry.getNext();
+        Entry<E> current = entry.getNext();
         for (int i = 0; i < pos; i++) {
             current = current.getNext();
         }
@@ -96,34 +98,35 @@ public class Liste<E extends Comparable<E>> implements Iterable<E> {
         //getPrev weil es ab 0 los geht
     }
 
-    private int loescheAllgemein(DLListElement<E> current) throws NoSuchElementException {
+   public int loescheAllgemein(Entry<E> current) throws NoSuchElementException {
+
         if (current == entry) {
-            // auf den Speicher (data) bezogen
             throw new NoSuchElementException(":(");
         }
 
-        int data = current.getData();
+        int alter = current.getAlter();
+        String name = current.getName();
         // Schritt 1: Ueberschreiben
         current.getPrev().setNext(current.getNext());
         current.getNext().setPrev(current.getPrev());
         // Schritt 2: Loeschen
         current.setNext(null);
         current.setPrev(null);
-        current.setData(0);
-        size--;
-        return data;
+        current.setAlter(0);
+        current.setName("");
+        return size--;
     }
 
-    public boolean enthalten(int wert){
-        DLListElement<E> current = entry.getNext();
+    public boolean enthalten(String name){
+        Entry<E> current = entry.getNext();
 
-        while (current != entry && current.getData() < wert) {
+        while (current != entry && current.getName() != name) {
             current = current.getNext();
         }
 
-        if (current != entry && current.getData() == wert) {
-            System.out.println(wert +" gefunden");
-        } else System.out.println(wert + " nicht enthalten");
+        if (current != entry && current.getName() == name) {
+            System.out.println(name +" gefunden");
+        } else System.out.println(name + " nicht enthalten");
         return true;
     }
 
@@ -133,11 +136,11 @@ public class Liste<E extends Comparable<E>> implements Iterable<E> {
 
     public String toString() {
         String erg = "";
-        DLListElement<E> currentElement = entry.getNext();
+        Entry<E> currentElement = entry.getNext();
         // beim Durchlaufen der Liste: Start beim ersten Element (nach entry)
 
         while (currentElement != entry) {
-            erg += currentElement.getData() + " -> ";
+            erg += currentElement.getAlter() + " -> ";
             currentElement = currentElement.getNext();
         }
         return erg;
@@ -146,7 +149,7 @@ public class Liste<E extends Comparable<E>> implements Iterable<E> {
 
     public static void main(String[] args) {
 
-        Liste<Integer> doppelteListe = new Liste<>();
+        MeineListe<Integer> doppelteListe = new MeineListe<>();
 
         doppelteListe.addDaten(6);
         doppelteListe.addDaten(2);

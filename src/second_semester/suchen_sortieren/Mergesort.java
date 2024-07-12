@@ -47,6 +47,7 @@ public class Mergesort {
             zahlen[links + j] = hilfsArray[j];
         }
 
+
     }
 
     /**
@@ -56,9 +57,9 @@ public class Mergesort {
      */
     public static void main(String[] args) {
         int anzahl = 10;
-        int[] a;
+        int[] a = {52,41,3,26,9,57,38,49,16,37};
 
-        a = bestArray(anzahl);
+        //a = bestArray(anzahl);
         System.out.println("aufsteigend geordnetes Array");
         printArray(a);
         System.out.println("MergeSort:");
