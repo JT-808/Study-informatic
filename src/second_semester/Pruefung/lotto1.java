@@ -1,4 +1,4 @@
-package Pruefung;
+package second_semester.Pruefung;
 
 import java.util.Iterator;
 import java.util.Random;
