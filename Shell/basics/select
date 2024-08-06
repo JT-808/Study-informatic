@@ -1,0 +1,11 @@
+#!bin/bash
+
+# Komination aus schleife und Menüverzweigung
+
+select A in eins zwei drei fertig
+do
+echo "Ihre eingabe war $A"
+if [ $A = "fertig" ]; then
+    break
+fi
+done

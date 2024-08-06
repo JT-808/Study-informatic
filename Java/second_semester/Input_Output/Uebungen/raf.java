@@ -11,7 +11,7 @@ public class raf {
         quadrat(zahl);
 
     }
-
+y
     public static void quadrat(int zahl) {
         RandomAccessFile raf = null;
 
