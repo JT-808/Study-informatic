@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<buch buch_id="_03">
+	<kuerzel>[Vonhoegen 18]</kuerzel>
+	<titel>XML: Einstieg, Praxis, Referenz</titel>
+	<autoren>Vonhoegen, H.</autoren>
+	<verlag link="https://www.rheinwerk-verlag.de/">Rheinwerk Verlag Bonn</verlag>
+</buch>
+<buch buch_id="_04">
+	<kuerzel>[Becher 21]</kuerzel>
+	<titel>XML - DTD, XML-Schema, XPath, XQuery, XSL-FO, SAX, DOM</titel>
+	<autoren>Becher, M.</autoren>
+	<verlag>Springer Vieweg Wiesbaden</verlag>
+</buch>

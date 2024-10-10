@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!-- 1. Uebung  -->
+<!DOCTYPE biblio [
+    <!ELEMENT biblio (buch+)>
+    <!ELEMENT buch (kuerzel, titel, autoren, verlag)>
+    <!ELEMENT kuerzel (#PCDATA)>
+    <!ELEMENT titel (#PCDATA)>
+    <!ELEMENT autoren ANY>
+    <!ELEMENT verlag (#PCDATA)>
+    <!ELEMENT kurzinfo (#PCDATA)>
+    <!ATTLIST buch buch_id ID #REQUIRED>
+    <!ATTLIST verlag link CDATA #IMPLIED>
+    <!ENTITY extBiblio SYSTEM "externeBiblio.xml">
+]>
+<biblio>
+    <buch buch_id="_01">
+        <kuerzel>[Harold 05]</kuerzel>
+        <titel>XML in a </titel>
+        <autoren>Harold, E.R; Means, W.s</autoren>
+        <verlag>0&apos;Reilly Verlag Köln</verlag>
+    </buch>
+    <buch buch_id="_02">
+        <kuerzel>[Niedermeier 06</kuerzel>
+        <titel>Java und xml</titel>
+        <autoren>Niedermeier, St.; Scholz, M <kurzinfo>
+                <![CDATA[ Stephan Niedermaier befasst sich als freier Entwickler, Trainer und Autor seit vielen Jahren mit Java und XML. Bei Galileo Computing ist zuletzt "Cocoon 2 und Tomcat" erschienen. Michael Scholz ist Anwendungs-Architekt und betreut ein J2EE-basierendes EAI-System.]]>
+                </kurzinfo>
+        </autoren>
+        <verlag link="www.galileocomputing.de">Galileo Computing</verlag>
+    </buch>
+     &extBiblio; 
+     <!--Hau hier die externe XML rein -->
+</biblio>
