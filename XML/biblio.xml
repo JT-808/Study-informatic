@@ -29,5 +29,5 @@
         <verlag link="www.galileocomputing.de">Galileo Computing</verlag>
     </buch>
      &extBiblio; 
-     <!--Hau hier die externe XML rein -->
+     <!-- &extBiblio haut hier die externe XML rein -->
 </biblio>
