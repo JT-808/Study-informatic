@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE messberichte [
+    <!ELEMENT messberichte (messbericht+)>
+    <!ATTLIST messbericht nr ID #REQUIRED>
+    <!ATTLIST messbericht datum CDATA #REQUIRED>
+    <!ATTLIST arbeitszeit dimension ID #REQUIRED>
+
+
+    <!ELEMENT messbericht (kopfdaten, messwertdaten, prueferergebnis)>
+
+
+    <!ELEMENT kopfdaten (arbeitszeit, artikeldaten, lieferantendaten, prueferdaten)>
+
+    <!ELEMENT arbeitszeit (#PCDATA)>
+
+    <!ELEMENT lieferantendaten (lieferanten)>
+    <!ELEMENT lieferanten (lieferant)>
+    <!ATTLIST lieferanten Lieferanten_id CDATA #REQUIRED>
+    <!ELEMENT lieferant (#PCDATA)>
+
+    <!ELEMENT prueferdaten (pruefplandaten)>
+    <!ELEMENT pruefplandaten (#PCDATA)>
+    <!ATTLIST pruefplandaten ppl_id CDATA #REQUIRED>
+
+
+    <!ELEMENT artikeldaten (artikel)>
+    <!ELEMENT artikel (zeichnungs_nr, art_bezeichnung)>
+    <!ELEMENT zeichnungs_nr (#PCDATA)>
+    <!ELEMENT art_bezeichnung (#PCDATA)>
+
+
+    <!ELEMENT messwertdaten (pruefmerkmal+)>
+    <!ELEMENT pruefmerkmal (pm_wert+)>
+    <!ELEMENT pm_wert (#PCDATA)>
+    <!ELEMENT pm_mittelwert (#PCDATA)>
+    <!ATTLIST pm_wert lfd_nr CDATA #REQUIRED>
+
+    <!ATTLIST pruefmerkmal pm_name CDATA #REQUIRED>
+    <!ATTLIST pruefmerkmal pm_dimension CDATA #REQUIRED>
+
+
+    <!ELEMENT prueferergebnis (bemerkung, nacharbeitstermin)>
+]>
+
+
+<messberichte>
+    <!-- Messbericht-Nr und Datum fuer den Messbericht hier ergaenzen -->
+    <messbericht nr="_1" datum="15.10.2024">
+        <kopfdaten>
+            <arbeitszeit dimension="_Stunden">4.5</arbeitszeit>
+            <artikeldaten>
+                <artikel artikel_id="_wz-123-876">
+                    <zeichnungs_nr> tpb7012578-v01 </zeichnungs_nr>
+                    <art_bezeichnung>CPU-Kühlkörper A1</art_bezeichnung>
+                </artikel>
+            </artikeldaten>
+            <lieferantendaten>
+                <lieferanten Lieferanten_id="2323">
+                    <lieferant> Schenker</lieferant>
+                </lieferanten>
+            </lieferantendaten>
+            <prueferdaten>
+                <pruefplandaten ppl_id="wz-123-876-ppl1" />
+            </prueferdaten>
+
+        </kopfdaten>
+        <messwertdaten>
+            <pruefmerkmal pm_name="Länge-a" pm_dimension="mm">
+                <pm_wert lfd_nr="001">50.12</pm_wert>
+                <pm_wert lfd_nr="002">50.01</pm_wert>
+                <pm_wert lfd_nr="003">49.98</pm_wert>
+                <pm_mittelwert>50.04</pm_mittelwert>
+            </pruefmerkmal>
+            <pruefmerkmal pm_name="Gesamtmasse" pm_dimension="g">
+                <pm_wert lfd_nr="001">210.3</pm_wert>
+                <pm_wert lfd_nr="002">209.8</pm_wert>
+                <pm_wert lfd_nr="003">208.9</pm_wert>
+                <pm_mittelwert>209.7</pm_mittelwert>
+            </pruefmerkmal>
+        </messwertdaten>
+        <prueferergebnis>
+            <einstufung>
+            </einstufung>
+            <bemerkung></bemerkung>
+            <nacharbeitstermin></nacharbeitstermin>
+        </prueferergebnis>
+    </messbericht>
+</messberichte>
+
+
+<!-- IDs müssen immer _ davor haben
+ zb. _01-->
+<!-- in der Aufgabe steht aber diesmal, dass es nur eine ID geben darf und deshalb bekommt der Rest
+statt ID ein CDATA-->
