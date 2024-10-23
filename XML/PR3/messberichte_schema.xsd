@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- Aufbau eines XSD-Stufenmodells (eine Ausnahme, siehe unten -->
+	<!-- Stand 21.10.2022 -->
+	
+	<!-- GLOBALE DEKLARATIONEN -->
+	
+	<!-- Einfache Typen -->
+	
+	<!-- Komplexe Typen -->
+	
+	<xs:element name="pruefplandaten">
+		<xs:complexType>
+			<xs:attribute name="ppl_id" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Deklaration Artikeldaten -->
+	<xs:element name="artikeldaten">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="artikel" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Deklaration Pruefmerkmal -->
+	
+	<!-- Deklaration Kopfdaten -->
+
+	<!--  Deklaration Messwertdaten -->
+
+	<!-- Deklaration Pruefergebnis (geschachtelt) -->
+
+	<!-- Deklaration Messbericht -->
+	<!-- bestehend aus den drei Teilen Kopfdaten, Messwertdaten und Pruefergebnis -->
+	<xs:element name="messbericht">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="kopfdaten" />
+				<xs:element ref="messwertdaten" />
+				<xs:element ref="pruefergebnis" />
+			</xs:sequence>
+			<xs:attribute name="mb_id" type="xs:ID" use="required" />
+			<xs:attribute name="pruefdatum" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Deklaration Root-Elemente Messberichte -->
+	<xs:element name="messberichte">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="messbericht" minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

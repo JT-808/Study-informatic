@@ -1,0 +1,37 @@
+<xs:simpleType name="">
+	<xs:restriction base="">
+		<xs:enumeration value="" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:element name="">
+	<xs:complexType>
+		<xs:attribute name="" type="" />
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="">
+	<xs:complexType>
+		<xs:simpleContent>
+			<xs:extension base="">
+				<xs:attribute name="" type="" use="" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="" type="" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
