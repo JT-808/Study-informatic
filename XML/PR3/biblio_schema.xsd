@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="biblio" type="buchListe"/>
+<xs:complexType name="buchListe">
+    <xs:sequence>
+        <xs:element name="buch" type="buch" maxOccurs="unbounded"/>
+    </xs:sequence>
+</xs:complexType>
+<xs:complexType name="buch">
+    <xs:sequence>
+        <xs:element name="kuerzel" type="xs:string"/>
+        <xs:element name="titel" type="xs:string"/>
+        <xs:element name="autoren" type="xs:string"></xs:element>
+        <xs:element name="verlag" type="xs:string"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="buch_id" type="xs:string" use="required"></xs:attribute>
+</xs:complexType>
+</xs:schema>
