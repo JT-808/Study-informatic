@@ -1,4 +1,4 @@
-package Datum;
+package first_semester.Datum;
 
 public class Main {
 

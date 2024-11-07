@@ -1,3 +1,6 @@
+package first_semester.Probeklausur1;
+
+
 
 import java.util.Random;
 
