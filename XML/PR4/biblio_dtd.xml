@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE biblio SYSTEM "biblio.dtd">
+
+<biblio>
+	<buch buch_id="_00001">
+		<kuerzel>[Harold 05]</kuerzel>
+		<titel>XML in a Nutshell</titel>
+		<autoren>Harold, E.R.; Means, W.S.</autoren>
+		<verlag>O&apos;Reilly Verlag Köln</verlag>
+	</buch>
+	<buch buch_id="_00002">
+		<kuerzel>[Niedermeier 05]</kuerzel>
+		<titel>Java und XML</titel>
+		<autoren>Niedermeier, St.; Scholz, M.
+			<kurzInfo>
+				<![CDATA["Stephan Niedermaier befasst sich als freier Entwickler, Trainer und Autor seit vielen Jahren mit Java und XML. Bei Galileo Computing ist zuletzt "Cocoon 2 und Tomcat" erschienen. Michael Scholz ist Anwendungs-Architekt und betreut ein J2EE-basierendes EAI-System."]]>
+			</kurzInfo>
+		</autoren>
+		<verlag link="www.galileocomputing.de">Galileo Press Bonn</verlag>
+	</buch>
+	&extBuchListe;
+</biblio>

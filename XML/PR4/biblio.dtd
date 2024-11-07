@@ -1,0 +1,10 @@
+<!ELEMENT biblio (buch+)>
+<!ELEMENT buch (kuerzel, titel, autoren, verlag)>
+<!ELEMENT kuerzel (#PCDATA)>
+<!ELEMENT titel (#PCDATA)>
+<!ELEMENT autoren (#PCDATA | kurzInfo)*>
+<!ELEMENT verlag (#PCDATA)>
+<!ELEMENT kurzInfo (#PCDATA)>
+<!ATTLIST buch buch_id ID #REQUIRED>
+<!ATTLIST verlag link CDATA #IMPLIED>
+<!ENTITY extBuchListe SYSTEM "externeBuchListe.xml">

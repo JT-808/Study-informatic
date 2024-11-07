@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<buch buch_id="_00003">
+	<kuerzel>[Vonhoegen 05]</kuerzel>
+	<titel>Einstieg in XML</titel>
+	<autoren>Vonhoegen, H.</autoren>
+	<verlag link="www.galileocomputing.de">Galileo Press Bonn</verlag>
+</buch>
+<buch buch_id="_00004">
+	<kuerzel>[Stark 05]</kuerzel>
+	<titel>J2EE - Einstieg für Anspruchsvolle</titel>
+	<autoren>Stark, T.</autoren>
+	<verlag>Addison-Wesley Pearson Studium</verlag>
+</buch>

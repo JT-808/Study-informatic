@@ -1,0 +1,7 @@
+<!ELEMENT buecher (buch+)>
+<!ELEMENT buch (titel, autoren, verlag)>
+<!ELEMENT titel (#PCDATA)>
+<!ELEMENT autoren ANY>
+<!ELEMENT verlag (#PCDATA)>
+<!ATTLIST buch buch_id ID #REQUIRED isbn CDATA #IMPLIED>
+<!ATTLIST verlag link CDATA #IMPLIED>
