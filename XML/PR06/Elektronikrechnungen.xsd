@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!--Hauptelement: Rechnungsliste fuer Rechnungselemente-->
+<xs:element name="rechnungsliste" type="rechnungslistentyp">
+
+    <!--Attribut "id" der Rechnungselement eindeutig setzen-->
+    <xs:unique name="eindeutigeIDs">
+        <xs:selector xpath="rechnung"/>
+        <xs:field xpath="@id"/>
+    </xs:unique>
+</xs:element>
+
+<!--Typendefinition fuer die Rechnungsliste-->
+<xs:complexType name="rechnungslistentyp">
+    <xs:sequence>
+        <xs:element name="rechnung" type="rechnungstyp" maxOccurs="unbounded"/>
+    </xs:sequence>
+</xs:complexType>
+
+<!--Typendefinition fuer ein Rechnungselement-->
+<xs:complexType name="rechnungstyp">
+    <xs:sequence>
+
+        <!--Kaufdatum-->
+        <xs:element name="kaufdatum" type="xs:date" maxOccurs="1"/>
+		
+		<!--Kaufliste-->
+		<xs:element name="kaufliste" type="kauflistentyp" maxOccurs="1"/>
+
+        <!--Haendler-->
+        <xs:element name="haendler" type="haendlertyp" maxOccurs="1"/>
+
+    </xs:sequence>
+	
+	<!--ID der Rechnung als Attribut-->
+    <xs:attribute name="id" type="idtype"/>
+</xs:complexType>
+
+<!--Typendefinition fuer die Kaufliste-->
+<xs:complexType name="kauflistentyp">
+    <xs:sequence>
+        <xs:element name="gegenstand" type="gegenstandstyp" maxOccurs="unbounded"/>
+    </xs:sequence>
+</xs:complexType>
+
+<!--Typendefinition fuer Gegenstaende-->
+<xs:complexType name="gegenstandstyp">
+    <xs:sequence>
+	
+		<!--Bezeichnung-->
+        <xs:element name="bezeichnung" type="xs:string" maxOccurs="1"/>
+		
+		<!--Menge-->
+		<xs:element name="menge" type="xs:positiveInteger" maxOccurs="1"/>
+		
+		<!--Einzelpreis-->
+		<xs:element name="einzelpreis" type="einzelpreistyp" maxOccurs="1"/>
+    </xs:sequence>
+</xs:complexType>
+
+<!--Typendefinition fuer Einzelpreis-->
+<xs:complexType name="einzelpreistyp">
+    <xs:sequence>
+	
+		<!--Betrag-->
+        <xs:element name="betrag" type="betragstyp" maxOccurs="1"/>
+		
+		<!--Waehrung-->
+		<xs:element name="waehrung" type="waehrungstyp" maxOccurs="1"/>
+    </xs:sequence>
+</xs:complexType>
+
+<!--Typendefinition fuer Haendleradressen-->
+<xs:complexType name="haendlertyp">
+    <xs:sequence>
+        <xs:element name="name" type="xs:string" maxOccurs="1"/>
+        <xs:element name="ort" type="xs:string" maxOccurs="1"/>
+        <xs:element name="plz" type="xs:string" maxOccurs="1"/>
+        <xs:element name="strasse" type="xs:string" maxOccurs="1"/>
+        <xs:element name="hausnummer" type="xs:string" maxOccurs="1"/>
+    </xs:sequence>
+</xs:complexType>
+
+<!--Dimensionen des Betrags-->
+<xs:simpleType name="betragstyp">
+    <xs:restriction base="xs:decimal">
+		<xs:minExclusive value="0"/>
+		<xs:fractionDigits value="2"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<!--Enumeration fuer Waehrungen-->
+<xs:simpleType name="waehrungstyp" final="restriction">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="euro"/>
+        <xs:enumeration value="usd"/>
+        <xs:enumeration value="gpb"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<!--Muster fuer Rechungs-ID-Attribute-->
+<xs:simpleType name="idtype" final="restriction">
+    <xs:restriction base="xs:token">
+        <xs:pattern value="[0-9]{3}"/>
+    </xs:restriction>
+</xs:simpleType>
+
+</xs:schema>
