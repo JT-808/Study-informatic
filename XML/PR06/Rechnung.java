@@ -1,4 +1,4 @@
-package model;
+package XML.PR06;
 
 import java.util.List;
 
