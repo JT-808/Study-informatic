@@ -3,12 +3,12 @@
 <biblio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="biblio.xsd">
 <!-- XML Schema Definition über den Parser -->
 <!-- <biblio> -->
-	<buch buch_id="_00001">
+	<buchd buch_id="_00001">
 		<kuerzel>[Harold 05]</kuerzel>
 		<titel>XML in a Nutshell</titel>
 		<autoren>Harold, E.R.; Means, W.S.</autoren>
 		<verlag>O&apos;Reilly Verlag Köln</verlag>
-	</buch>
+	</buchd>
 	<buch buch_id="_00002">
 		<kuerzel>[Niedermeier 05]</kuerzel>
 		<titel>Java und XML</titel>
