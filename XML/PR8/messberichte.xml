@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<messberichte>
+	<messbericht mb_id="YXZ-0815" pruefdatum="25.09.2024">
+		<kopfdaten>
+			<prueferdaten pers_id="HM0102" email="stefan@abcd.com" pr_name="Stefan Muster" />
+			<arbeitszeit dimension="Min">4.5</arbeitszeit>
+			<artikeldaten>
+				<artikel artikel_id="wz-123-876" zeichnungs_nr="tpb7012578-v01">
+					<art_bezeichnung>CPU-Kühlkörper A1</art_bezeichnung>
+				</artikel>
+			</artikeldaten>
+			<pruefplandaten ppl_id="wz-123-876-ppl1" />
+			<lieferantendaten lief_id="L00304">
+				<lieferantenname>Fischer AG, Ulm</lieferantenname>
+			</lieferantendaten>
+		</kopfdaten>
+		<messwertdaten>
+			<pruefmerkmal pm_name="Länge-a" pm_dimension="mm">
+				<pm_wert lfd_nr="001">50.12</pm_wert>
+				<pm_wert lfd_nr="002">50.01</pm_wert>
+				<pm_wert lfd_nr="003">49.98</pm_wert>
+				<pm_mittelwert>50.04</pm_mittelwert>
+			</pruefmerkmal>
+			<pruefmerkmal pm_name="Gesamtmasse" pm_dimension="g">
+				<pm_wert lfd_nr="001">210.3</pm_wert>
+				<pm_wert lfd_nr="002">209.8</pm_wert>
+				<pm_wert lfd_nr="003">208.9</pm_wert>
+				<pm_mittelwert>209.6</pm_mittelwert>
+			</pruefmerkmal>
+		</messwertdaten>
+		<pruefergebnis einstufung="Nacharbeit">
+			<bemerkungen>
+				<![CDATA[
+					Die Prüf-Ergebnisse liegen in einem Grenzbereich, so dass der o. g. Artikel mit der speziellen Nacharbeit XYZ einer erneuten Prüfung unterzogen werden kann.
+				]]>
+			</bemerkungen>
+			<nacharbeitsdatum format="dd.mm.yyyy">25.10.2024</nacharbeitsdatum>
+		</pruefergebnis>
+	</messbericht>
+	<messbericht mb_id="YXZ-0816" pruefdatum="27.09.2024">
+		<kopfdaten>
+			<prueferdaten pers_id="HM0103" email="rolf@abcd.com" pr_name="Rolf Beispiel" />
+			<arbeitszeit dimension="Min">3.7</arbeitszeit>
+			<artikeldaten>
+				<artikel artikel_id="wz-123-874" zeichnungs_nr="tpb7012578-v05">
+					<art_bezeichnung>CPU-Kühlkörper A2</art_bezeichnung>
+				</artikel>
+			</artikeldaten>
+			<pruefplandaten ppl_id="wz-123-876-pp2" />
+			<lieferantendaten lief_id="L00304a">
+				<lieferantenname>Fischer AG, Ulm</lieferantenname>
+			</lieferantendaten>
+		</kopfdaten>
+		<messwertdaten>
+			<pruefmerkmal pm_name="Länge-a" pm_dimension="mm">
+				<pm_wert lfd_nr="001">50.02</pm_wert>
+				<pm_wert lfd_nr="002">50.01</pm_wert>
+				<pm_wert lfd_nr="003">49.98</pm_wert>
+				<pm_mittelwert>50.00</pm_mittelwert>
+			</pruefmerkmal>
+			<pruefmerkmal pm_name="Gesamtmasse" pm_dimension="g">
+				<pm_wert lfd_nr="001">209.9</pm_wert>
+				<pm_wert lfd_nr="002">209.8</pm_wert>
+				<pm_wert lfd_nr="003">208.9</pm_wert>
+				<pm_mittelwert>209.5</pm_mittelwert>
+			</pruefmerkmal>
+		</messwertdaten>
+		<pruefergebnis einstufung="Gut">
+			<bemerkungen>
+				<![CDATA[
+					Die Prüf-Ergebnisse lagen alle im i.O. Bereich.
+				]]>
+			</bemerkungen>
+		</pruefergebnis>
+	</messbericht>
+	<messbericht mb_id="YXZ-0817" pruefdatum="30.09.2024">
+		<kopfdaten>
+			<prueferdaten pers_id="HM0104" email="anja@abcd.com" pr_name="Anja Sample" />
+			<arbeitszeit dimension="Min">2.3</arbeitszeit>
+			<artikeldaten>
+				<artikel artikel_id="wz-123-875" zeichnungs_nr="tpb7012578-v05a">
+					<art_bezeichnung>CPU-Kühlkörper B3</art_bezeichnung>
+				</artikel>
+			</artikeldaten>
+			<pruefplandaten ppl_id="wz-123-876-pp3" />
+			<lieferantendaten lief_id="L00304b">
+				<lieferantenname>Fischer AG, Ulm</lieferantenname>
+			</lieferantendaten>
+		</kopfdaten>
+		<messwertdaten>
+			<pruefmerkmal pm_name="Länge-a" pm_dimension="mm">
+				<pm_wert lfd_nr="001">50.21</pm_wert>
+				<pm_wert lfd_nr="002">50.01</pm_wert>
+				<pm_wert lfd_nr="003">49.98</pm_wert>
+				<pm_mittelwert>50.06</pm_mittelwert>
+			</pruefmerkmal>
+			<pruefmerkmal pm_name="Gesamtmasse" pm_dimension="g">
+				<pm_wert lfd_nr="001">211.8</pm_wert>
+				<pm_wert lfd_nr="002">209.8</pm_wert>
+				<pm_wert lfd_nr="003">208.9</pm_wert>
+				<pm_mittelwert>210.2</pm_mittelwert>
+			</pruefmerkmal>
+		</messwertdaten>
+		<pruefergebnis einstufung="Schlecht">
+			<bemerkungen>
+				<![CDATA[
+					Einige Prüf-Ergebnisse liegen außerhalb der gültigen Toleranz.
+				]]>
+			</bemerkungen>
+		</pruefergebnis>
+	</messbericht>
+</messberichte>

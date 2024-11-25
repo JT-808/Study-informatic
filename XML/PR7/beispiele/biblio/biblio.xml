@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!-- Stylesheet-Zuweisung, hat mit aelteren Browsern bzw aelteren Versionen der Browser funktioniert -->
+<?xml-stylesheet type="text/xsl" href="biblio.xsl"?>
+
+<biblio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="biblio.xsd">
+	<buch buch_id="_00001">
+		<kuerzel>[Harold 05]</kuerzel>
+		<titel>XML in a Nutshell</titel>
+		<autoren>Harold, E.R.; Means, W.S.</autoren>
+		<verlag>O&apos;Reilly Verlag Köln</verlag>
+	</buch>
+	<buch buch_id="_00002">
+		<kuerzel>[Niedermeier 05]</kuerzel>
+		<titel>Java und XML</titel>
+		<autoren>Niedermeier, St.; Scholz, M.</autoren>
+		<verlag>Galileo Press Bonn</verlag>
+	</buch>
+</biblio>

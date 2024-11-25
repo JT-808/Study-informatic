@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:element name="biblio">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="buch" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="buch">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="kuerzel" type="xsd:string" />
+				<xsd:element name="titel" type="xsd:string" />
+				<xsd:element name="autoren" type="xsd:string"  />
+				<xsd:element name="verlag" type="xsd:string"  />
+			</xsd:sequence>
+			<xsd:attribute name="buch_id" type="xsd:ID" use="required" />
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- Aufbau eines XSD-Stufenmodells (eine Ausnahme, siehe unten -->
+	<!-- Stand 21.10.2022 -->
+	
+	<!-- GLOBALE DEKLARATIONEN -->
+	
+	<!-- Einfache Typen -->
+	<xs:simpleType name="dimension">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Stunden"/>
+			<xs:enumeration value="Min"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- Komplexe Typen -->
+	<xs:element name="prueferdaten">
+		<xs:complexType>
+			<xs:attribute name="pers_id" type="xs:string"/>
+			<xs:attribute name="email" type="xs:string"/>
+			<xs:attribute name="pr_name" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="arbeitszeit">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:decimal">
+					<xs:attribute name="dimension" type="dimension" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="artikel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="art_bezeichnung" type="xs:string"/>
+			</xs:sequence>
+			<xs:attribute name="artikel_id" type="xs:string"/>
+			<xs:attribute name="zeichnungs_nr" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="pruefplandaten">
+		<xs:complexType>
+			<xs:attribute name="ppl_id" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="lieferantendaten">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="lieferantenname" type="xs:string"/>
+			</xs:sequence>
+			<xs:attribute name="lief_id" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="pm_wert">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:decimal">
+					<xs:attribute name="lfd_nr" type="xs:int"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Deklaration Artikeldaten -->
+	<xs:element name="artikeldaten">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="artikel"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Deklaration Pruefmerkmal -->
+	<xs:element name="pruefmerkmal">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="pm_wert" minOccurs="1" maxOccurs="10"/>
+				<xs:element name="pm_mittelwert" type="xs:double"/>
+			</xs:sequence>
+			<xs:attribute name="pm_name" type="xs:string"/>
+			<xs:attribute name="pm_dimension" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<!-- Deklaration Kopfdaten -->
+	<xs:element name="kopfdaten">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="prueferdaten"/>
+				<xs:element ref="arbeitszeit"/>
+				<xs:element ref="artikeldaten"/>
+				<xs:element ref="pruefplandaten"/>
+				<xs:element ref="lieferantendaten"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!--  Deklaration Messwertdaten -->
+	<xs:element name="messwertdaten">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="pruefmerkmal" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Deklaration Pruefergebnis (geschachtelt) -->
+	<xs:element name="pruefergebnis">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="bemerkungen" type="xs:string"/>
+				<xs:element name="nacharbeitsdatum" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="format" type="xs:string"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="einstufung">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Gut"/>
+						<xs:enumeration value="Schlecht"/>
+						<xs:enumeration value="Nacharbeit"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Deklaration Messbericht -->
+	<!-- bestehend aus den drei Teilen Kopfdaten, Messwertdaten und Pruefergebnis -->
+	<xs:element name="messbericht">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="kopfdaten"/>
+				<xs:element ref="messwertdaten"/>
+				<xs:element ref="pruefergebnis"/>
+			</xs:sequence>
+			<xs:attribute name="mb_id" type="xs:ID" use="required"/>
+			<xs:attribute name="pruefdatum" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Deklaration Root-Elemente Messberichte -->
+	<xs:element name="messberichte">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="messbericht" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

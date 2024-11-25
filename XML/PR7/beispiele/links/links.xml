@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<links>
+	<link>
+		<titel>XML Technology - W3C</titel>
+		<ref>https://www.w3.org/standards/xml/</ref>
+		<description>W3C-Seite zu XML-Technologien</description>
+		<modul>DTA</modul>
+	</link>
+	<link>
+		<titel>Extensible Markup Language (XML) 1.0 (Fifth Edition)</titel>
+		<ref>https://www.w3.org/TR/xml/</ref>
+		<description>Offizielle W3C-Seite zu XML</description>
+		<modul>DTA</modul>
+	</link>
+	<link>
+		<titel>xslt cover page - W3C</titel>
+		<ref>https://www.w3.org/TR/xslt</ref>
+		<description>Offizielle W3C-Seite zu XSLT</description>
+		<modul>DTA</modul>
+	</link>
+	<link>
+		<titel>Hochschule Mittweida</titel>
+		<ref>https://www.hs-mittweida.de</ref>
+		<description>Die Homepage der Hochschule Mittweida</description>
+		<modul>Allgemein</modul>
+	</link>	
+</links>
