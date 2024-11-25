@@ -97,12 +97,11 @@ public class StaxWriter {
                 
                 // Abschluss des Dokuments
                 writer.writeEndElement(); // rechnungsliste Ende
+            }
                 writer.writeEndDocument();
                 writer.flush();
                 writer.close();
             
-                
-            }
 
         } catch (XMLStreamException e) {
             e.printStackTrace();
