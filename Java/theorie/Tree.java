@@ -1,3 +1,5 @@
+package theorie;
+
 
 
 import java.util.*;
@@ -22,7 +24,7 @@ public class Tree {
         System.out.println("Bitte geben Sie die Zeichen für Preorder ein (z.B. a b d e c f):");
         String preorderInput = scanner.nextLine();
         System.out.println("Bitte geben Sie die Zeichen für Postorder ein (z.B. d e b f c a):");
-        String postorderInput = scanner.nextLine();
+        String postorderInput = scanner.nextLine();a
 
         char[] preorderValues = preorderInput.replaceAll("\\s+", "").toCharArray();
         char[] postorderValues = postorderInput.replaceAll("\\s+", "").toCharArray();

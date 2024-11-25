@@ -1,4 +1,4 @@
-package suche;
+package theorie.suche;
 
 /*
  * Die naive Suche durchsucht die Liste ähnlich wie die 
