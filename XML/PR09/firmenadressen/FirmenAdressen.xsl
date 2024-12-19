@@ -33,13 +33,76 @@
 			</fo:layout-master-set>
 			
 			<fo:page-sequence master-reference="Standard-A4-Seite">
+			<!-- statische Bereiche fuer Kopf- und Fusszeile formatieren-->
+			<fo:static-content flow-name="header" text-align="center">
+			<fo:block font-size="16pt">XSL-FO-Praktikum</fo:block>
+			</fo:static-content>
+
+			<fo:static-content flow-name="footer" text-align="right">
+			
+			<!-- Seitennummerierung mit fo:page-numver und fo:page-numver-citation-->
+			<fo:block font-size="14pt">Seite<fo:page-number/>
+			von <fo:page-number-citation ref-id="LastPage"/>
+			</fo:block>
+			</fo:static-content>
+
+
 				<!-- fliessenden Bereich des Textkoerpers formatieren -->
 				<fo:flow flow-name="xsl-region-body">
-					<fo:block/>
+				<xsl:apply-templates/>
+					<fo:block id="LastPage"/>
 				</fo:flow>
 			</fo:page-sequence>
 			
 		</fo:root>
 	</xsl:template>
+
+	<!-- zweites Template zur Ausgabe der Ueberschrift,Tabellenheader und Tabellenkörper-->
+	<xsl:template match="ADRESSEN">
+	<!-- bsp. fuer Inline-Rotfärbung-->
+	<fo:block>
+	<fo:inline color="red">Firmenadressen in Mittweida und Chemnitz</fo:inline> (Anzahl:
+	<xsl:value-of select="count(ADRESSE[ORT='Mittweida' or ORT='Chemnitz'])"/>)
+	</fo:block>
+	<!-- Tabellenstruktur - layout-->
+	<fo:table border-style="solid" table-layout="fixed" width="15">
+		<fo:table-column column-width="1.5cm"/>
+		<fo:table-column column-width="5.4cm"/>
+		<fo:table-column column-width="2.8cm"/>
+		<fo:table-column column-width="3.8cm"/>
+		<fo:table-column column-width="1.4cm"/>
+		<fo:table-header>
+			<xsl:call-template name="table-head"/>
+		</fo:table-header>
+		<fo:table-body>
+			<xsl:apply-templates select="ADRESSE[ORT='Mittweida' or ORT='Chemnitz']">
+				<xsl:sort select="FIRMA"/>
+			</xsl:apply-templates>
+		</fo:table-body>
+	</fo:table>
+	</xsl:template>
 	
+
+	<!-- drittes Template zur Formatierung und statischen Ausgabe des Tabellenkopfes-->
+	<xsl:template name="table-head">
+		<fo:table-row background-color="rgb(0%,50%,0%)">
+			<fo:table-cell xsl:use-attribute-sets="cell-style">
+			<fo:block xsl:use-attribute-sets="block-style" text-align="center">ID</fo:block>
+			</fo:table-cell>
+			<xsl:use-attribute-sets="cell-style">
+			<fo:block xsl:use-attribute-sets="block-style" text-align="center">Firmenname</fo:block>
+			</fo:table-cell>
+			<fo:table-cell xsl:use-attribute-sets="cell-style">
+			<fo:block xsl:use-attribute-sets="block-style" text-align="center">Ort</fo:block>
+			</fo:table-cell>
+			<fo:table-cell xsl:use-attribute-sets="cell-style">
+			<fo:block xsl:use-attribute-sets="block-style" text-align="center">Telefon</fo:block>
+			</fo:table-cell>
+			<fo:table-cell xsl:use-attribute-sets="cell-style">
+			<fo:block xsl:use-attribute-sets="block-style" text-align="center">Anz. MA</fo:block>
+			</fo:table-cell>
+		</fo:table-row>
+	</sxl:template>
+
+
 </xsl:stylesheet>

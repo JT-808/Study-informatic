@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>hs-mittweida.de: Netz- und Kommunikationszentrum</title>
+		<link>https://www.ncc.hs-mittweida.de/</link>
+		<description>Neuigkeiten, Störungen, ...</description>
+		<language>de-DE</language>
+		<copyright>Hochschule Mittweida</copyright>
+		<pubDate>Thu, 05 Dec 2024 00:16:02 +0100</pubDate>
+		<lastBuildDate>Thu, 05 Dec 2024 00:16:02 +0100</lastBuildDate>
+		<atom:link href="https://www.ncc.hs-mittweida.de/?type=9818" rel="self" type="application/rss+xml"/>
+		<generator>TYPO3 EXT:news</generator>
+		<item>
+			<guid isPermaLink="false">news-8464</guid>
+			<pubDate>Tue, 29 Oct 2024 09:33:18 +0100</pubDate>
+			<title>Wartungsarbeiten am Netzwerk Haus 39</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8464/</link>
+			<description>Am 01. November werden in die Netzknoten der 1. und 2. Etage des Hauses 39 Switche einer neuen Generation eingebaut. Netzwerk und WLAN werden in den beiden Etagen ganztägig nicht zur Verfügung stehen.  
+</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Leider ist das aufgrund der räumlichen Situation im Gebäude nicht anders möglich. Bei den Umbauten in anderen Häusern konnte die neue Infrastruktur parallel aufgebaut werden, so dass die Ausfallzeiten im Minutenbereich lagen.  </p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8398</guid>
+			<pubDate>Wed, 18 Sep 2024 12:13:30 +0200</pubDate>
+			<title>Update: Probleme bei der Anmeldung im WLAN über easyroam behoben</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8398/</link>
+			<description>Zur Zeit ist die Anmeldung am eduroam über easyroam teilweise gestört. Die Ursache ist noch nicht gefunden. Bitte nutzen Sie bei Problemen alternativ das Netzwerk HSMW-Portal. Dort können Sie sich mit Benutzername und Kennwort anmelden. Die Verbindung bleibt acht Stunden aktiv.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+								</div>
+									<!-- content elements -->
+<div id="c115646" class="frame frame-default frame-type-text frame-layout-0"><header><h2 class="">
+				Nachtrag vom 19. September 2024, 08:33 Uhr
+			</h2></header><p>Die Probleme sind mittlerweile behoben. Ursache waren Probleme mit zwei Servern des DFN-Vereins, wodurch es bei allen Teilnehmern von eduroam zu Störungen kam.</p></div>
+							]]>
+			</content:encoded>
+			<category>Störungsmeldungen</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8356</guid>
+			<pubDate>Mon, 12 Aug 2024 13:14:00 +0200</pubDate>
+			<title>Wartungsarbeiten an der Netzwerkhardware in Teilen des Hauses 1</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8356/</link>
+			<description>Am 14.08., 15.08. und 16.08. jeweils von 07:00 bis 08:00 Uhr finden im Haus 1, Wartungsarbeiten am Datennetz statt. Betroffen sind alle Räume in den Gebäudeteilen A und D sowie einige im Teil B. Es wird an allen Datenanschlüssen zu einer kurzen Unterbrechung (ca. 5 Minuten) der Datenverbindung kommen. </description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Die Arbeiten dienen dem Ersatz der zentralen Switche in den Anschlussräumen 1-K10 und 1-405a durch neue Hardware. </p>
+<p>Während der Arbeiten werden alle Datenanschlüsse vom alten auf den neuen Switch umgesteckt und die Patchkabel erneuert. </p>
+<p> Sollten Sie an den Folgetagen Probleme mit Ihren Endgeräten (PCs, Telefone, Drucker) feststellen, von denen Sie glauben, dass sie auf diese Wartungsarbeiten zurückzuführen sein könnten, so wenden Sie sich bitte an unser Ticket-System (it-service@hs-mittweida.de) oder an unsere Service-Hotline (Tel. 1410). </p>
+<p> Wir bitten eventuelle Unannehmlichkeiten im Zusammenhang mit dieser Wartung zu entschuldigen.  </p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>NCC News</category>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8240</guid>
+			<pubDate>Wed, 08 May 2024 13:14:51 +0200</pubDate>
+			<title>Wartungsarbeiten an den Switchen einiger Häuser</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8240/</link>
+			<description>Am Freitag, den 10.05.2024  wird im Zeitraum von 16:00 bis 22:00 Uhr in folgenden Häusern die Betriebssystemsoftware der lokalen Switche aktualisiert:
+Haus 1 (teilweise), Haus 2, Haus 4, Haus 5, Haus 6, Haus 7, Haus 8, Haus 9 (teileweise), Haus 10, Haus 20 (teilweise), Haus 32
+Die Arbeiten führen zum kurzzeitigen Ausfall aller Netzwerkanschlüsse, der IP-Telefone und des Wlans in den genannten Häusern. </description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Mit der Aktualisierung der Betriebssystemsoftware der Switche werden kleinere funktionelle Verbesserungen eingeführt und eine Sicherheitslücke beseitigt.</p>
+<p>Dieses Update erfordert einen Neustart der Switche. Nach dem Neustart authentifizieren sich alle Endgeräte, die während der Wartung aktiv sind (Drucker, IP-Telefone, Wlan-Accesspoints, Arbeitsplatz-PC, dezentrale Server) erneut am Netzwerk.&nbsp;</p>
+<p>Sollten Sie nach dem Wartungszeitraum Probleme feststellen, so wenden Sie sich bitte an <a href="javascript:linkTo_UnCryptMailto(&apos;ocknvq,kv\/ugtxkegBju\/okvvygkfc0fg&apos;);">it-service<span>@</span>hs-mittweida.de.</a></p>
+<p>Wir bitten eventuelle Unannehmlichkeiten im Zusammenhang mit der Wartung zu entschuldigen.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>IT-Sicherheit</category>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8220</guid>
+			<pubDate>Mon, 15 Apr 2024 10:52:45 +0200</pubDate>
+			<title>Netzwerkunterbrechung wegen Stromabschaltung</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8220/</link>
+			<description>Am 20. April werden zwischen 7:00 und 12:00 Uhr neue Stromanschlüsse für die Häuser 1 und 2 geschaltet. In diesen Gebäuden und den Häusern 18 und 20 wird deshalb kein LAN und WLAN zur Verfügung stehen.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Die Unterbrechung ist notwendig, weil die jetzigen Stromkabel für die Häuser 1 und 2 durch das Baufeld der neuen Hochschulbibliothek verlaufen. Die Häuser 18 und 20 sind an die Netzwerkinfrastruktur im Haus 2 angeschlossen und deshalb mit betroffen.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8214</guid>
+			<pubDate>Thu, 11 Apr 2024 08:40:44 +0200</pubDate>
+			<title> Update: Ausfall der Zahlungsschnittstelle des Landes Sachsen</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8214/</link>
+			<description>Das Problem wurde gelöst.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Die Zahlungsschnittstelle des Landes Sachsen (ePayBL) ist zur Zeit nicht erreichbar. Dadurch sind keine Buchungen und Käufe im  Buchungsportal PAY möglich</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Störungsmeldungen</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8173</guid>
+			<pubDate>Tue, 05 Mar 2024 12:50:48 +0100</pubDate>
+			<title>Probleme mit Microsoft Outlook</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8173/</link>
+			<description>Derzeit treten vermehrt Probleme mit Outlook auf. Insbesondere außerhalb des Hochschulnetzes erscheint häufig das Anmeldefenster und fordert zur erneuten Eingabe der Logindaten auf. Der Fehler wird untersucht, um eine nachhaltige Lösung zu finden, welche dieses Problem behebt.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Aktuell berichten einige Nutzer, dass sie sich immer wieder bei Outlook anmelden müssen, obwohl sie bereits ihre Anmeldeinformationen eingegeben haben. Das Verhalten scheint sich auf Mobilgeräte zu beschränken und sporadisch aufzutauchen.&nbsp;Die genaue Ursache für dieses Verhalten ist im Detail noch nicht klar und wird von uns derzeit noch untersucht. Eine schnelle und nachhaltige Lösung ist nach derzeitigem Stand  allerdings nicht in Sicht.</p>
+<p>Um in der Zwischenzeit ohne Einschränkungen auf Ihr Postfach und Ihren Kalender zugreifen zu können, verwenden sie <a href="https://xc.hs-mittweida.de/owa" target="_blank" class="external-link">Outlook Web Access</a> oder <a href="https://rdg.hs-mittweida.de/" target="_blank" class="external-link">greifen Sie remote</a> auf Ihren stationären Rechner im Hochschulnetz zu.</p>
+<p>Um uns bei der Fehleranalyse zu unterstützen, können die folgenden Informationen uns weiterhelfen:</p><ul><li>Tritt der Fehler auf einem von der Hochschule verwalteten Rechner auf (Domänenmitglied)?</li><li>Tritt der Fehler nur mit aktiven VPN auf? Wenn ja, welchen VPN-Server nutzen Sie (vpn4/vpn6) mit welchen Anmeldenamen?</li><li>Funktioniert Outlook nach der Eingabe der Logindaten wie gewünscht?</li><li>Ist bei den Anmeldefenstern ein zeitliches Muster zu erkennen, ist dieses bspw. nach gleich nach dem Umschalten der VPN-Verbindung da und in welchen Abständen kommt es?</li></ul><p>Die Meldung dieser Informationen per Mail an <a href="javascript:linkTo_UnCryptMailto(&apos;ocknvq,kv\/ugtxkegBju\/okvvygkfc0fg&apos;);">it-service<span>@</span>hs-mittweida.de</a>&nbsp;hilft uns das Problem einzugrenzen und besser nachstellen zu können.&nbsp;</p>
+<p><em>Vielen Dank für Ihr Verständnis und Ihre Geduld.</em></p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Störungsmeldungen</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8145</guid>
+			<pubDate>Mon, 19 Feb 2024 16:11:00 +0100</pubDate>
+			<title>Wartungsarbeiten an der zentralen Netzwerkinfrastruktur</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8145/</link>
+			<description>Im Zeitraum von Freitag, den 23.02.2024, 16:00 Uhr bis Sonntag, den 25.02.2024 18:00 Uhr werden zentrale Komponenten im Netzwerk gegen neue Hardware getauscht und umfangreiche Konfigurationsänderungen durchgeführt. Es kommt im genannten Zeitraum zu mehreren kurzzeitigen Unterbrechungen fast aller Netzwerk-Dienste der Hochschule, insbesondere der Anbindungen der Häuser, der VPN-Gateways, in den Wlans &quot;eduroam&quot; und &quot;MW-City&quot;, beim Zugang zu den Web-, Email- und Telefonie-Servern sowie zu den virtuellen Maschinen.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Die zentralen Switch-Router und die Internet-Router werden durch neue Geräte ersetzt.</p>
+<p>Damit einher geht die Neukonfiguration der Anbindung der Switche in den Häusern, der zentralen Firewalls und des Internet-Zugangs an die neuen Switch-Router.</p>
+<p>Die Änderung dient der Erhöhung der Sicherheit und der Verfügbarkeit und der Erhöhung des Datendurchsatzes im Kernnetz. Sie ist Bestandteil der Erneuerung sämtlicher Switche der Hochschule.&nbsp;</p>
+<p>Damit sollten die zentralen Komponenten auf dem "Stand der Technik" für die nächsten Jahre einen stabilen Betrieb ermöglichen.</p>
+<p>Sollten Sie nach dem Wartungszeitraum Probleme insbesondere bei der Erreichbarkeit von Servern bzw. Diensten feststellen, so wenden Sie sich bitte an <a href="javascript:linkTo_UnCryptMailto(&apos;ocknvq,kv\/ugtxkegBju\/okvvygkfc0fg&apos;);" class="mail">it-service<span>@</span>hs-mittweida.de</a></p>
+<p>Wir bitten eventuelle Unannehmlichkeiten im Zusammenhang mit der Wartung zu entschuldigen.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>IT-Sicherheit</category>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8147</guid>
+			<pubDate>Fri, 16 Feb 2024 11:58:19 +0100</pubDate>
+			<title>Mails mit schädlichen Dateien im Umlauf</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8147/</link>
+			<description>Aktuell gehen Mails aus scheinbar vorausgegangenem Mailverkehr ein, die Dateien mit Schadcode enthalten.
+Das können ZIP-Dateien, aber auch Excel- und alle anderen Dateiformate sein. Der Schadcode kann in einem Bild eingebettet sein und wird so vom Virenscanner nicht erkannt. Bei verschlüsselten Dateien wird das Kennwort in der Regel mitgeliefert. Bitte beachten Sie:</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<ul><li>überprüfen Sie genau den Absender der Mail, oft passt der angezeigte Name nicht zur E-Mailadresse</li><li>öffnen Sie keine verdächtigen Anhänge</li><li>senden Sie verdächtige Mails als <strong>Anhang</strong> an den <a href="javascript:linkTo_UnCryptMailto(&apos;ocknvq,kv\/ugtxkegBju\/okvvygkfc0fg&apos;);" class="mail">Helpdesk</a></li></ul><p>Sollte Sie Aktionen in einer solchen Mail ausgeführt haben, melden Sie sich bitte ebenfalls umgehend beim NCC.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>IT-Sicherheit</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8146</guid>
+			<pubDate>Fri, 16 Feb 2024 11:42:29 +0100</pubDate>
+			<title>Wartungsarbeiten an der Netzwerkhardware in Teilen des Hauses 1</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8146/</link>
+			<description>Am Freitag, den 16.02.2024  ab 20:00 Uhr sowie am Montag, 19.02.2024 ab 20:00 Uhr finden im Haus 1 Wartungsarbeiten am Datennetz statt. Betroffen sind alle Räume auf der Westseite des Hauses EG-2.OG, alle Räume im Aufgang C und alle Räume im Aufgang D nördlich des Treppenhauses. Dabei wird es an allen Datenanschlüssen zu einer kurzen Unterbrechung der Datenverbindung kommen.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Die Arbeiten dienen dem Ersatz der zentralen Switche in den Anschlussräumen 1-018c und 1-129d durch neue Hardware. Während der Arbeiten werden alle Datenanschlüsse vom alten auf den neuen Switch umgesteckt und wo erforderlich die Patchkabel ausgetauscht. </p>
+<p>Sollten Sie an den Folgetagen Probleme mit Ihren Endgeräten (PCs, Telefone, Drucker) feststellen, von denen Sie glauben, dass sie auf diese Wartungsarbeiten zurückzuführen sein könnten, so wenden Sie sich bitte an unser Ticket-System (<a href="javascript:linkTo_UnCryptMailto(&apos;ocknvq,kv\/ugtxkegBju\/okvvygkfc0fg&apos;);">it-service<span>@</span>hs-mittweida.de</a>)&nbsp;oder an unsere Service-Hotline (Tel. 1410).&nbsp;</p>
+<p>Wir bitten eventuelle Unannehmlichkeiten im Zusammenhang mit dieser Wartung zu entschuldigen. </p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8088</guid>
+			<pubDate>Thu, 21 Dec 2023 08:09:59 +0100</pubDate>
+			<title>Verfügbarkeit von Diensten über den Jahreswechsel</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8088/</link>
+			<description>Aus Sicherheitsgründen werden die Dienste VPN und SSH in der Zeit vom 22.12.2023 22:00 Uhr bis zum 02.01.2024 06:00 Uhr nicht zur Verfügung stehen.
+</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Typischerweise werden Cyberangriffe verstärkt zu Feiertagen ausgeführt. Zum Weihnachtsfest des letzten Jahres war eine sächsische Hochschule massiv betroffen. Aus diesem Grunde erfolgt in Abstimmung mit dem Rektorat die Einschränkung.&nbsp;</p>
+<p>Alle anderen Dienste stehen uneingeschränkt zur Verfügung, auch die Lernplattformen, E-Mail und das Ticketsystem. Während der Betriebsruhe werden vom NCC allerdings nur kritische Vorfälle behoben.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>IT-Sicherheit</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8083</guid>
+			<pubDate>Wed, 20 Dec 2023 09:43:00 +0100</pubDate>
+			<title>Aktualisierung des Chat-Servers auf Zulip 8.0</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8083/</link>
+			<description>Der Chat-Server https://chat.hs-mittweida.de wird am Donnerstag, den 21. Dezember 2023 auf die Zulip-Version 8.0 aktualisiert und steht in der Zeit zwischen 6 und 7 Uhr zeitweise nicht zur Verfügung.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Für das Chat-System Zulip wurde ein neues Release auf&nbsp;die&nbsp;<a href="https://zulip.readthedocs.io/en/latest/overview/changelog.html#zulip-server-8-0" target="_blank" class="external-link">Version 8.0</a>&nbsp;veröffentlicht. Es ist geplant unseren Server <a href="https://chat.hs-mittweida.de/" target="_blank" class="external-link">chat.hs-mittweida.de</a> am 21. Dezember 2023 auf diese Version zu aktualisieren. Dabei wird der Dienst in der Zeit zwischen 6 und 7 Uhr zeitweise nicht erreichbar sein.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8074</guid>
+			<pubDate>Wed, 13 Dec 2023 08:09:00 +0100</pubDate>
+			<title>Aktuelle Kampagne mit Phishing-Mails</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8074/</link>
+			<description>Aktuell gehen wieder vermehrt Phishing-Mails in den Postfächern ein, mit der Aufforderung sein Konto zu verifizieren. Diese Mails stammen nicht vom Helpdesk der Hochschule und sollten gelöscht bzw. ignoriert werden.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Die in der Mail verlinkte Seite fragt die Hochschul-Anmeldedaten ab und missbraucht diese anschließend.&nbsp;Der Absender ist in der Regel eine GMail-Adresse und die Webseite auf die verlinkt wird, gehört nicht zur Hochschule Mittweida.</p>
+<p>Bitte geben Sie dort auf keinen Fall ihre Anmeldedaten ein und löschen Sie die Mail. Falls dies bereits geschehen ist, <a href="https://setup.hs-mittweida.de/ndb/password_user" target="_blank" class="external-link">ändern sie bitte umgehend Ihr Passwort.</a>&nbsp;Bei Fragen kontaktieren Sie bitte das NCC per Mail an <a href="javascript:linkTo_UnCryptMailto(&apos;ocknvq,kv\/ugtxkegBju\/okvvygkfc0fg&apos;);" class="mail">it-service<span>@</span>hs-mittweida.de</a>.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>IT-Sicherheit</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8073</guid>
+			<pubDate>Tue, 12 Dec 2023 13:17:40 +0100</pubDate>
+			<title>Wartungsarbeiten an der Netzwerkhardware im Haus 6, 4. Etage</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8073/</link>
+			<description>Am Mittwoch, den 13.12.2023  08:00 bis 10:00 Uhr sowie am Donnerstag, den 14.12. ab 8:00 Uhr finden im Haus 6 in der 4. Etage Wartungsarbeiten am Datennetz statt. Dabei wird es an allen Datenanschlüssen zu einer kurzen Unterbrechung der Datenverbindung kommen.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Die Arbeiten dienen dem Ersatz des zentralen Switches im Anschlussraum 6-417 durch neue Hardware. Während der Arbeiten werden alle Datenanschlüsse vom alten auf den neuen Switch umgesteckt und wo erforderlich die Patchkabel ausgetauscht. Bei eventuellen Problemen melden Sie sich direkt bei uns im Hausanschlussraum 6-417. Wir melden uns jeweils vor Ort, um sicherzustellen, dass Lehrveranstaltungen von den Arbeiten nicht betroffen sind. Wir bitten eventuelle Unannehmlichkeiten im Zusammenhang mit dieser Wartung zu entschuldigen. </p>
+<p>&nbsp;</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8057</guid>
+			<pubDate>Tue, 21 Nov 2023 14:57:01 +0100</pubDate>
+			<title>Wartungsarbeiten an der Netzwerkhardware im Haus 5a</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8057/</link>
+			<description>Am Freitag, den 24.11.2023 von 13:00 bis 17:00 Uhr finden im Haus 5a Wartungsarbeiten am Datennetz statt. Dabei wird es an allen Datenanschlüssen zu einer kurzen Unterbrechung der Datenverbindung kommen. </description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Die Arbeiten dienen dem Ersatz des zentralen Switches des Hauses 5a durch neue Hardware.</p>
+<p>Während der Arbeiten werden alle Datenanschlüsse vom alten auf den neuen Switch umgesteckt und wo erforderlich die Patchkabel ausgetauscht.</p>
+<p>Die Arbeiten werden so durchgeführt, dass die geplanten Lehrveranstaltungen ohne Unterbrechungen ablaufen können.</p>
+<p>Bei eventuellen Problemen melden Sie sich direkt bei uns im Hausanschlussraum 5-212a.</p>
+<p>Wir bitten eventuelle Unannehmlichkeiten im Zusammenhang mit dieser Wartung zu entschuldigen.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8051</guid>
+			<pubDate>Fri, 17 Nov 2023 10:15:00 +0100</pubDate>
+			<title>Aktualisierung des Chat-Servers auf Zulip 7.5</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8051/</link>
+			<description>Der Chat-Server https://chat.hs-mittweida.de wird am Montag, den 20. November 2023 auf die Zulip-Version 7.5 aktualisiert und steht in der Zeit zwischen 6 und 7 Uhr zeitweise nicht zur Verfügung.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Für das Chat-System Zulip wurde ein neues Release auf&nbsp;die&nbsp;<a target="_blank" class="external-link">Version 7.5</a>&nbsp;veröffentlicht. Es ist geplant unseren Server <a href="https://chat.hs-mittweida.de/" target="_blank" class="external-link">chat.hs-mittweida.de</a> am 20. November 2023 auf diese Version zu aktualisieren. Dabei wird der Dienst in der Zeit zwischen 6 und 7 Uhr zeitweise nicht erreichbar sein.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8049</guid>
+			<pubDate>Thu, 16 Nov 2023 15:15:00 +0100</pubDate>
+			<title>Wartungsarbeiten am Dokumentenmanagementsystem Docuware</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8049/</link>
+			<description>Das Dokumentenmanagementsystem Docuware wird am 17. November 2023 aktualisiert und steht in der Zeit zwischen 6 und 7 Uhr zeitweise nicht zur Verfügung.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Die Wartungsarbeiten sind aufgrund einer Systemaktualisierung auf eine neue Version notwendig. Das Docuware-System und angeschlossene Systeme werden im Wartungszeitraum temporär nicht nutzbar sein.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-7990</guid>
+			<pubDate>Wed, 08 Nov 2023 07:32:00 +0100</pubDate>
+			<title>Umstellung des WLAN-Anmeldeverfahrens</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/7990/</link>
+			<description>Mit dem Start in das neue Semester wird das WLAN-Anmeldeverfahren auf easyroam umgestellt. Durch einen Zertifikats-basierten Ansatz wird das Sicherheitsniveau erhöht. Die bereitgestellten Apps erleichtern zudem die WLAN-Einrichtung durch den Nutzer.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p><strong>easyroam </strong>versteht sich als eine Weiterentwicklung des Anmeldeverfahrens am eduroam-Dienst. Dies bedeutet, dass weiterhin das <a href="https://eduroam.org/" target="_blank" class="external-link">eduroam-Netzwerk</a> mit all seinen Vorteilen genutzt wird, nur die Anmeldung am WLAN ändert sich.&nbsp;</p>
+<p>Diese Änderung macht es notwendig, dass alle Geräte, die das WLAN der Hochschule (eduroam) nutzen auf das neue Verfahren umgestellt werden müssen. Das neue Verfahren stellt Apps zur einfachen Einrichtung für alle gängigen Systeme bereit.&nbsp;</p>
+<p><strong>Konkret bedeutet dies:</strong></p><ol><li>Neue Geräte, die erstmalig das WLAN nutzen wollen, müssen ab sofort die <a href="https://www.easyroam.de/Auth/Login?entityID=https%3A%2F%2Flogin4.hs-mittweida.de%2Fidp%2Fshibboleth" target="_blank" class="external-link">easyroam</a>-App verwenden für die Ersteinrichtung.</li><li>Geräte, die schon das WLAN genutzt haben, können das WLAN ebenfalls ab sofort mithilfe von <a href="https://www.easyroam.de/Auth/Login?entityID=https%3A%2F%2Flogin4.hs-mittweida.de%2Fidp%2Fshibboleth" target="_blank" class="external-link">easyroam</a> neu einrichten. Es gibt bis zum 31. Oktober 2023 eine Übergangsfrist, bis zu der die bisherige Konfiguration noch funktioniert. Ab November wird somit nur das neue Verfahren funktionieren.</li></ol><p>Weitere Detailinformationen und häufig gestellte Fragen zur Umstellung finden Sie auf einer <a href="https://wiki.hs-mittweida.de/de/Easyroam-Umstellung" target="_blank" class="external-link">extra bereitgestellten Wiki-Seite</a>. Allgemeine Informationen zur Anmeldung im WLAN finden Sie ebenfalls <a href="https://wiki.hs-mittweida.de/de/Kategorie:WLAN" target="_blank" class="external-link">im Wiki an gewohnter Stelle</a>.</p>
+<p>Bei Problemen oder Fragen wenden Sie sich an den <a href="javascript:linkTo_UnCryptMailto(&apos;ocknvq,kv\/ugtxkegBju\/okvvygkfc0fg&apos;);" class="mail">Helpdesk</a>.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>NCC News</category>
+			<category>Software</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-8000</guid>
+			<pubDate>Fri, 29 Sep 2023 13:53:00 +0200</pubDate>
+			<title>Mails mit verdächtigen Anhängen und Links im Umlauf </title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/8000/</link>
+			<description>Aktuell erhalten Hochschulangehörige wieder Mails, welche als Antwort auf einen tatsächlichen Mailverkehr getarnt sind. Im Anhang oder im Mailtext sind jedoch Links auf Schadcode enthalten.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Die aktuell im Umlauf befindlichen Schad-Mails sind als Antwort auf eine tatsächliche Konversation verfasst. Durch diesen Umstand erscheinen sie beim Überfliegen zunächst als plausibel und verleiten schneller zum Öffnen des Anhangs bzw. zum Anklicken des Links. Über die Absenderadresse war die Fälschung in den meisten Fällen zu erkennen.</p>
+<p>Im Anhang bzw. hinter dem Link in der Mail (oder im angehängten PDF) versteckt sich bei den untersuchten Fällen eine Archivdatei, welche durch ein mitgeteiltes Passwort entpackt werden soll. Erst darin befindet sich der eigentliche Schadcode der dann ausgeführt werden müsste.&nbsp;</p>
+<p>Sollten sie den Schadcode ausgeführt haben oder sie sind sich unsicher, dann nehmen sie mit dem <a href="javascript:linkTo_UnCryptMailto(&apos;ocknvq,kv\/ugtxkegBju\/okvvygkfc0fg&apos;);" class="mail">Helpdesk</a> Kontakt auf.</p>
+<p>Weitere Informationen finden sie auf den <a href="https://www.verbraucherzentrale.de/wissen/digitale-welt/apps-und-software/emotet-trojaner-beantwortet-empfangene-emails-und-klaut-anhaenge-35502" target="_blank" class="external-link">Seiten der Verbraucherzentrale</a>, beachten sie außerdem&nbsp;unsere&nbsp;<a href="https://wiki.hs-mittweida.de/de/Umgang_mit_Phishing_Mails" target="_blank" class="external-link" style="font-size: 1rem;">allgemeinen Hinweise zum Umgang mit Phishing-Mails</a>.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>IT-Sicherheit</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-7997</guid>
+			<pubDate>Thu, 28 Sep 2023 08:04:00 +0200</pubDate>
+			<title>Wartungsarbeiten am Dokumentenmanagementsystem Docuware</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/7997/</link>
+			<description>Das Dokumentenmanagementsystem Docuware wird am 30. September 2023 in der Zeit zwischen 7 und 18 Uhr zeitweise nicht zur Verfügung stehen.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Das Wartungsfenster ist aufgrund einer umfangreichen Datenbank-Migration notwendig.&nbsp;Das Docuware-System und angeschlossene Systeme werden im Wartungszeitraum temporär nicht nutzbar sein.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-7975</guid>
+			<pubDate>Tue, 29 Aug 2023 13:21:00 +0200</pubDate>
+			<title>Exchange-Mail-Server ist wieder verfügbar</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/7975/</link>
+			<description>Ab sofort steht der Exchange-Server und somit der E-Mail-Dienst wieder im vollen Umfang zur Verfügung. </description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Die Exchange-Server sind wieder voll funktionsfähig und der Mail-Dienst kann somit vollumfänglich genutzt werden. Wir bitten um Entschuldigung für die entstandenen Unannehmlichkeiten.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Störungsmeldungen</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-7974</guid>
+			<pubDate>Tue, 29 Aug 2023 12:53:00 +0200</pubDate>
+			<title>Ausfall des Exchange-Mail-Server behoben</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/7974/</link>
+			<description>Aufgrund einer technischen Störung ist derzeit unser E-Mail-Dienst Exchange nicht verfügbar. Wir arbeiten an einer Lösung und melden uns sobald der Dienst wieder verfügbar ist. Die Störung ist mittlerweile behoben.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Derzeit ist der Exchange-Mail-Server leider nicht mehr erreichbar. Wir arbeiten bereits an der Fehlerbehebung und bitten noch um etwas Geduld. Wir werden uns umgehend melden sobald das Problem behoben ist. In der Zwischenzeit bitten wir, von weiteren Tickets zu dieser Störung abzusehen.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Störungsmeldungen</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-7972</guid>
+			<pubDate>Mon, 28 Aug 2023 10:54:00 +0200</pubDate>
+			<title>Aktualisierung des Chat-Servers auf Zulip 7.3</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/7972/</link>
+			<description>Der Chat-Server https://chat.hs-mittweida.de wird am Dienstag, den 29. August 2023 auf die Zulip-Version 7.3 aktualisiert und steht in der Zeit zwischen 6 und 7 Uhr zeitweise nicht zur Verfügung.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Für das Chat-System Zulip wurde ein neues Release auf&nbsp;die&nbsp;<a href="https://blog.zulip.com/2023/08/25/zulip-server-7-3-security-release/" target="_blank" class="external-link">Version 7.3</a>&nbsp;veröffentlicht. Es ist geplant unseren Server <a href="https://chat.hs-mittweida.de/" target="_blank" class="external-link">chat.hs-mittweida.de</a> am 29. August 2023  auf diese Version zu aktualisieren. Dabei wird der Dienst in der Zeit zwischen 6 und 7 Uhr zeitweise nicht erreichbar sein.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-7933</guid>
+			<pubDate>Wed, 12 Jul 2023 13:44:15 +0200</pubDate>
+			<title>Umstellung Telefonieprovider abgeschlossen</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/7933/</link>
+			<description>Heute erfolgte die Umstellung des Telefonie Providers der Hochschule. Mit der Umstellung wurden im NCC neue Gateways für die Außenanbindung der Telefonie in den produktiven Betrieb übernommen. Es wurden strengere Verschlüsselungsverfahren eingeführt und somit die Sicherheit erhöht.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Wie angekündigt erfolgte heute zwischen 6:00 und 8:00 Uhr die Umstellung des Telefonie Providers der Hochschule von British Telecom auf Vodafone. Basis dieser Umstellung war eine Sachsenweite Ausschreibung.&nbsp;</p>
+<p>Nach der Umstellung kam es zu Verbindungsproblemen bei weitergeleiteten Telefonaten. Deren Ursache konnte gegen 12:00 Uhr von Vodafone beseitigt werden.</p>
+<p>Mit dieser Umstellung haben wir zwei neue zueinander redundante Gateways in Betrieb genommen. Die Außenanbindung erfolgt ebenfalls redundant über die Glasfaser-Leitungen des DFN, der bisher für die Telefonie verwendete VDSL-Anschluss wurde damit obsolete.</p>
+<p>Mit der Umstellung wurden strengere Verschlüsselungsverfahren eingeführt. Ermöglicht wurde dies durch die Herauslösung des Faxdienstes aus der Telefonvermittlung.&nbsp;</p>
+<p>Weitere Verbesserungen des Telefoniedienstes sind in der 31. und 32. KW mit dem Upgrade der Call-Manager-Software geplant.&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-7927</guid>
+			<pubDate>Thu, 06 Jul 2023 10:37:00 +0200</pubDate>
+			<title>Wartungsarbeiten am Dokumentenmanagementsystem Docuware</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/7927/</link>
+			<description>Das Dokumentenmanagementsystem Docuware wird am 7. Juli 2023 aktualisiert und steht in der Zeit zwischen 6 und 7 Uhr zeitweise nicht zur Verfügung.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Die Wartungsarbeiten sind aufgrund einer Systemaktualisierung zur Fehlerbehebung und Verbesserung der Stabilität notwendig. Das Docuware-System und angeschlossene Systeme werden im Wartungszeitraum temporär nicht nutzbar sein.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-7926</guid>
+			<pubDate>Thu, 06 Jul 2023 10:32:00 +0200</pubDate>
+			<title>Aktualisierung des Chat-Servers auf Zulip 7.2</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/7926/</link>
+			<description>Der Chat-Server https://chat.hs-mittweida.de wird am Freitag, den 7. Juli 2023 auf die Zulip-Version 7.2 aktualisiert und steht in der Zeit zwischen 6 und 7 Uhr zeitweise nicht zur Verfügung.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Für das Chat-System Zulip wurde ein neues Release auf&nbsp;die&nbsp;<a href="https://blog.zulip.com/2023/07/05/zulip-server-7-2-bug-fix-release/" target="_blank" class="external-link">Version 7.2</a>&nbsp;veröffentlicht. Es ist geplant unseren Server <a href="https://chat.hs-mittweida.de/" target="_blank" class="external-link">chat.hs-mittweida.de</a> am 7. Juli 2023 auf diese Version zu aktualisieren. Dabei wird der Dienst in der Zeit zwischen 6 und 7 Uhr zeitweise nicht erreichbar sein.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-7862</guid>
+			<pubDate>Thu, 29 Jun 2023 12:43:00 +0200</pubDate>
+			<title>Aktualisierung des Chat-Servers auf Zulip 7.1</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/7862/</link>
+			<description>Der Chat-Server https://chat.hs-mittweida.de wird am Freitag, den 30. Juni 2023 auf die Zulip-Version 7.1 aktualisiert und steht in der Zeit zwischen 6 und 7 Uhr zeitweise nicht zur Verfügung.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Für das Chat-System Zulip wurde ein neues Release auf&nbsp;die&nbsp;<a href="https://blog.zulip.com/2023/06/13/zulip-server-7-1-bug-fix-release/" target="_blank" class="external-link">Version 7.1</a>.&nbsp;veröffentlicht. Es ist geplant unseren Server <a href="https://chat.hs-mittweida.de/" target="_blank" class="external-link">chat.hs-mittweida.de</a> am 30. Juni 2023 auf diese Version zu aktualisieren. Dabei wird der Dienst in der Zeit zwischen 6 und 7 Uhr zeitweise nicht erreichbar sein.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-7911</guid>
+			<pubDate>Thu, 08 Jun 2023 07:11:00 +0200</pubDate>
+			<title>Aktualisierung des Chat-Servers auf Zulip 7.0</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/7911/</link>
+			<description>Der Chat-Server https://chat.hs-mittweida.de wird am Freitag, den 9. Juni 2023 auf die Zulip-Version 7.0 aktualisiert und steht in der Zeit zwischen 7 und 9 Uhr zeitweise nicht zur Verfügung.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Für das Chat-System Zulip wurde ein neues Release auf&nbsp;die&nbsp;<a href="https://blog.zulip.com/2023/05/31/zulip-7-0-released/" target="_blank" class="external-link">Version 7.0</a>&nbsp;veröffentlicht. Es ist geplant unseren Server <a href="https://chat.hs-mittweida.de/" target="_blank" class="external-link">chat.hs-mittweida.de</a> am 9. Juni 2023 auf diese Version zu aktualisieren. Dabei wird der Dienst in der Zeit zwischen 7 und 9 Uhr zeitweise nicht erreichbar sein.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Wartungsarbeiten</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-7816</guid>
+			<pubDate>Mon, 08 May 2023 10:00:00 +0200</pubDate>
+			<title>Verbesserung des Anmeldeverfahrens an der Hochschule</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/7816/</link>
+			<description>Nutzer die sich auf Windows-Rechnern der Hochschule anmelden, müssen sich ab sofort nicht zusätzlich im Web oder dem Browser anmelden. Die Windows-Anmeldedaten werden automatisch für die Webdienste verwendet.</description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Durch die Erweiterung des unseres zentralen Single-Sign-On-Verfahrens (SSO), reicht es zukünftig aus sich einmalig an seinem Windows-Rechner anzumelden. Eine erneute Eingabe seines Passwortes bei Webdiensten der Hochschule ist dann nicht mehr notwendig. Die Voraussetzung dafür ist die Verwendung eines Windows-Rechners der durch die Hochschule bereitgestellt und eingerichtet wurde.</p>
+<p>Durch den Ausbau unseres Anmeldedienstes wird somit der&nbsp;Authentisierungsvorgangs weiter verbessert und für unsere Nutzer vereinfacht, neben der Zeitersparnis durch mehrfaches Eingeben der Anmeldedaten wird hier ebenso die Sicherheit erhöht.</p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>IT-Sicherheit</category>
+			<category>Software</category>
+		</item>
+		<item>
+			<guid isPermaLink="false">news-7797</guid>
+			<pubDate>Tue, 18 Apr 2023 08:00:00 +0200</pubDate>
+			<title>Migration auf Zoom X erfolgreich abgeschlossen</title>
+			<link>https://www.ncc.hs-mittweida.de/news/aktuell/7797/</link>
+			<description>Der Videokonferenzdienst Zoom der Hochschule Mittweida wurde in der letzten Nacht erfolgreich auf ZoomX der Telekom umgestellt. </description>
+			<content:encoded>
+							<![CDATA[
+								<!-- main text -->
+								<div itemprop="articleBody" class="clearfix">
+									<p>Die Migration der Zoom-Daten in die <a href="https://public.telekom.de/digitalisierungsloesungen/digitale-bildung-und-schule/zoom-x" target="_blank" class="external-link">ZoomX-Cloud der Telekom</a> wurde in der letzten Nacht erfolgreich durchgeführt und abgeschlossen. Falls Einwahlnummern in Meetings verwendet werden, sollten die entsprechenden Meetings aktualisiert werden, so dass hier die neuen Nummern in der Einladung angezeigt werden. Ansonsten sind keine weiteren Anpassungen durch den Nutzer notwendig.</p>
+<p>Falls es dennoch zu Problemen kommt, wenden sie sich bitte an unseren <a href="javascript:linkTo_UnCryptMailto(&apos;ocknvq,kv\/ugtxkegBju\/okvvygkfc0fg&apos;);" class="mail">Helpdesk</a> </p>
+								</div>
+							]]>
+			</content:encoded>
+			<category>Software</category>
+			<category>Wartungsarbeiten</category>
+		</item>
+	</channel>
+</rss>
