@@ -76,13 +76,16 @@ public class haeufigkeiten {
         double eam = berechneEAM(n, werte);
         double median = berechneEMedian(n, werte);
         double varianz2 = berechneVarianz(n, werte, eam);
+        double standartabweichung = berechneStandartabweichung(varianz2);
         double variationsK = berechneVariationsK(varianz2, eam);
 
         System.out.printf("\nempirisches arithmetisches Mittel: %.2f%n", eam);
         System.out.printf("empirischer Median: %.2f%n", median);
         System.out.println("empirischer Modalwert: " + modalwert);
-        System.out.printf("empirische Varianz: %.2f%n ", varianz2);
-        System.out.printf("empirischer Variationskoeffizient: %.2f%n ", variationsK);
+        System.out.printf("empirische Varianz S²: %.2f%n", varianz2);
+        System.out.printf("empirische Standartabweischung s: %.2f%n", standartabweichung);
+        System.out.printf("empirischer Variationskoeffizient: %.2f%n", variationsK);
+
     }
 
     public static double berechneEAM(int n, int[] werte) {
@@ -116,6 +119,11 @@ public class haeufigkeiten {
         double varianz = Math.sqrt(varianz2);
         return varianz / eam;
 
+    }
+
+    public static double berechneStandartabweichung(double varianz2) {
+        double standartabweichung = Math.sqrt(varianz2);
+        return standartabweichung;
     }
 
 }
