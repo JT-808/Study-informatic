@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!ELEMENT rss (channel)>
+
+<!ELEMENT channel (title, link, description, language, copyright, pubDate, lastBuildDate, atom:link, generator, item+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT language (#PCDATA)>
+<!ELEMENT copyright (#PCDATA)>
+<!ELEMENT pubDate (#PCDATA)>
+<!ELEMENT lastBuildDate (#PCDATA)>
+<!ELEMENT atom:link (#PCDATA)>
+<!ELEMENT generator (#PCDATA)>
+
+
+<!ELEMENT item (guid, pubDate,title,link, description, content:encoded, category+)>
+<!ELEMENT guid (#PCDATA)>
+
+
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT content:encoded (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+
+
+<!ATTLIST rss version CDATA #REQUIRED>
+<!ATTLIST rss xmlns:content CDATA #REQUIRED>
+<!ATTLIST rss xmlns:atom CDATA #REQUIRED>
+
+<!ATTLIST atom:link href CDATA #REQUIRED>
+<!ATTLIST atom:link rel CDATA #REQUIRED>
+<!ATTLIST atom:link type CDATA #REQUIRED>
+
+<!ATTLIST guid isPermaLink CDATA #REQUIRED>
