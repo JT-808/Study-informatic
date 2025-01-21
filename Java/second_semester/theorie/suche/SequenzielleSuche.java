@@ -1,4 +1,4 @@
-package suche;
+package second_semester.theorie.suche;
 
 /*
  * Die sequenzielle Suche durchsucht die Liste von Anfang bis

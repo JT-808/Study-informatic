@@ -1,4 +1,4 @@
-package sort;
+package second_semester.theorie.sort;
 
 	/*
 	 * CountSort zählt die Anzahl jedes Elements und 

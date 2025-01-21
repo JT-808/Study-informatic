@@ -1,4 +1,4 @@
-package java_collection;
+package second_semester.theorie.java_collection;
 
 import java.util.HashSet;
 import java.util.Set;

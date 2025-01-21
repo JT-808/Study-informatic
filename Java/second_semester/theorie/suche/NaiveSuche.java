@@ -1,4 +1,4 @@
-package theorie.suche;
+package second_semester.theorie.suche;
 
 /*
  * Die naive Suche durchsucht die Liste ähnlich wie die 

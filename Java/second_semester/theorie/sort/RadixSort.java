@@ -1,4 +1,4 @@
-package sort;
+package second_semester.theorie.sort;
 
 /*
  * RadixSort ist ein nicht-vergleichender Sortieralgorithmus, 

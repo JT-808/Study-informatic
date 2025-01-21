@@ -1,4 +1,4 @@
-package suche;
+package second_semester.theorie.suche;
 
 /*
  * Die binäre Suche wird nicht zum Sortieren verwendet,

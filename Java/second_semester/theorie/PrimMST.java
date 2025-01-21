@@ -1,4 +1,4 @@
-package theorie;
+package second_semester.theorie;
 
 
 
