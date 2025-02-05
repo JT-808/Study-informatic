@@ -7,8 +7,6 @@ module Main(
 );
 
 
-
-
     //    wire [15:0]Aufg1_LED;
     //    assign Aufg1_LED = {8{2'b01}};
 
@@ -280,14 +278,6 @@ module choiceWithoutIf(
 
     assign final = digit[counter[15:14]] ; // = das selbe wie die zeilen darunter
 
-
-
-
-
-    //    assign final = (HW_switch[1:0] == 0) * digit[0] +   //wenn Erfüllt dann ergebnis = 1*digit0 (9) = 9
-    //                   (HW_switch[1:0] == 1) * digit[1] + 
-    //                   (HW_switch[1:0] == 2) * digit[2] + 
-    //                   (HW_switch[1:0] == 3) * digit[3]; 
 
     seg7(final, SSD_CA, SSD_CB, SSD_CC, SSD_CD, SSD_CE, SSD_CF, SSD_CG);
 
