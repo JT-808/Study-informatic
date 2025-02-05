@@ -6,8 +6,9 @@ public class haeufigkeiten {
 
     public static void main(String[] args) {
 
-        int[] werte = { 1, 1, 2, 0, 6, 4, 3, 1, 0, 0, 3, 4, 3, 2, 2, 1, 1, 2, 3, 3, 0, 0, 0, 4, 3, 2, 1, 2, 6, 3, 3, 3,
-                0, 4, 1, 2, 2, 6, 2, 2 };
+        int[] werte = { 1, 9, 0, 8, 3, 3, 5, 7, 9, 10,10, 1, 2, 5, 5, 4, 4, 9, 8, 6,
+            1, 2, 2, 4, 7, 9, 7, 7, 6, 2,4, 5, 5, 6, 6, 7, 7, 4, 5, 6,
+            7, 9, 8, 6, 7, 7, 8, 6, 6, 7 };
         int n = werte.length;
 
         System.out.println("Unsortierte Werte: \n" + Arrays.toString(werte) + "\n");
