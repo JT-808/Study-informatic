@@ -19,8 +19,8 @@ assign blink = counter[1] // teile durch 2
 
 endmodule
 
-module Aufgabe 4();
 
+module Aufgabe 4();
 
 assign HW_led[0] = blink;
 wire blink = tick;
@@ -37,9 +37,6 @@ begin
 end
 counter =counter+1
 end
-
-assign blink =  Tick 
-
     
 endmodule
 
