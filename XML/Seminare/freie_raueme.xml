@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE datum [
+    <!ELEMENT datum (raum+)>
+    <!ELEMENT raum (bezeichnung, raum_nr, haus_nr, anzahl_plaetze, projektor)>
+    <!ATTLIST raum raum_id ID #REQUIRED>
+    <!ELEMENT bezeichnung (#PCDATA)>
+    <!ELEMENT raum_nr (#PCDATA)>
+    <!ELEMENT haus_nr (#PCDATA)>
+    <!ELEMENT anzahl_plaetze (#PCDATA)>
+    <!ELEMENT projektor (#PCDATA)>
+]>
+
+<datum>
+    <raum raum_id="_01">
+        <bezeichnung>Hörsaal</bezeichnung>
+        <raum_nr>120</raum_nr>
+        <haus_nr>5</haus_nr>
+        <anzahl_plaetze>209</anzahl_plaetze>
+        <projektor>ja</projektor>
+    </raum>
+    <raum raum_id="_02">
+        <bezeichnung>Computerpool</bezeichnung>
+        <raum_nr>103</raum_nr>
+        <haus_nr>8</haus_nr>
+        <anzahl_plaetze>16</anzahl_plaetze>
+        <projektor>nein</projektor>
+    </raum>
+    <raum raum_id="_03">
+        <bezeichnung>Seminarraum</bezeichnung>
+        <raum_nr>203</raum_nr>
+        <haus_nr>8</haus_nr>
+        <anzahl_plaetze>32</anzahl_plaetze>
+        <projektor>ja</projektor>
+    </raum>
+    <raum raum_id="_04">
+        <bezeichnung>Labor</bezeichnung>
+        <raum_nr>204</raum_nr>
+        <haus_nr>8</haus_nr>
+        <anzahl_plaetze>5</anzahl_plaetze>
+        <projektor>nein</projektor>
+    </raum>
+
+</datum>

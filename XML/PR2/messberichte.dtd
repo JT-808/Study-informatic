@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <!--ENTITY % id "ID #REQUIRED"-->
-<!--  ersetze kommene %id; mit "ID #REQUIRED-->
-
+<!--  ersetze kommende %id; mit "ID #REQUIRED-->
 
 <!ELEMENT messberichte (messbericht+)>
 <!ATTLIST messbericht
     nr ID #REQUIRED
     datum CDATA #REQUIRED>
+<!ELEMENT arbeitszeit (#PCDATA)>
 <!ATTLIST arbeitszeit dimension ID #REQUIRED>
 
 
 <!ELEMENT messbericht (kopfdaten, messwertdaten, prueferergebnis)>
 <!ELEMENT kopfdaten (arbeitszeit, artikeldaten, lieferantendaten, prueferdaten)>
 
-<!ELEMENT arbeitszeit (#PCDATA)>
+<!ELEMENT artikeldaten (artikel)>
 <!ATTLIST artikel artikel_id CDATA #REQUIRED>
+<!ELEMENT artikel (zeichnungs_nr, art_bezeichnung)>
+<!ELEMENT zeichnungs_nr (#PCDATA)>
+<!ELEMENT art_bezeichnung (#PCDATA)>
+
+<!ELEMENT lieferantendaten (lieferanten)>
+<!ELEMENT lieferanten (lieferant)>
+<!ATTLIST lieferanten Lieferanten_id CDATA #REQUIRED>
+<!ELEMENT lieferant (#PCDATA)>
 
 <!ELEMENT messwertdaten (pruefmerkmal+)>
 <!ELEMENT pruefmerkmal (pm_wert+,pm_mittelwert)>
@@ -27,20 +34,15 @@
 <!ATTLIST pruefmerkmal pm_dimension CDATA #REQUIRED>
 
 
-<!ELEMENT lieferantendaten (lieferanten)>
-<!ELEMENT lieferanten (lieferant)>
-<!ATTLIST lieferanten Lieferanten_id CDATA #REQUIRED>
-<!ELEMENT lieferant (#PCDATA)>
+
 
 <!ELEMENT prueferdaten (pruefplandaten)>
 <!ELEMENT pruefplandaten (#PCDATA)>
 <!ATTLIST pruefplandaten ppl_id CDATA #REQUIRED>
 
 
-<!ELEMENT artikeldaten (artikel)>
-<!ELEMENT artikel (zeichnungs_nr, art_bezeichnung)>
-<!ELEMENT zeichnungs_nr (#PCDATA)>
-<!ELEMENT art_bezeichnung (#PCDATA)>
+
+
 
 <!ELEMENT prueferergebnis (einstufung, bemerkung, nacharbeitstermin)>
 <!ELEMENT einstufung (#PCDATA)>

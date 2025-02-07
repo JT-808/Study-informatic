@@ -2,7 +2,6 @@
 
 <!DOCTYPE messberichte SYSTEM "messberichte.dtd">
 
-
 <messberichte>
     <!-- Messbericht-Nr und Datum fuer den Messbericht hier ergaenzen -->
     <messbericht nr="_1" datum="15.10.2024">
