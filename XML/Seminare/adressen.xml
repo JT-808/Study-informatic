@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE adressen [
+    <!ELEMENT adressen (adresse+)>
+    <!ELEMENT adresse (name, anschrift)>
+    <!ELEMENT name (titel?, vorname+ ,nachname)>
+    <!ELEMENT anschrift (Straße, Hausnummer, PLZ, Ort)>
+
+    <!ATTLIST name anrede (Herr|Frau) #REQUIRED>
+    <!ELEMENT titel (#PCDATA)>
+    <!ELEMENT vorname (#PCDATA)>
+    <!ELEMENT nachname (#PCDATA)>
+
+    <!ELEMENT Straße (#PCDATA)>
+    <!ELEMENT Hausnummer (#PCDATA)>
+    <!ELEMENT PLZ (#PCDATA)>
+    <!ELEMENT Ort (#PCDATA)>
+]>
+
+<adressen>
+    <adresse>
+        <name anrede="Frau">
+            <titel></titel>
+            <vorname>Ilse</vorname>
+            <vorname>Maria</vorname>
+            <nachname>Schuster</nachname>
+        </name>
+        <anschrift>
+            <Straße>Hauptstraße</Straße>
+            <Hausnummer>1</Hausnummer>
+            <PLZ>10827</PLZ>
+            <Ort>Berlin</Ort>             
+        </anschrift>
+    </adresse>
+    <adresse>
+        <name anrede="Herr">
+            <titel>Dr.</titel>
+            <vorname>Hans</vorname>
+            <nachname>Müller</nachname>
+        </name>
+        <anschrift>
+            <Straße>Hauptstraße</Straße>
+            <Hausnummer>2</Hausnummer>
+            <PLZ>10827</PLZ>
+            <Ort>Berlin</Ort>             
+        </anschrift>
+    </adresse>
+    
+</adressen>
