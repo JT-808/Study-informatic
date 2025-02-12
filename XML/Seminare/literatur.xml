@@ -1,0 +1,15 @@
+<?xml version ="1.0" encoding ="utf-8" standalone ="yes"?>
+<literatur>
+    <werk werk_id=" _001" typ="Zeitschrift">
+        <autoren>iX Redaktion</autoren>
+        <titel>iX-Special: Das XML-Kompendium</titel>
+        <verlag>Heise Zeitschriftenverlag Verlag</verlag>
+        <jahr>2004</jahr>
+    </werk>
+    <werk werk_id="_002" typ="Buch">
+        <autoren>Grupe, W.</autoren>
+        <titel>XML: Grundlagen, Technologien, Validierung, Auswertung</titel >
+        <verlag>mitp</verlag>
+        <jahr>2018</jahr >
+    </werk>
+</literatur>
