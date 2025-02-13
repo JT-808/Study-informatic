@@ -1,0 +1,68 @@
+<!DOCTYPE universitaet [
+    <!ELEMENT universitaet (fakultaet+)>
+    <!ELEMENT fakultaet (dozent+)>
+    <!ELEMENT dozent (name, vorlesung, semester, studenten+)>
+    <!ELEMENT studenten (student+)>
+    <!ELEMENT student (name, note)>
+
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT vorlesung (#PCDATA)>
+    <!ELEMENT semester (#PCDATA)>
+    <!ELEMENT note (#PCDATA)>
+
+    <!ATTLIST fakultaet name ID #REQUIRED>
+    <!ATTLIST dozent id ID #REQUIRED>
+    <!ATTLIST student matrikelnummer ID #REQUIRED>
+]>
+
+<universitaet>
+    <fakultaet name="Informatik">
+        <dozent id="d1">
+            <name>Dr. Müller</name>
+            <vorlesung>Einführung in die Programmierung</vorlesung>
+            <semester>Wintersemester 2023</semester>
+            <studenten>
+                <student matrikelnummer="s1">
+                    <name>Anna</name>
+                    <note>1.3</note>
+                </student>
+                <student matrikelnummer="s2">
+                    <name>Max</name>
+                    <note>2.0</note>
+                </student>
+            </studenten>
+        </dozent>
+        <dozent id="d2">
+            <name>Prof. Schmidt</name>
+            <vorlesung>Algorithmen und Datenstrukturen</vorlesung>
+            <semester>Sommersemester 2023</semester>
+            <studenten>
+                <student matrikelnummer="s3">
+                    <name>Lisa</name>
+                    <note>1.7</note>
+                </student>
+                <student matrikelnummer="s4">
+                    <name>John</name>
+                    <note>3.2</note>
+                </student>
+            </studenten>
+        </dozent>
+    </fakultaet>
+    <fakultaet name="Maschinenbau">
+        <dozent id="d3">
+            <name>Dr. Becker</name>
+            <vorlesung>Maschinentechnik</vorlesung>
+            <semester>Wintersemester 2023</semester>
+            <studenten>
+                <student matrikelnummer="s5">
+                    <name>Peter</name>
+                    <note>2.3</note>
+                </student>
+                <student matrikelnummer="s6">
+                    <name>Julia</name>
+                    <note>1.5</note>
+                </student>
+            </studenten>
+        </dozent>
+    </fakultaet>
+</universitaet>

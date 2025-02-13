@@ -1,0 +1,22 @@
+<buchsammlung>
+    <buch>
+        <titel>Der Hobbit</titel>
+        <autor>J.R.R. Tolkien</autor>
+        <jahr>1937</jahr>
+    </buch>
+    <buch>
+        <titel>Harry Potter und der Stein der Weisen</titel>
+        <autor>J.K. Rowling</autor>
+        <jahr>1997</jahr>
+    </buch>
+    <buch>
+        <titel>Das Lied von Eis und Feuer</titel>
+        <autor>George R.R. Martin</autor>
+        <jahr>1996</jahr>
+    </buch>
+    <buch>
+        <titel>Die Tribute von Panem</titel>
+        <autor>Suzanne Collins</autor>
+        <jahr>2008</jahr>
+    </buch>
+</buchsammlung>
