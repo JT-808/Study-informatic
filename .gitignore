@@ -85,3 +85,8 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Alle Dateien ohne Endung ignorieren (außer speziellen Fällen)
+.*
+!*.c
+!*.h
