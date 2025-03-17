@@ -86,7 +86,10 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Alle Dateien ohne Endung ignorieren (außer speziellen Fällen)
+# Ignoriere alle Dateien ohne Dateiendung, außer Quellcode
 .*
 !*.c
 !*.h
+!*.cpp
+!*.hpp
+
