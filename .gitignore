@@ -63,6 +63,7 @@ bin/*
 *.dylib
 
 # Executables
+a.out
 *.exe
 *.out
 *.app
