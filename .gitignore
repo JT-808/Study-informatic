@@ -24,6 +24,7 @@ hs_err_pid*
 replay_pid*
 
 # Compiled class file
+*.bin
 *.class
 bin/*
 .vscode/*
@@ -86,10 +87,7 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Ignoriere alle Dateien ohne Dateiendung, außer Quellcode
-.*
-!*.c
-!*.h
-!*.cpp
-!*.hpp
+
+[^.]*   # Ignoriert alle Dateien ohne Punkt im Namen
+
 
