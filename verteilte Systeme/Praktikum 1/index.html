@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+  <script>
+    window.onload = function(){
+      console.log("Loaded");
+      document.getElementById('getUsers').addEventListener("click",function(){
+        console.log("Get User...");
+        const Http = new XMLHttpRequest();
+        const url = '/users';
+        Http.open("GET", url);
+        Http.send();
+        Http.addEventListener('load', function(){
+          if(Http.status >= 200 && Http.status < 300){
+            console.log(Http.responseText);
+          }else{
+            console.log(Http.statusText, Http.responseText);
+          }
+        })
+      })
+
+      document.getElementById('createUser').addEventListener("click",function(){
+        console.log("Create User...");
+        const Http = new XMLHttpRequest();
+        const url = '/users';
+        const params = JSON.stringify({name: 'Test3', permission: 3, desc: 'Das ist Test 3'});
+
+        Http.open("POST", url);
+        Http.send(params);
+        Http.addEventListener('load', function(){
+          if(Http.status >= 200 && Http.status < 300){
+            console.log(Http.responseText);
+          }else{
+            console.log(Http.statusText, Http.responseText);
+          }
+        })
+      })
+
+    document.getElementById('getUser').addEventListener("click",function(){
+        console.log("Get single user...");
+        const Http = new XMLHttpRequest();
+        var userid = 2;
+        const url = '/users/'+userid;
+        Http.open("GET", url);
+        Http.send();
+        Http.addEventListener('load', function(){
+          if(Http.status >= 200 && Http.status < 300){
+            console.log(Http.responseText);
+          }else{
+            console.log(Http.statusText, Http.responseText);
+          }
+        })
+      });
+
+      document.getElementById('deleteUser').addEventListener("click",function(){
+          console.log("Delete single user...");
+          const Http = new XMLHttpRequest();
+          var userid = 2;
+          const url = '/users/'+userid;
+          Http.open("DELETE", url);
+          Http.send();
+          Http.addEventListener('load', function(){
+            if(Http.status >= 200 && Http.status < 300){
+              console.log(Http.responseText);
+            }else{
+              console.log(Http.statusText, Http.responseText);
+            }
+          })
+        });
+
+
+        document.getElementById('updateUser').addEventListener("click",function(){
+            console.log("Update single user...");
+            const Http = new XMLHttpRequest();
+            const params = JSON.stringify({desc: 'Das ist ein Update von User 3'});
+            var userid = 3;
+            const url = '/users/'+userid;
+            Http.open("PUT", url);
+            Http.send(params);
+            Http.addEventListener('load', function(){
+              if(Http.status >= 200 && Http.status < 300){
+                console.log(Http.responseText);
+              }else{
+                console.log(Http.statusText, Http.responseText);
+              }
+            })
+          });
+    }
+
+  </script>
+</head>
+
+<body>
+  <button id='getUsers'>Get Users</button>
+  <button id='createUser'>Create User</button>
+  <button id='getUser'>Get User</button>
+  <button id='updateUser'>Update User</button>
+  <button id='deleteUser'>Delete User</button>
+</body>
+
+</html>
