@@ -87,9 +87,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-
-[^.]*   # Ignoriert alle Dateien ohne Punkt im Namen
-
 # Prerequisites
 *.d
 
@@ -142,3 +139,18 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+
+# .NET Build Folders
+bin/
+obj/
+
+# User-specific files
+.vscode/
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+
