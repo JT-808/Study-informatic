@@ -1,14 +1,12 @@
 using System;
 
-class Program
+class ReleaseAufLinux
 {
     static void Main()
     {
         Console.WriteLine("Hello, .NET 9!");
     }
 }
-
-
 
 /*
 
