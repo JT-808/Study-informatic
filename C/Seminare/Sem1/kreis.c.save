@@ -1,0 +1,8 @@
+#include "kreis.h" // Wenn im Projekt ""
+
+/* Definition der Funktion kreisFlaeche() */
+double kreisFlaeche(double radius)
+{
+    return PI*radius*radius;
+}
+
