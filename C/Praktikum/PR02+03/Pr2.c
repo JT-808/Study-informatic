@@ -1,4 +1,4 @@
-/* ----------------------- Berechnungen am Kreis ------------------------ */
+/* ----------------------- Abfrage und umwandeln von Zechnen ------------------------ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
         }   while(erg != 1); 
 
                      /*ausgabe*/
-            printf("Zeichen:  %c %d 0x%x\n", input, input, input);
+            printf("Zeichen:  %c %d 0x%x", input, input, input);
 
     }while(input!='Q');
 
