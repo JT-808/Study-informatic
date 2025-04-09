@@ -1,5 +1,8 @@
 main: main.o kreis.o
 	gcc -g -o prog main.o kreis.o
+# löschen der .o dateien
+	rm -f *.o
+
 
 struct: struct.o
 	gcc -g -o struct struct.c
