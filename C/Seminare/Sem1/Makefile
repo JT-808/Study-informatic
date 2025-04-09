@@ -1,5 +1,5 @@
 main: main.o kreis.o
-	gcc -g -o main main.o kreis.o
+	gcc -g -o prog main.o kreis.o
 
 struct: struct.o
 	gcc -g -o struct struct.c
