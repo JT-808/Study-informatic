@@ -34,5 +34,52 @@ let methods = { // JSON
         }
     },
 
+    // Neue Methode zum Erstellen einer Jobanzeige
+    createJobPost: {
+        description: 'Creates a job post with title, description and salary',
+        params: ['title', 'description', 'salary'],
+        returns: ['jobPost'],
+
+        exec(params) {
+            let title, description, salary, requestId;
+
+            if (Array.isArray(params)) {
+                // Positionierte Parameter
+                [title, description, salary] = params;
+            } else if (typeof params === 'object' && params !== null) {
+                // Benannte Parameter
+                title       = params.title;
+                description = params.description;
+                salary      = params.salary;
+                requestId   = params.id;
+            }
+
+            if (!title || !description || !salary) {
+                return {
+                    jsonrpc: "2.0",
+                    error: { code: -32602, message: "Invalid params" },
+                    id: requestId || null
+                };
+            }
+
+            const jobPost = {
+                id: jobPosts.length + 1,
+                title: title,
+                description: description,
+                salary: salary
+            };
+
+            jobPosts.push(jobPost);
+
+            console.log("Neue Jobanzeige erstellt:", jobPost);
+
+            return {
+                jsonrpc: "2.0",
+                result: jobPost,
+                id: requestId || null
+            };
+        }
+    }
+
 };
 module.exports = methods;
