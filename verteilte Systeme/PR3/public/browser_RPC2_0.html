@@ -1,0 +1,46 @@
+<!doctype html>
+    <head>
+        <script>
+            
+            window.onload = function(){
+                document.getElementById('createUser').addEventListener("click", function(){
+                    console.log("Create User geklickt");
+                    var xhr = new XMLHttpRequest();
+                    var url = "/rpcapi"; // unser Endpoint
+                    xhr.open("POST", url, true);
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                    var requestID = Math.floor(Math.random() * 10000000); // create a random request id for RPC 2.0
+                    var data = JSON.stringify({"jsonrpc": "2:0", "method": "createUser", "params": {"name":"TestName2","age":99, "id":requestID } }); // Named Parameters for RPC 2.0
+                    
+                    xhr.addEventListener('load', function(){
+                        
+                        if(xhr.status >= 200 && xhr.status <300){
+                            console.log(xhr.responseText);
+                        }else{
+                            console.log(xhr.statusText, xhr.responseText);
+                        }
+                    });
+
+                    xhr.onreadystatechange = function() { // Call a function when the state changes.
+                        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                            // Request finished. Process reply here.
+                            console.log("Antwort " + xhr.responseText);
+                            console.log("Result " + JSON.parse(xhr.responseText).result); // RPC 2.0 kann bei Bedarf noch weiter aufgelöst werden
+                            console.log("Request ID: " + JSON.parse(xhr.responseText).id); // RPC 2.0
+                            console.log("Error:" + JSON.parse(xhr.responseText).error); // RPC 2.0
+                        }
+                    }
+
+                    xhr.send(data);
+                })
+            }
+        </script>
+    </head>
+    <body>
+        <div>hello World</div>
+        <button id = 'createUser'>Create User</button>
+    </body>
+    
+    
+    
+</html>
