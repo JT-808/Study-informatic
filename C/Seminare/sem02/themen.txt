@@ -1,0 +1,15 @@
+Speicherverwaltung in C, Malloc & Fehlerbehandlung (OutOfMemory?)
+
+ASAN/Valgrind
+
+Zeigerfelder int* / char** (Tafelbild)
+
+die Studis sollen Sortieralgorithmen wiederholen
+
+
+
+
+
+https://ss64.com/bash/ulimit.html
+
+ulimit -v 64 -m 64
