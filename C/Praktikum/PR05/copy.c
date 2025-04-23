@@ -1,28 +1,53 @@
-#include <fcntl.h> // open()
+#include <errno.h>
+#include <fcntl.h>    // open()
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h> // read(), write(), close()
+#include <unistd.h>   // read(), write(), close()
 
-#define MAX 65536 // max 64 kb Puffergröße -> wird später dynamisch genutzt
-// 64 KB = Kompromiss zwischen Effizienz und Speicherverbrauch
+#define MAX 65536     // 64 KB Puffergröße
 
+//-----------------------------------------
 // Kopierfunktion
+//-----------------------------------------
+int copy(const char *quelle, const char *ziel) {
+  // Quelldatei öffnen
+  int fd_quelle = open(quelle, O_RDONLY);
+  if (fd_quelle == -1) {
+    if (errno == ENOENT) {
+      perror("Quelldatei existiert nicht");
+    } else if (access(quelle, R_OK) != 0) {
+      perror("Keine Rechte zum Lesen");
+    } else {
+      perror("Fehler beim Öffnen der Quelldatei");
+    }
+    return EXIT_FAILURE;
+  }
 
-void copy(int fd_quelle, int fd_ziel) {
+  // Zieldatei öffnen/erstellen
+  int fd_ziel = open(ziel, O_WRONLY | O_CREAT | O_TRUNC, 0600);
+  if (fd_ziel == -1) {
+    perror("Zieldatei konnte nicht geöffnet werden");
+    close(fd_quelle);
+    return EXIT_FAILURE;
+  }
+
+  // Puffer reservieren
   char *puffer = malloc(MAX);
   if (puffer == NULL) {
     perror("Speicherreservierung fehlgeschlagen");
-    return;
+    close(fd_quelle);
+    close(fd_ziel);
+    return EXIT_FAILURE;
   }
 
-  ssize_t gelesen; // signierter Int=> repräsentiert die Anzahl der gelesenen
-                   // oder geschriebenen Bytes
+  // Dateiinhalt kopieren
+  ssize_t gelesen;
   while ((gelesen = read(fd_quelle, puffer, MAX)) > 0) {
     ssize_t geschrieben = write(fd_ziel, puffer, gelesen);
     if (geschrieben != gelesen) {
       perror("Fehler beim Schreiben");
-      break;
+      return EXIT_FAILURE;
     }
   }
 
@@ -32,40 +57,11 @@ void copy(int fd_quelle, int fd_ziel) {
     printf("Datei erfolgreich kopiert.\n");
   }
 
+  // Ressourcen freigeben
   free(puffer);
-}
-//*********************** MAIN********************/
-
-int main(int argc, char **argv) {
-  if (argc < 2) {
-    printf("Zu wenig Parameter\n");
-    return EXIT_FAILURE;
-  }
-
-  // Quelldatei öffnen
-  int fd_quelle = open(argv[1], O_RDONLY);
-  if (fd_quelle == -1) {
-    perror("Quelldatei konnte nicht geöffnet werden");
-    return EXIT_FAILURE;
-  }
-
-  // Zieldatei erstellen
-  // mit 0600: nur Nutzer darf lesen & schreiben
-  // Trunc= Wenn die Datei bereits existiert und geöffnet wird 0> wird sie
-  // gelöscht
-  int fd_ziel = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0600);
-  if (fd_ziel == -1) {
-    perror("Zieldatei konnte nicht geöffnet werden");
-    close(fd_quelle);
-    return EXIT_FAILURE;
-  }
-
-  // Kopieren
-  copy(fd_quelle, fd_ziel);
-
-  // Aufräumen
   close(fd_quelle);
   close(fd_ziel);
 
-  return EXIT_SUCCESS;
+  return gelesen < 0 ? EXIT_FAILURE : EXIT_SUCCESS;
 }
+
