@@ -1,11 +1,10 @@
-#include <errno.h>
+
 #include <fcntl.h> // open()
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <unistd.h> // read(), write(), close()
 
-#include "copy.h"
+#include "fileCopy.h"
 
 //-----------------------------------------
 // Main-Funktion
@@ -18,6 +17,6 @@ int main(int argc, char **argv) {
   if (isRegularFile(argv[1])) {
     return copy(argv[1], argv[2]);
   } else {
-  return EXIT_FAILURE;
+    return EXIT_FAILURE;
   }
 }

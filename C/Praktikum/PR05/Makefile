@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -g -Wall -Wextra
 
-TARGET = copy.out
+TARGET = main.out
 
 # Standardziel
 all: $(TARGET)
@@ -13,13 +13,13 @@ $(TARGET): copy_reg.o copy.o regular.o
 
 # Kompilierungsregeln
 
-copy_reg.o: copy_reg.c copy.h
+copy_reg.o: copy_reg.c fileCopy.h
 	$(CC) $(CFLAGS) -c copy_reg.c
 
-copy.o: copy.c copy.h
+copy.o: copy.c 
 	${CC} ${CFLAGS} -c copy.c
 
-regular.o: regular.c copy.h
+regular.o: regular.c 
 	$(CC) $(CFLAGS) -c regular.c
 
 # Aufräumen

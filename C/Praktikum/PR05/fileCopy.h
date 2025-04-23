@@ -2,8 +2,8 @@
 // Headerdatei -> Definiert das Interface
 
 // Header Guard
-#ifndef copy_H
-#define copy_H
+#ifndef regCopy_H
+#define regCopy_H
 
 
 int copy(const char *quelle, const char *ziel);
