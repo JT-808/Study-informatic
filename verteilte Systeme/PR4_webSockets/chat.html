@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href="/style.css">
+        <script>
+            var socket;
+            window.onload = function(){
+
+                console.log("Browserfenster geladen");
+                var chatId = window.location.pathname.match(/\w{7}/)[0];
+                socket = new WebSocket("ws://localhost:3000");
+                socket.onopen = function(){
+                    initChatJSON = JSON.stringify({type: "init", chatId: chatId});
+                    socket.send(initChatJSON);
+                    console.log("Websocket offen, Initiale Message versandt" + initChatJSON);
+                    document.getElementById("sendButton").addEventListener("click", sendMessage);
+                }
+                socket.onmessage = function(message){
+                    console.log(message.data);
+                    data = JSON.parse(message.data); // {type: message, name: Name, message: "hello World"}
+                    if(data.type == "message"){
+                        console.log("Nachricht vom Server erhalten: " + data.message);
+                        var newLine= document.createElement("div");
+                        newLine.id = "message";
+                        newLine.innerHTML = data.name + ": " + data.message;
+                        document.getElementById("chatWindow").appendChild(newLine);
+                    }
+                }
+
+                function sendMessage(){
+                    message = document.getElementById("messageArea").value;
+                    name = document.getElementById("name").value;
+                    messageJSON = JSON.stringify({chatId: chatId, type: "message", message: message, name : name});
+                    message = document.getElementById("messageArea").value = "";  // Textarea wieder leeren
+                    console.log("Message versenden: " + messageJSON);
+                    socket.send(messageJSON);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id = "chatContainer">
+
+            <div id = "nameArea">
+                <textarea id = "name" cols = "30" rows = "1"></textarea>
+                <span class = "label"> Name</span>
+            </div>
+            <div id = "chatWindow" ></div>
+            <div id = "typeMessges">
+                <textarea id = "messageArea" cols = "30" rows = "5">Gib hier deine Nachricht ein</textarea>
+                <span class = "label"> Nachricht</span>
+            </div>
+            <button id = "sendButton">Senden</button>
+        </div>
+
+    </body>
+
+</html>
