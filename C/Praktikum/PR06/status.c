@@ -58,7 +58,9 @@ void printDateiInfo(const char *pfad) {
   // Größe
   printf("Größe: %ld Bytes\n", (long)dateiInfo.st_size);
 
-  //Besitzer und Gruppe im Klartext
+  //Besitzer und Gruppe im Klartext -> Es soll der name angezeigt werden!
+  //getgrid() -> getpwuid()
+  //
   printf("UID: %d\n", dateiInfo.st_uid);
   printf("GID %d\n",dateiInfo.st_gid);
 

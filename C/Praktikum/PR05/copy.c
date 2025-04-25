@@ -25,6 +25,7 @@ int copy(const char *quelle, const char *ziel) {
   }
 
   // Zieldatei öffnen/erstellen
+  // trunc nullt die Datei
   int fd_ziel = open(ziel, O_WRONLY | O_CREAT | O_TRUNC, 0600);
   if (fd_ziel == -1) {
     perror("Zieldatei konnte nicht geöffnet werden");
