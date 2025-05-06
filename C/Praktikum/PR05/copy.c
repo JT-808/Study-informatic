@@ -66,3 +66,5 @@ int copy(const char *quelle, const char *ziel) {
   return gelesen < 0 ? EXIT_FAILURE : EXIT_SUCCESS;
 }
 
+
+
