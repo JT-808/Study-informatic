@@ -1,0 +1,12 @@
+{
+    "folders": [
+      {
+        "path": "."
+      }
+    ],
+    "settings": {
+      // Hier kannst du workspace-spezifische Einstellungen hinzufügen
+      "omnisharp.useGlobalMono": "always"
+    }
+  }
+  
