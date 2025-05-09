@@ -66,7 +66,7 @@ int main(int argc, char *argv[]) {
   return EXIT_SUCCESS;
 }
 
-
+//mmap verbietet kopieren der Dateien größe: 0
 
 
 /*

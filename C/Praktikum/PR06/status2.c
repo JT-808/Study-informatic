@@ -1,5 +1,6 @@
 #include <dirent.h>
 #include <errno.h>
+#include <linux/limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -77,12 +78,14 @@ void verzeichnisInhaltAnzeigen(const char *verzeichnis) {
   while ((eintrag = readdir(dir)) != NULL) {
     // readdir gibt einen Zeiger auf den nächsten Verzeichniseintrag zurück
     // Zugriff auf das Feld 'd_name' der Struktur dirent(über Zeiger mit ->)
-
-    if (strcmp(eintrag->d_name, ".") == 0 || strcmp(eintrag->d_name, "..") == 0)
-      continue; // "." und ".." überspringen
+  
+// Wenn "." und ".." übersprungen werden soll:
+ /*   if (strncmp(eintrag->d_name, ".", sizeof(".")) == 0 ||
+        strncmp(eintrag->d_name, "..", sizeof("..")) == 0)
+      continue; // "." und ".." überspringen*/
 
     // Vollständiger Pfad: Verzeichnis + "/" + Dateiname
-    char vollerPfad[4096]; // 4096 typische max Pfadlänge
+    char vollerPfad[PATH_MAX]; // 4096 typische max Pfadlänge
     snprintf(vollerPfad, sizeof(vollerPfad), "%s/%s", verzeichnis,
              eintrag->d_name);
 
