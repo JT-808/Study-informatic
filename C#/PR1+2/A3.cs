@@ -30,7 +30,7 @@ public class Person
     }
 }
 
-public class Program
+public class Programm
 {
     public static void Main() // dotnet script kann kein Main
     {
@@ -49,4 +49,5 @@ public class Program
             person.ZeigeDaten();  // Zeigt die Daten der Person an
         }
     }
+
 }
