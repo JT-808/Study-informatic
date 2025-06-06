@@ -74,6 +74,8 @@ int main(int argc, char *argv[]) {
 // Signalhandler: Wird aufgerufen, wenn SIGUSR2 empfangen wird
 void signalHandler(int signo) { signalBekommen = 1; }
 
+
+
 /*
 Signalhandler registrieren:
 Das Programm setzt einen Handler für das Signal SIGUSR2, damit es auf bestimmte
@@ -88,23 +90,35 @@ Sendet SIGUSR2 an das Kind.
 Wartet mit pause() auf die Rückmeldung vom Kind.
 Danach wartet er mit wait() auf das Ende des Kindprozesses.
 
-
-
-
-| Schritt | Was passiert | | ------- |
----------------------------------------------------------------------------- |
-| 1️⃣     | Elternprozess registriert `signalHandler` für `SIGUSR2` | | 2️⃣     |
-Elternprozess wartet (z. B. `pause()`)                                       |
-| 3️⃣     | Kindprozess sendet `SIGUSR2` an Elternprozess mit `kill(getppid(),
-SIGUSR2)` | | 4️⃣     | Kernel sieht: Eltern hat Handler → unterbricht ihn kurz |
-| 5️⃣     | Kernel führt `signalHandler(SIGUSR2)` im Elternprozess aus | | 6️⃣     |
-Elternprozess läuft normal weiter (nach `pause()`)                           |
-
-
-
-
-
 sigaction ist eine Systemfunktion, mit der ein Prozess dem Betriebssystem
 (Kernel) sagt, wie es auf ein bestimmtes Signal reagieren soll.
+
+Die Variable signalBekommen dient dazu, dem Prozess mitzuteilen, dass er gerade ein Signal erhalten hat, und zwar auf eine signal-sichere Weise.
+
+
+fork() muss nach dem registrieren des Signalhändlers geschehen, damit beide davon wissen
+
+
+
+
+Signalarten:
+
+| Signal    | Name        | Beschreibung                                                  |
+| --------- | ----------- | ------------------------------------------------------------- |
+| `SIGINT`  | Interrupt   | Wird z. B. durch `Strg + C` im Terminal ausgelöst             |
+| `SIGTERM` | Terminate   | Freundlicher Terminationswunsch an den Prozess                |
+| `SIGKILL` | Kill        | Beendet den Prozess sofort (kann nicht abgefangen werden)     |
+| `SIGSTOP` | Stop        | Hält den Prozess an (kann nicht abgefangen werden)            |
+| `SIGCONT` | Continue    | Führt gestoppten Prozess weiter                               |
+| `SIGSEGV` | Segfault    | Speicherzugriffsfehler (z. B. durch Dereferenzieren von NULL) |
+| `SIGABRT` | Abort       | Wird durch `abort()` ausgelöst                                |
+| `SIGFPE`  | Float Error | Arithmetischer Fehler (z. B. Division durch 0)                |
+| `SIGILL`  | Illegal     | Ungültiger Maschinenbefehl                                    |
+| `SIGHUP`  | Hangup      | Terminal wurde geschlossen / Benutzer abgemeldet              |
+| `SIGPIPE` | Pipe Error  | Schreiben in eine geschlossene Pipe                           |
+| `SIGUSR1` | User 1      | Benutzerdefiniertes Signal                                    |
+| `SIGUSR2` | User 2      | Benutzerdefiniertes Signal                                    |
+| `SIGALRM` | Alarm       | Signal nach Ablauf eines Timers (`alarm()`)                   |
+| `SIGCHLD` | Child       | Ein Kindprozess hat sich beendet                              |
 
 */

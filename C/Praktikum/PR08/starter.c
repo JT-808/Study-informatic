@@ -32,16 +32,6 @@ int main(int argc, char** argv) {
 }
 
 
-/*
- * Dieses Programm startet ein anderes Programm mit beliebigen Argumenten.
- * - Es erzeugt mit fork() einen Kindprozess.
- * - Im Kindprozess wird execvp() aufgerufen, um das gewünschte Programm zu starten.
- *   Dabei werden argv[1] (Programmname) und folgende Argumente übergeben.
- * - execvp() nutzt den PATH, um das Programm zu finden.
- * - Der Elternprozess wartet mit wait() auf die Beendigung des Kindprozesses.
- * - Bei Fehlern werden passende Fehlermeldungen ausgegeben.
- * Hinweis: Wildcards wie *.c werden nicht expandiert, da keine Shell verwendet wird.
- */
 
 
  /*
@@ -53,3 +43,28 @@ execvp() - sucht automatisch im PATH (wie die Shell)
  */
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*
+ * Dieses Programm startet ein anderes Programm mit beliebigen Argumenten.
+ * - Es erzeugt mit fork() einen Kindprozess.
+ * - Im Kindprozess wird execvp() aufgerufen, um das gewünschte Programm zu starten.
+ *   Dabei werden argv[1] (Programmname) und folgende Argumente übergeben.
+ * - execvp() nutzt den PATH, um das Programm zu finden.
+ * - Der Elternprozess wartet mit wait() auf die Beendigung des Kindprozesses.
+ * - Bei Fehlern werden passende Fehlermeldungen ausgegeben.
+ * Hinweis: Wildcards wie *.c werden nicht expandiert, da keine Shell verwendet wird.
+ */
