@@ -47,7 +47,7 @@ namespace PersonSerialization
                 xmlSerializer.Serialize(xmlWriter, currentPerson);
             }
 
-            Console.WriteLine("Serialisierung nach xport.xml erfolgreich abgeschlossen!");
+            Console.WriteLine("Serialisierung nach export.xml erfolgreich abgeschlossen!");
         }
     }
 }

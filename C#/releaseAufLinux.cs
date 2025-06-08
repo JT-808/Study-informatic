@@ -2,10 +2,10 @@ using System;
 
 class ReleaseAufLinux
 {
-    static void Main()
-    {
-        Console.WriteLine("Hello, .NET 9!");
-    }
+  static void Main()
+  {
+    Console.WriteLine("Hello, .NET 9!");
+  }
 }
 
 /*
@@ -13,6 +13,11 @@ class ReleaseAufLinux
 für release auf linux:
 
 -> Main Methode wird benötigt!
+
+-> Bei meheren Projekten inerhalb eines Großprojektes -> Pro ordner eine neue .csproj anlegen
+-> Siehe C#/PR6
+
+
 -> benötigt eine .csproj datei mit folgendem Inhalt:
 
 <Project Sdk="Microsoft.NET.Sdk">
@@ -49,7 +54,7 @@ dotnet publish -c Release -r linux-x64 --self-contained
 --self-contained: Stellt sicher, dass die benötigten .NET-Abhängigkeiten in die Veröffentlichung eingebunden werden, sodass der Code ohne eine installierte .NET-Laufzeit auf anderen Systemen ausgeführt werden kann.
 
 
-chmod +x HelloApp 
+chmod +x HelloApp
 ./HelloApp
 
 */

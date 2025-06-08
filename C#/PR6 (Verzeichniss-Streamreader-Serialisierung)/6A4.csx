@@ -64,7 +64,7 @@ Person[] personenArray = new Person[]
 
 Person currentPerson = personenArray[0];
 
-using (XmlTextWriter writer = new XmlTextWriter("export.xml", Encoding.UTF8))
+using (XmlTextWriter writer = new XmlTextWriter("export-csx.xml", Encoding.UTF8))
 {
     writer.Formatting = Formatting.Indented;
     writer.WriteStartDocument();
