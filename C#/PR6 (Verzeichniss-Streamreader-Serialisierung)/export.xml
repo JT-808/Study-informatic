@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Person xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Mueller</Name>
+  <Vorname>Max</Vorname>
+  <Wohnort>Berlin</Wohnort>
+  <Adresse>Musterstr. 1</Adresse>
+  <Geburtsdatum>01.01.1990</Geburtsdatum>
+</Person>

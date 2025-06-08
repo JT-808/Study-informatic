@@ -1,6 +1,26 @@
 using System;
 using System.IO;
 
+/*
+===========================================
+Tool: Verzeichnis-Analyse-Tool
+Beschreibung:
+Dieses Programm analysiert ein Verzeichnis und listet wahlweise
+- nur Unterverzeichnisse,
+- nur Dateien oder
+- beides
+auf.
+
+Funktionsweise:
+1. Zeigt das aktuelle Arbeitsverzeichnis an und erlaubt optional die Eingabe eines anderen Pfads.
+2. Benutzer wählt aus, ob nur Verzeichnisse, nur Dateien oder beides angezeigt werden soll.
+3. Ausgabe der entsprechenden Informationen im Konsolenfenster.
+
+Hinweis:
+- Die Eingaben werden validiert (Pfadexistenz & Auswahloption).
+===========================================
+*/
+
 Console.WriteLine("=== Verzeichnis-Analyse-Tool ===");
 
 // 1. Verzeichnisauswahl
