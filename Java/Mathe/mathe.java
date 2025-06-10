@@ -1,9 +1,10 @@
 package Mathe;
 
+
 public class mathe {
     public static void main(String[] args) {
 
-        // System.out.println(Acker(0, 2));
+        System.out.println(Acker(0, 2));
 
         // System.out.println(Rek(1));
 

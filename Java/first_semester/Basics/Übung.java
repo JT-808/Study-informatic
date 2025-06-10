@@ -1,4 +1,4 @@
-package Basics;
+package first_semester.Basics;
 
 public class Übung {
 

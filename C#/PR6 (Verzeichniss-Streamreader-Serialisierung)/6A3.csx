@@ -39,3 +39,4 @@ catch (Exception ex)
 
 Console.WriteLine("\nDrücke eine Taste zum Beenden...");
 Console.ReadKey();
+Console.ReadLine();

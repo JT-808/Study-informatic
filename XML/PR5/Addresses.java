@@ -4,18 +4,23 @@ import java.util.ArrayList;
 
 public class Addresses {
 
-	private ArrayList<Address> adresses = new ArrayList<Address>();
+  private ArrayList<Address> adresses = new ArrayList<Address>();
 
-	public ArrayList<Address> getAdresses() {
+  public ArrayList<Address> getAdresses() {
 
-		return this.adresses;
-		
-	}
+    return this.adresses;
+  }
 
-	public Object getValue(int index, String key) {
+  public Object getValue(int index, String key) {
 
-		return this.adresses.get(index).getValue(key);
-		
-	}
+    return this.adresses.get(index).getValue(key);
+  }
 
+  public static void name() {
+    System.out.println("Test");
+    System.out.println("adresses");
+
+    int zahl = "Hello";
+    ;
+  }
 }

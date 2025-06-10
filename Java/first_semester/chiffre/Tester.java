@@ -1,4 +1,6 @@
-package chiffre;
+package first_semester.chiffre;
+
+
 
 import java.util.Scanner;
 
@@ -7,6 +9,8 @@ public class Tester {
 
         String Klar;
         int verschiebung;
+
+
 
         Scanner wort = new Scanner(System.in);
         Scanner Zahl = new Scanner(System.in);
