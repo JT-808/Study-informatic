@@ -1,20 +1,19 @@
 #ifndef SHMSEM_COMMON_H
 #define SHMSEM_COMMON_H
 
-#define SEM_PUT 0       // Semaphor für freie Plätze (Producer)
-#define SEM_GET 1       // Semaphor für belegte Plätze (Consumer)
-#define SEM_INIT 2      // Semaphor für Initialisierung
-#define NSEM_SHMSEM 3   // Anzahl der Semaphore
+#define SEM_PUT   0     // Anzahl freier Pufferplätze (Producer nutzt)
+#define SEM_GET   1     // Anzahl belegter Plätze (Consumer nutzt)
+#define SEM_INIT  2     // Initialisierungs-Semaphor
+#define NSEM_SHMSEM 3   // Anzahl Semaphore insgesamt
 
 #define BUFFER_SIZE 256 // Größe des Ringpuffers
 
-struct ShmRing {
+// Ringpuffer-Struktur
+typedef struct {
     char buffer[BUFFER_SIZE];
-    int read_idx;       // Leseindex (Consumer)
-    int write_idx;      // Schreibindex (Producer)
-    int producer_done;  // Flag, ob Producer fertig ist
-};
-
-typedef struct ShmRing ShmRing;
+    int read_idx;       // Lese-Index (Consumer)
+    int write_idx;      // Schreib-Index (Producer)
+    int producer_done;  // Signal: Producer hat finale Daten geschrieben
+} ShmRing;
 
 #endif

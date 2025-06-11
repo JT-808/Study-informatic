@@ -1,132 +1,114 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <unistd.h>
 #include <sys/ipc.h>
 #include <sys/sem.h>
 #include <sys/shm.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <time.h>
-#include <signal.h>
 #include "shmsem_common.h"
 
-// Signal-Handler für Timeout
-volatile sig_atomic_t timeout_occurred = 0;
-
-void alarm_handler(int sig) {
-    timeout_occurred = 1;
-}
-
-// Definition von union semun für Systeme, die es nicht automatisch definieren
-#if !defined(__GNU_LIBRARY__) || defined(_SEM_SEMUN_UNDEFINED)
-union semun {
-    int val;
-    struct semid_ds *buf;
-    unsigned short *array;
-};
-#endif
-
-int main(int argc, char **argv) {
-    (void)argc; // unused
-
-    // IPC-Schlüssel erzeugen
-    key_t key = ftok(".", 'S');
-    if (key == -1) {
+int main() {
+    // Schlüssel für Shared Memory und Semaphore erzeugen
+    key_t key = ftok("/tmp", 'S');
+    if (key < 0) {
         perror("ftok");
         return EXIT_FAILURE;
     }
 
-    // Shared Memory verbinden
+    // Zugriff auf das Shared Memory Segment erhalten
     int shmid = shmget(key, sizeof(ShmRing), 0666);
-    if (shmid == -1) {
+    if (shmid < 0) {
         perror("shmget");
         return EXIT_FAILURE;
     }
 
-    ShmRing *shm = (ShmRing *)shmat(shmid, NULL, 0);
-    if (shm == (ShmRing *)-1) {
+    // Shared Memory Segment an den Adressraum anhängen
+    ShmRing *shm = (ShmRing*) shmat(shmid, NULL, 0);
+    if (shm == (void*) -1) {
         perror("shmat");
         return EXIT_FAILURE;
     }
 
-    // Semaphore verbinden
-    int semid = semget(key, NSEM_SHMSEM, 0666);
-    if (semid == -1) {
+    // Zugriff auf die Semaphore erhalten
+    int semid = semget(key, 2, 0666);
+    if (semid < 0) {
         perror("semget");
+        shmdt(shm);
         return EXIT_FAILURE;
     }
 
-    // Zieldatei öffnen
-    int fd = open("target.dat", O_WRONLY | O_CREAT | O_TRUNC, 0666);
-    if (fd == -1) {
-        perror("open target.dat");
+    // Semaphore-Operationen definieren:
+    // wait_data: Warte auf belegten Slot (Semaphore 1 runterzählen)
+    struct sembuf wait_data = {1, -1, 0};
+    // signal_free: Signalisiere freien Slot (Semaphore 0 hochzählen)
+    struct sembuf signal_free = {0, 1, 0};
+
+    // Lese-Index im Shared Memory initialisieren (optional, je nach Implementierung)
+    shm->read_idx = 0;
+
+    // Ziel-Datei zum Schreiben öffnen (binär)
+    FILE *outfile = fopen("target.dat", "wb");
+    if (!outfile) {
+        perror("fopen target.dat");
+        shmdt(shm);
         return EXIT_FAILURE;
     }
 
-    // Signalhandler für Alarm einrichten
-    signal(SIGALRM, alarm_handler);
-
-    struct sembuf sem_wait = {SEM_GET, -1, 0};  // Warte auf Daten
-    struct sembuf sem_signal = {SEM_PUT, 1, 0}; // Signalisiere freien Platz
-
-    int progress = 0;
-    time_t last_data_time = time(NULL);
-
+    // Haupt-Schleife zum Lesen der Daten
     while (1) {
-        // Timeout mit Alarm-Signal implementieren
-        timeout_occurred = 0;
-        alarm(3); // 3 Sekunden Timeout setzen
-        
-        int sem_result = semop(semid, &sem_wait, 1);
-        
-        alarm(0); // Alarm zurücksetzen
-        
-        if (sem_result == -1) {
-            if (timeout_occurred) {
-                // Timeout abgelaufen
-                if (shm->producer_done) {
-                    break; // Producer ist fertig
-                }
-                if (difftime(time(NULL), last_data_time) >= 3) {
-                    printf("Consumer: Timeout - no data for 3 seconds\n");
-                    break;
-                }
-                continue;
-            }
-            perror("semop wait");
-            return EXIT_FAILURE;
+        // Warten, bis ein belegter Pufferplatz vorhanden ist (Blockiert, falls leer)
+        if (semop(semid, &wait_data, 1) < 0) {
+            perror("semop wait_data");
+            break;
         }
 
-        // Byte aus dem Puffer lesen
-        char ch = shm->buffer[shm->read_idx];
+        // Ein Byte aus dem Shared Memory lesen
+        char c = shm->buffer[shm->read_idx];
+
+        // Lese-Index zyklisch erhöhen (Ringpuffer)
         shm->read_idx = (shm->read_idx + 1) % BUFFER_SIZE;
-        last_data_time = time(NULL);
 
-        // Byte in die Zieldatei schreiben
-        if (write(fd, &ch, 1) != 1) {
-            perror("write");
-            return EXIT_FAILURE;
+        // Signalisiere dem Producer, dass ein freier Pufferplatz vorhanden ist
+        if (semop(semid, &signal_free, 1) < 0) {
+            perror("semop signal_free");
+            break;
         }
 
-        // Fortschrittsanzeige
-        if (++progress % 100 == 0) {
-            printf("Consumer: *\n");
+        // Prüfen, ob Terminator-Zeichen empfangen wurde
+        if (c == '0') {
+            printf("\nConsumer: received terminator, exiting\n");
+            break;
         }
 
-        // Signalisiere freien Platz für Producer
-        if (semop(semid, &sem_signal, 1) == -1) {
-            perror("semop signal");
-            return EXIT_FAILURE;
-        }
-
-        // Beenden, wenn Producer fertig und Puffer leer
-        if (shm->producer_done && semctl(semid, SEM_GET, GETVAL) == 0) {
+        // Gelesenes Byte in die Datei schreiben
+        if (fwrite(&c, 1, 1, outfile) != 1) {
+            perror("fwrite");
             break;
         }
     }
 
-    close(fd);
+    // Datei schließen und Shared Memory abkoppeln
+    fclose(outfile);
     shmdt(shm);
+
     return EXIT_SUCCESS;
 }
+
+/*
+Dieses Programm ist der Consumer-Teil eines Producer-Consumer-Systems, das mittels Shared Memory und Semaphoren synchronisiert wird.
+
+1. Es verbindet sich mit einem bereits existierenden Shared Memory Segment und den dazugehörigen Semaphoren.
+2. Die Semaphore mit Index 1 (wait_data) wird genutzt, um zu warten, bis mindestens ein belegter Pufferplatz im Shared Memory vorhanden ist.
+3. Sobald Daten verfügbar sind, liest der Consumer ein Byte aus dem Ringpuffer im Shared Memory.
+4. Nach dem Lesen signalisiert er mit der Semaphore 0 (signal_free), dass ein Pufferplatz wieder frei ist.
+5. Die gelesenen Daten werden byteweise in die Datei "target.dat" geschrieben.
+6. Wenn das Terminator-Zeichen ('0') empfangen wird, beendet der Consumer die Schleife und schließt die Datei.
+7. Shared Memory wird wieder abgekoppelt.
+
+Die Semaphore-Steuerung garantiert, dass der Consumer niemals liest, wenn keine Daten vorhanden sind, und dass der Producer nicht in einen vollen Puffer schreibt. So wird eine sichere, blockierende Synchronisation ohne Polling sichergestellt.
+
+| Semaphor-Nr | Name         | Bedeutung                             | Anfangswert   |
+| ----------- | ------------ | ------------------------------------- | ------------- |
+| `sem[0]`    | `free_slots` | Zählt, wie viele freie Plätze es gibt | `BUFFER_SIZE` |
+| `sem[1]`    | `data_items` | Zählt, wie viele Daten vorhanden sind | `0`           |
+
+*/

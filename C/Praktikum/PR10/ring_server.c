@@ -1,134 +1,126 @@
-
-/* Server mit Kommunikation über Shared Memory und Semaphoren.
-   Arbeitsweise:
- - Server legt Shared Memory (SHM) und Semaphoren an.
- - Server wartet an Semaphor 1, bis ein Client signalisiert, dass
-   ein Auftrag im SHM liegt und Zugriff auf SHM erlaubt wurde.
- - Server verarbeitet den Auftrag und schreibt eine Antwort.
- - Server signalisiert über Semaphor 2, dass der Client die Antwort
-   abholen kann.
- - Mit '0' beginnende Nachricht vom Client beendet den Server.
-*/
-
-
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <fcntl.h>
+#include <unistd.h>
 #include <sys/ipc.h>
 #include <sys/sem.h>
 #include <sys/shm.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <fcntl.h>
 #include "shmsem_common.h"
 
+union semun {
+    int val; // für SETVAL
+};
+
 int main(int argc, char **argv) {
+    // Überprüfe Kommandozeilenargumente (Eingabedatei erforderlich)
     if (argc != 2) {
         fprintf(stderr, "Usage: %s <input_file>\n", argv[0]);
         return EXIT_FAILURE;
     }
 
-    // Datei öffnen
+    // Eingabedatei zum Lesen öffnen
     int fd = open(argv[1], O_RDONLY);
-    if (fd == -1) {
+    if (fd < 0) {
         perror("open");
         return EXIT_FAILURE;
     }
 
-    // IPC-Schlüssel erzeugen
-    key_t key = ftok(".", 'S');
-    if (key == -1) {
+    // Schlüssel für Shared Memory und Semaphore erzeugen
+    key_t key = ftok("/tmp", 'S');
+    if (key < 0) {
         perror("ftok");
         close(fd);
         return EXIT_FAILURE;
     }
 
-    // Shared Memory anlegen/verbinden
+    // Shared Memory Segment erstellen oder öffnen (Größe des Ringpuffers)
     int shmid = shmget(key, sizeof(ShmRing), IPC_CREAT | 0666);
-    if (shmid == -1) {
+    if (shmid < 0) {
         perror("shmget");
         close(fd);
         return EXIT_FAILURE;
     }
 
-    ShmRing *shm = (ShmRing *)shmat(shmid, NULL, 0);
-    if (shm == (ShmRing *)-1) {
+    // Shared Memory Segment an den Adressraum anhängen
+    ShmRing *shm = (ShmRing*) shmat(shmid, NULL, 0);
+    if (shm == (void*) -1) {
         perror("shmat");
         close(fd);
         return EXIT_FAILURE;
     }
 
-    // Semaphore anlegen/verbinden
-    int semid = semget(key, NSEM_SHMSEM, IPC_CREAT | 0666);
-    if (semid == -1) {
+    // Semaphore erstellen oder öffnen (2 Semaphore: freie & belegte Slots)
+    int semid = semget(key, 2, IPC_CREAT | 0666);
+    if (semid < 0) {
         perror("semget");
         shmdt(shm);
         close(fd);
         return EXIT_FAILURE;
     }
 
-    // Initialisierung mit atomarer Prüfung
-    struct sembuf init_lock = {SEM_INIT, -1, 0};
-    if (semop(semid, &init_lock, 1) == 0) {
-        // Nur der erste Prozess kommt hier herein
-        shm->read_idx = 0;
-        shm->write_idx = 0;
-        shm->producer_done = 0;
-        
-        union semun {
-            int val;
-            struct semid_ds *buf;
-            unsigned short *array;
-        } arg;
-        
-        unsigned short init_values[NSEM_SHMSEM] = {BUFFER_SIZE, 0, 1};
-        arg.array = init_values;
-        if (semctl(semid, 0, SETALL, arg) == -1) {
-            perror("semctl SETALL");
-            shmdt(shm);
-            close(fd);
-            return EXIT_FAILURE;
-        }
-    }
-    else {
-        // Warte auf Initialisierung durch anderen Prozess
-        while (semctl(semid, SEM_INIT, GETVAL) == 0) {
-            usleep(10000); // 10ms warten
-        }
-    }
+    // Initialisiere Semaphoren:
+    // sem0 (freie Slots) auf Puffergröße setzen (anfänglich alle frei)
+    union semun arg;
+    arg.val = BUFFER_SIZE;
+    semctl(semid, 0, SETVAL, arg);
 
-    struct sembuf sem_wait = {SEM_PUT, -1, 0};  // Warte auf freien Platz
-    struct sembuf sem_signal = {SEM_GET, 1, 0}; // Signalisiere neues Byte
+    // sem1 (belegte Slots) auf 0 setzen (anfänglich leer)
+    arg.val = 0;
+    semctl(semid, 1, SETVAL, arg);
 
-    int progress = 0;
-    char ch;
-    while (read(fd, &ch, 1) > 0) {
-        if (semop(semid, &sem_wait, 1) == -1) {
-            perror("semop wait");
+    // Schreibindex im Shared Memory initialisieren
+    shm->write_idx = 0;
+
+    // Definition der Semaphore-Operationen
+    struct sembuf wait_free = {0, -1, 0};  // Warten auf freien Slot (sem0--)
+    struct sembuf signal_data = {1, 1, 0}; // Signalisiere belegten Slot (sem1++)
+
+    char buf;
+    // Haupt-Schleife: Lese Byte für Byte aus der Datei
+    while (read(fd, &buf, 1) == 1) {
+        // Warte, bis ein freier Pufferplatz verfügbar ist (blockierend)
+        if (semop(semid, &wait_free, 1) < 0) {
+            perror("semop wait_free");
             break;
         }
 
-        shm->buffer[shm->write_idx] = ch;
+        // Schreibe das gelesene Byte in den Ringpuffer
+        shm->buffer[shm->write_idx] = buf;
+
+        // Schreibindex zyklisch erhöhen (Ringpuffer)
         shm->write_idx = (shm->write_idx + 1) % BUFFER_SIZE;
 
-        if (++progress % 100 == 0) {
-            printf("Producer: Processed %d bytes\n", progress);
-        }
-
-        if (semop(semid, &sem_signal, 1) == -1) {
-            perror("semop signal");
+        // Signalisiere, dass ein belegter Slot hinzugekommen ist
+        if (semop(semid, &signal_data, 1) < 0) {
+            perror("semop signal_data");
             break;
         }
     }
 
-    // Producer ist fertig
-    shm->producer_done = 1;
-    sem_signal.sem_num = SEM_GET;
-    semop(semid, &sem_signal, 1); // Sicherstellen dass Consumer aufwacht
+    // Schreibe Terminator-Zeichen '0', um dem Consumer das Ende zu signalisieren
+    if (semop(semid, &wait_free, 1) == 0) {
+        shm->buffer[shm->write_idx] = '0';
+        shm->write_idx = (shm->write_idx + 1) % BUFFER_SIZE;
+        semop(semid, &signal_data, 1);
+    }
 
-    printf("Producer: Finished after processing %d bytes\n", progress);
-
+    // Ressourcen freigeben
     close(fd);
     shmdt(shm);
+
     return EXIT_SUCCESS;
 }
+
+/*
+
+Dieses Programm ist der Producer-Teil eines Producer-Consumer-Systems, das Shared Memory und Semaphoren zur Synchronisation nutzt.
+
+1. Es öffnet die angegebene Eingabedatei und liest sie Byte für Byte.
+2. Über eine Semaphore (sem0) wird gewartet, bis im Ringpuffer im Shared Memory ein freier Slot verfügbar ist.
+3. Sobald ein freier Slot vorhanden ist, schreibt der Producer das Byte in den Ringpuffer.
+4. Danach signalisiert er mit der zweiten Semaphore (sem1), dass ein belegter Slot hinzugekommen ist.
+5. Wenn die Eingabedatei komplett gelesen ist, schreibt der Producer ein Terminator-Zeichen ('0'), um dem Consumer das Ende der Daten mitzuteilen.
+6. Semaphore gewährleisten eine sichere blockierende Synchronisation ohne aktives Abfragen (Polling).
+
+So wird verhindert, dass der Producer in einen vollen Puffer schreibt und der Consumer aus einem leeren Puffer liest.
+*/
