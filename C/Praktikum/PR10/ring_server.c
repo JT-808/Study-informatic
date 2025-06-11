@@ -7,6 +7,13 @@
 #include <sys/shm.h>
 #include "shmsem_common.h"
 
+/*
+| Semaphor-Nr | Name         | Bedeutung                             | Anfangswert   |
+| ----------- | ------------ | ------------------------------------- | ------------- |
+| `sem[0]`    | `free_slots` | Zählt, wie viele freie Plätze es gibt | `BUFFER_SIZE` |
+| `sem[1]`    | `data_items` | Zählt, wie viele Daten vorhanden sind | `0`           |
+*/
+
 union semun {
     int val; // für SETVAL
 };

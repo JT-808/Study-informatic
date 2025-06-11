@@ -106,9 +106,4 @@ Dieses Programm ist der Consumer-Teil eines Producer-Consumer-Systems, das mitte
 
 Die Semaphore-Steuerung garantiert, dass der Consumer niemals liest, wenn keine Daten vorhanden sind, und dass der Producer nicht in einen vollen Puffer schreibt. So wird eine sichere, blockierende Synchronisation ohne Polling sichergestellt.
 
-| Semaphor-Nr | Name         | Bedeutung                             | Anfangswert   |
-| ----------- | ------------ | ------------------------------------- | ------------- |
-| `sem[0]`    | `free_slots` | Zählt, wie viele freie Plätze es gibt | `BUFFER_SIZE` |
-| `sem[1]`    | `data_items` | Zählt, wie viele Daten vorhanden sind | `0`           |
-
 */
