@@ -4,8 +4,6 @@
 
 #include "sort.h"
 
-
-
 int main(int argc, char **argv) {
 
   // Speicher vom Heap anfordern

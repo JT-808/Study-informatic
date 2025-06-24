@@ -74,8 +74,6 @@ int main(int argc, char *argv[]) {
 // Signalhandler: Wird aufgerufen, wenn SIGUSR2 empfangen wird
 void signalHandler(int signo) { signalBekommen = 1; }
 
-
-
 /*
 Signalhandler registrieren:
 Das Programm setzt einen Handler für das Signal SIGUSR2, damit es auf bestimmte
@@ -95,14 +93,9 @@ sigaction ist eine Systemfunktion, mit der ein Prozess dem Betriebssystem
 
 Die Variable signalBekommen dient dazu, dem Prozess mitzuteilen, dass er gerade ein Signal erhalten hat, und zwar auf eine signal-sichere Weise.
 
-
 fork() muss nach dem registrieren des Signalhändlers geschehen, damit beide davon wissen
 
-
-
-
 Signalarten:
-
 | Signal    | Name        | Beschreibung                                                  |
 | --------- | ----------- | ------------------------------------------------------------- |
 | `SIGINT`  | Interrupt   | Wird z. B. durch `Strg + C` im Terminal ausgelöst             |
